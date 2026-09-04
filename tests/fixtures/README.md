@@ -47,7 +47,7 @@ sku, cat, sub, vendor_casepack, po_cases_revised, item_group`.
 
 ## `rdz_inventory_summary.txt`
 
-The RDZ 3PL sheet export (2026-08-31 banner) trimmed to the Inventory Summary
+The RDZ sheet export (2026-08-31 banner) trimmed to the Inventory Summary
 table only: empty header row, alignment row, banner row, header row, 127 item
 rows. Used by `tests/test_rdz_parser.py`.
 

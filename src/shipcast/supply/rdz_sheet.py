@@ -1,4 +1,4 @@
-"""Parser for the RDZ 3PL "Inventory Summary" sheet (Drive markdown/plain-text export).
+"""Parser for the RDZ "Inventory Summary" sheet (RDZ is Biom's own distribution center) (Drive markdown/plain-text export).
 
 Spec: scratchpad `sheet_specs.md` sections A and C (2026-09-03), reproduced in
 the rules below. The export renders every tab as pipe tables separated by blank

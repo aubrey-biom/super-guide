@@ -23,7 +23,7 @@ Nothing writes to BigQuery. Do not paste credential values into the transcript.
 1. **Install.** `uv sync --extra dev` in the repo root. If bullseye cannot be
    fetched, stop and report — do not vendor it.
 2. **Inputs via Drive MCP** into `inputs/` (gitignored):
-   * RDZ 3PL Inventory sheet → `inputs/RDZ.txt` (plain-text export; the parser finds
+   * RDZ Inventory sheet (Biom's own distribution center) → `inputs/RDZ.txt` (plain-text export; the parser finds
      the Inventory Summary by header text) AND `inputs/rdz_inventory.xlsx` via
      `mcp__Google_Drive__download_file_content` with
      `exportMimeType=application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`

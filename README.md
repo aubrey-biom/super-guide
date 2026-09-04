@@ -6,7 +6,7 @@ replenishment signals (BigQuery project `biom-reporting-s26`, read through
 [bullseye](https://github.com/aubrey-biom/bullseye)'s logical tables) into
 expected PO units by TCIN by fiscal week, graded by measured accuracy, plus a
 monthly consumption-based view for S&OP and an ability-to-ship layer against
-the RDZ 3PL inventory sheet. It runs for anyone with repo access: GitHub
+the RDZ inventory sheet (Biom's own distribution center). It runs for anyone with repo access: GitHub
 Actions on a schedule, or a Claude Code slash command — not one laptop.
 
 Design record: [`docs/PLAN.md`](docs/PLAN.md). Every threshold lives in
@@ -123,7 +123,7 @@ docs/PLAN.md                       design record
 
 ## Inputs
 
-* **RDZ Inventory Summary** (`inputs/RDZ.txt`, Drive export of the 3PL sheet):
+* **RDZ Inventory Summary** (`inputs/RDZ.txt`, Drive export of the RDZ sheet):
   located by header text, markdown unescaped, `[merged]` stripped. Fail-loud:
   100-200 item rows, `Last updated:` banner present, identity
   `Remaining = Received + Adj − Allocated − Shipped` on ≥ 99% of rows. Emits
