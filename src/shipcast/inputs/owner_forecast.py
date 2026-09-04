@@ -33,7 +33,7 @@ import re
 import warnings
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass, field
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -534,6 +534,31 @@ def parse_bm_master_forecast(df: pd.DataFrame, ctx: ParseContext) -> ParsedOwner
 register_format(BM_MASTER_FORECAST_FORMAT, BM_REQUIRED_HEADERS, parse_bm_master_forecast)
 
 
+def _read_owner_xlsx(p: Path) -> pd.DataFrame:
+    """Read an owner workbook: the "Target Schedule" tab when present, else the first sheet.
+
+    Month headers arrive as datetimes from a Drive .xlsx export; they are
+    rendered back to `Mon-YYYY` so `detect_format` and `bm_month_start` see the
+    same header text as the Drive text rendering.
+    """
+    xl = pd.ExcelFile(p)
+    sheet = BM_TAB_NAME if BM_TAB_NAME in xl.sheet_names else xl.sheet_names[0]
+    raw = pd.read_excel(xl, sheet_name=sheet, header=None, dtype=object)
+    raw = raw.dropna(how="all").reset_index(drop=True)
+    header = raw.iloc[0].tolist()
+    cols: list[str] = []
+    for c in header:
+        if isinstance(c, datetime | date):
+            cols.append(pd.Timestamp(c).strftime("%b-%Y"))
+        elif c is None or (isinstance(c, float) and pd.isna(c)):
+            cols.append("")
+        else:
+            cols.append(str(c).strip())
+    body = raw.iloc[1:].reset_index(drop=True)
+    body.columns = cols
+    return body.astype(object).where(body.notna(), "")
+
+
 def load_owner_forecast(
     path: str | Path,
     *,
@@ -545,7 +570,7 @@ def load_owner_forecast(
     """Read a CSV/XLSX, detect its format by header, and parse to long form."""
     p = Path(path)
     if p.suffix.lower() in {".xlsx", ".xlsm"}:
-        df = pd.read_excel(p, sheet_name=0, dtype=str)
+        df = _read_owner_xlsx(p)
     else:
         text = p.read_text(encoding="utf-8")
         if drive_export.is_drive_export(text):
