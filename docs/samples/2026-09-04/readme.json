@@ -1,0 +1,28 @@
+{
+  "p0_plan_zero_history_positive": "6 of 38 TCIN-weeks with plan 0 and recent POs saw a PO anyway (2,893 units)",
+  "as_of": "2026-09-04",
+  "run_week": "2026-08-30",
+  "plan_snapshot_used": "2026-09-02",
+  "plan_horizon_last_order_day": "2026-10-31",
+  "orders_latest_snapshot": "2026-09-02",
+  "sales_last_week_end": "2026-08-29",
+  "inventory_last_week_end": "2026-08-29",
+  "dfe": {
+    "used": false,
+    "last_update_d": "2026-07-27",
+    "ratio": 1.25,
+    "age_days": 39,
+    "reason": "stale: 39 d > 21 d"
+  },
+  "owner_sheet": "bm_master_forecast.txt (bm_master_forecast_target_schedule)",
+  "pos_forecast_weights": {
+    "owner_velocity": 0.41,
+    "runrate_8wk": 0.59
+  },
+  "controller": "band 8.0 weeks, k 16.0 weeks; grid search on 252 TCIN-weeks ending 2026-08-23: min WAPE+|bias|",
+  "receipt_lag_weeks": 3,
+  "horizon": "16 PO weeks; 16 months",
+  "grades": "A/B/C weekly by plan lead days (measured); monthly B when >=75% plan-covered, C model to 6 months, D beyond or owner-only, E beyond 12 months",
+  "bands": "weekly: leave-one-week-out P10/P90 of log ratio from the backtest panel where fitted; otherwise symmetric \u00b1band from the grade legend",
+  "not_forecast": "launch/forward POs before Target creates them (shown booked or PLANNED_LAUNCH); item-level weekly timing beyond one week; realised shipments before ASN reconciliation"
+}

@@ -1,0 +1,6 @@
+grade,confidence,expected_error_band,meaning,basis
+A,high,±15%,"Target's own plan, 0-1 days old; measured error 12-18%",measured 2026-09-04
+B,good,±30%,"Target's plan 2-3 days old, or a month >= 75% covered by plan weeks; measured error 25-31%",measured 2026-09-04
+C,directional,±50%,"plan 4+ days old, or consumption model within 6 months; measured weekly error 42-62%, monthly unmeasured",measured 2026-09-04 (weekly); assumed for monthly until backtested
+D,plan-based,±70%,"beyond Target's plan and 6+ months out, or owner-forecast-only items; band assumed","operational choice, not measured"
+E,indicative,±100%,"beyond 12 months, or no history at all; direction only","operational choice, not measured"

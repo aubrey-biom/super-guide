@@ -1,0 +1,20 @@
+# Target-channel SKU aliases -> canonical Biom SKU.
+#
+# Tab-separated, 3 columns: alias	canonical_sku	note
+# Lookup runs on the NORMALISED alias (strip, uppercase, `_` -> `-`, collapse
+# whitespace, trailing ` (PDQ)` split off into an is_pdq flag); see
+# shipcast.inputs.aliases. A canonical value that itself ends in ` (PDQ)`
+# resolves to the base SKU with is_pdq = True (the RDZ stock line is separate).
+# Sources: owner forecast sheets and the freight tracker, 2026-09-03.
+alias	canonical_sku	note
+P-LDIS-TER	P-DIS-TER	owner sheet spelling of the full-size dispenser
+P-LDIS-WHI	P-DIS-WHI	owner sheet spelling of the full-size dispenser
+P-LDIS-EUC	P-DIS-EUC	owner sheet spelling of the full-size dispenser
+P-SSDIS-BRU	P-DIS-SS-BRU	owner sheet spelling of the stainless dispenser
+P-SSDIS-BLU	P-DIS-SS-BLU	owner sheet spelling of the stainless dispenser
+K-60WIP-AP-COM-3PK	K-60WIP-AP-COM	owner sheet adds -3PK; RDZ/Target item is K-60WIP-AP-COM
+K-60WIP-DSN-COM	K-60WIP-DSN-COM-3PK	owner sheet drops -3PK; RDZ/Target item is K-60WIP-DSN-COM-3PK
+30	K-60WIP-BAB-FRA-4PK	owner sheet row keyed by the literal number 30
+P-40WIP-LIT_FRA	P-40WIP-LIT-FRA	underscore variant seen on Target PO lines (normalisation also covers it)
+K-60WIP-FLU-FRA-3Pk	K-60WIP-FLU-FRA-3PK	mixed-case variant (normalisation also covers it)
+P-40WIP-6IN-SAN-STL-4	P-40WIP-6IN-SAN-STL (PDQ)	freight tracker spelling of the 4-unit PDQ display pack

@@ -1,0 +1,115 @@
+# Shared runner for the Target shipment forecast.
+#
+# Runs every Monday 12:00 UTC (08:00 ET) and on demand from the Actions tab by
+# anyone with repo access. Secrets live in the repository settings, not on a
+# person:
+#   GCP_SA_KEY_B64     base64 of the read-only BigQuery service-account JSON
+#                      (claude-code-bq-readonly@biom-reporting-s26). The same
+#                      account exports the Google Sheets once the Drive API is
+#                      enabled on the project and the sheets are shared with it.
+#   BULLSEYE_TOKEN     fine-grained GitHub PAT (or deploy token) with read access
+#                      to aubrey-biom/bullseye, the private git dependency.
+#   SLACK_WEBHOOK_URL  optional; posts the digest to #supply-chain.
+#   DRIVE_FOLDER_ID    optional; Shared Drive folder for the workbook upload.
+name: forecast
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Channel
+        default: target
+        type: choice
+        options: [target]
+      as_of:
+        description: Origin date YYYY-MM-DD (blank = today)
+        default: ""
+        type: string
+      months:
+        description: Months to forecast
+        default: "16"
+        type: string
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GCP_SA_KEY_B64: ${{ secrets.GCP_SA_KEY_B64 }}
+      SHIPCAST_ROOT: ${{ github.workspace }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Allow uv to fetch the private bullseye dependency
+        if: ${{ secrets.BULLSEYE_TOKEN != '' }}
+        run: |
+          git config --global url."https://x-access-token:${{ secrets.BULLSEYE_TOKEN }}@github.com/".insteadOf "https://github.com/"
+
+      - uses: astral-sh/setup-uv@v3
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: uv sync --extra drive
+
+      - name: Resolve as-of
+        id: asof
+        run: |
+          d="${{ github.event.inputs.as_of }}"
+          if [ -z "$d" ]; then d=$(date -u +%F); fi
+          echo "as_of=$d" >> "$GITHUB_OUTPUT"
+
+      - name: Export input sheets with the service account
+        run: |
+          mkdir -p inputs
+          uv run python -c "from shipcast.inputs.drive_fetch import fetch_known; print(fetch_known('inputs'))"
+        continue-on-error: true   # until the Drive API is enabled and the sheets are shared
+
+      - name: Integrity checks
+        run: uv run shipcast check --skip-bq --rdz inputs/RDZ.txt || true
+
+      - name: Pull Target signals
+        run: uv run shipcast pull --as-of ${{ steps.asof.outputs.as_of }}
+
+      - name: Build the forecast workbook
+        run: |
+          uv run shipcast run --channel ${{ github.event.inputs.channel || 'target' }} \
+            --as-of ${{ steps.asof.outputs.as_of }} --months ${{ github.event.inputs.months || '16' }} \
+            --owner inputs/bm_master_forecast.xlsx --rdz inputs/RDZ.txt || \
+          uv run shipcast run --channel ${{ github.event.inputs.channel || 'target' }} \
+            --as-of ${{ steps.asof.outputs.as_of }} --months ${{ github.event.inputs.months || '16' }}
+
+      - name: Upload workbook as a build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: target-shipment-forecast-${{ steps.asof.outputs.as_of }}
+          path: |
+            runs/${{ steps.asof.outputs.as_of }}/*.xlsx
+            runs/${{ steps.asof.outputs.as_of }}/csv/*.csv
+            runs/${{ steps.asof.outputs.as_of }}/readme.json
+
+      - name: Upload workbook to the Drive folder
+        if: ${{ secrets.DRIVE_FOLDER_ID != '' }}
+        run: |
+          uv run python -c "
+          import glob; from shipcast.inputs.drive_fetch import upload_to_folder
+          for p in glob.glob('runs/${{ steps.asof.outputs.as_of }}/*.xlsx'):
+              print(upload_to_folder(p, '${{ secrets.DRIVE_FOLDER_ID }}'))"
+        continue-on-error: true
+
+      - name: Post digest to Slack
+        if: ${{ secrets.SLACK_WEBHOOK_URL != '' }}
+        run: |
+          uv run python - <<'EOF'
+          import json, os, urllib.request
+          rd = json.load(open('runs/${{ steps.asof.outputs.as_of }}/readme.json'))
+          text = (f"Target shipment forecast {rd['as_of']}: plan snapshot {rd['plan_snapshot_used']}, "
+                  f"plan horizon to {rd['plan_horizon_last_order_day']}. Workbook in the run artifact / Drive folder.")
+          req = urllib.request.Request(os.environ['SLACK_WEBHOOK_URL'], data=json.dumps({"text": text}).encode(), headers={"Content-Type": "application/json"})
+          urllib.request.urlopen(req)
+          EOF
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        continue-on-error: true

@@ -1,0 +1,7 @@
+parameter,value
+wos_band_weeks,8.0
+adjust_weeks_k,16.0
+wape_weekly_orders,0.6685477816980707
+bias,0.028348566173710683
+n_tcin_weeks,252
+basis,grid search on 252 TCIN-weeks ending 2026-08-23: min WAPE+|bias|

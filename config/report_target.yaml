@@ -1,0 +1,143 @@
+# shipcast -- workbook layout for the Target channel.
+#
+# Edit this file to change what the workbook looks like. Each entry under
+# `sheets` becomes one sheet, in order. Kinds:
+#   readme  key/value block from the run metadata (+ optional appended frames)
+#   long    one table: pick `columns`, relabel with `labels`, `sort`, `filter`
+#   wide    a pivot: `index` rows x `column_from` columns holding `value`;
+#           `companion` grids (e.g. the grade per cell) are stacked underneath
+#   blocks  several long tables stacked on one sheet (Accuracy)
+# Frame keys come from shipcast.pipeline.ForecastBundle.frames.
+
+workbook:
+  filename: "target_shipment_forecast_{as_of}.xlsx"
+  also_write_csv: true
+
+sheets:
+  - name: README
+    kind: readme
+    title: "Target shipment forecast — run metadata"
+    append_frames: [legend]
+    append_titles:
+      legend: "Confidence legend (grade -> expected error band)"
+
+  - name: Monthly
+    kind: wide
+    title: "Expected shipments to Target by month (units, all streams). Grades below."
+    source: monthly
+    index: [sku, tcin, description]
+    column_from: month_start
+    column_format: "%b-%y"
+    value: expected_ship_units
+    agg: sum
+    limit_columns: 16
+    number_format: "#,##0"
+    total_row: true
+    companion:
+      - title: "Confidence grade per cell (A high … E indicative; see README legend)"
+        value: grade
+        agg: worst
+      - title: "Low end of band (units)"
+        value: low
+        agg: sum
+        number_format: "#,##0"
+      - title: "High end of band (units)"
+        value: high
+        agg: sum
+        number_format: "#,##0"
+
+  - name: Monthly detail
+    kind: long
+    title: "One row per SKU x month x stream — everything behind the Monthly grid"
+    source: monthly
+    sort: [tcin, month_start, stream]
+    columns: [sku, tcin, description, item_group, month, stream, expected_ship_units, low, high, grade, confidence,
+              expected_po_units, pos_units, drawdown_release, on_hand_start, on_hand_end, wos_end, order_to_sales,
+              source_mix, pos_candidates, step_up_month, flags]
+    labels:
+      expected_ship_units: "Expected shipments (units)"
+      expected_po_units: "Expected PO units (create month)"
+      pos_units: "POS forecast (units)"
+      drawdown_release: "Inventory change released (units)"
+      on_hand_start: "Target on-hand, month start"
+      on_hand_end: "Target on-hand, month end"
+      wos_end: "Weeks of supply, month end"
+      order_to_sales: "Orders / sales"
+      source_mix: "Weeks from plan vs model"
+      pos_candidates: "POS forecast blend"
+      step_up_month: "Step-up"
+
+  - name: Shipments weekly
+    kind: wide
+    title: "Expected shipments by ship week (cases). Replenishment forecast + booked launch POs."
+    source: shipments
+    index: [sku, tcin, description, stream]
+    column_from: ship_week
+    column_format: "%d %b"
+    value: cases
+    agg: sum
+    number_format: "#,##0.0"
+    total_row: true
+    companion:
+      - title: "Units"
+        value: units
+        agg: sum
+        number_format: "#,##0"
+      - title: "Confidence grade"
+        value: grade
+        agg: worst
+
+  - name: Weekly detail
+    kind: long
+    title: "Plan-anchored weekly forecast, one row per TCIN x PO week"
+    source: weekly
+    sort: [po_week, tcin]
+    columns: [po_week_label, fiscal_week, ship_week, sku, tcin, description, item_group, stream, expected_po_units,
+              expected_cases, low, high, grade, confidence, lead_days, plan_business_d, primary_signal, fallback_rung,
+              flags, lag1_rep, mean4_rep, n_dc, casepack]
+    labels:
+      po_week_label: "PO week (Sunday)"
+      expected_po_units: "Expected PO units"
+      expected_cases: "Cases"
+      plan_business_d: "Plan file date"
+      lead_days: "Plan lead (days)"
+      lag1_rep: "Last week actual"
+      mean4_rep: "4-week mean actual"
+
+  - name: Accuracy
+    kind: blocks
+    blocks:
+      - source: accuracy_signals_h1
+        title: "Signals one week ahead: WAPE with 80% week-block bootstrap interval, bias, admission (beats naive AND |bias| < 15%)"
+        columns: [signal, n, wape, wape_lo80, wape_hi80, bias, median_ape, exact_share, within_10_share, admitted_weekly]
+      - source: accuracy_plan_by_lead
+        title: "Target PO plan accuracy by lead days (basis of the A/B/C grades)"
+        columns: [lead_days, n, wape, bias, median_ape, exact_share, within_10_share]
+      - source: accuracy_horizon
+        title: "Plan accuracy by horizon (weeks ahead)"
+        columns: [horizon, n, wape, bias, exact_share, within_10_share]
+      - source: accuracy_bands
+        title: "Prediction bands: log-ratio quantiles per lead bucket and leave-one-week-out realised coverage of the P10-P90 band"
+        columns: [bucket, n, q_lo, q_hi, pooled, coverage]
+      - source: accuracy_pos_candidates
+        title: "Monthly POS forecast candidates vs actual POS (trailing months) and the weights used"
+        columns: [candidate, n, wape, bias, weight, weight_basis]
+      - source: accuracy_controller
+        title: "Inventory drawdown controller (calibrated each run)"
+        columns: [parameter, value]
+      - source: accuracy_controller_grid
+        title: "Controller grid (best 15 by WAPE + |bias|)"
+        columns: [band, k, wape, bias, objective]
+
+  - name: Booked forward
+    kind: long
+    title: "Open launch / forward PO lines already created by Target, placed at ship week"
+    source: booked_forward
+    sort: [ship_week, tcin]
+    columns: [sku, tcin, description, purchase_order_id, ship_begin_d, ship_week, receipt_week, units, casepack]
+
+  - name: Exceptions
+    kind: long
+    title: "Items and inputs that need a human eye. Nothing is silently dropped."
+    source: exceptions
+    columns: [tcin, sku, issue, detail]

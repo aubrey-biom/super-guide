@@ -1,0 +1,131 @@
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| Last updated: August 31, 1:35 PM | Target SKUs in RED |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Item \# | Item Description | Units per Case | Qty Received (unit) | Cases Received | Qty Adjustments | Qty Allocated / Pending | Qty Shipped | Qty Remaining (each/unit) | Cases Remaining | Total Pallets Remaining | Low Stock? (\<= threshold) | Notes | Wipe Pack Type | Vendor | Inbound Arrival Date  | Inbound Shipment QTY | TARGET | D2C |
+| K-60WIP-AP-COM | 60ct All Purpose Wipe 8" Roll - Combo 3 Pack (Lavender, Santal, Neroli) | 4 | 63,556 | 15889.00 | 0 | 1,096 | 45,417 | 17,043 | 4260.75 | 40.58 |  |  | Coffee | AHC |  |  |  |  |
+| K-60WIP-DSN-COM-3PK | 60ct Disinfecting Wipe 8" Roll - Combo 3 Pack (2 Fresh Citrus, 1 Alpine Mint) | 4 | 112,488 | 28122.00 | 29,608 | 912 | 138,766 | 2,418 | 604.50 | 5.76 | LOW |  | Coffee | AHC | TBD | 45,000 |  |  |
+| K-6DIS-WHI-1SAN-STL | 6" Dispenser with 40ct Sanitizing Inside (Bone w/ Santal Escape) | 6 | 28,994 | 4832.33 | 16,580 | 942 | 39,054 | 5,578 | 929.67 | 4.74 |  |  |  |  | Kitting |  |  |  |
+| K-6DIS-PER-1LIT | Mini Dispenser with 40ct Little Mess Mini Roll - Periwinkle | 6 | 7,968 | 1328.00 | 0 | 330 | 5,970 | 1,668 | 278.00 | 0.99 |  |  |  |  | Kitting |  |  |  |
+| P-40WIP-LIT-FRA | 40ct Little Mess Wipe Mini Roll (24 Unit Casepack, No PDQ) | 24 | 9,936 | 414.00 | \-6,252 | 1,728 | 0 | 1,956 | 81.50 | 0.68 |  |  |  |  |  |  |  |  |
+| P-40WIP-LIT-FRA (PDQ) | 40ct Little Mess Wipe Mini Roll (4 Unit PDQ) | 24 | 11,808 | 492.00 | 0 | 0 | 9,936 | 1,872 | 78.00 | 0.81 |  |  |  |  |  |  |  |  |
+| P-60WIP-BAB-FRA | 60ct Baby Wipe 8" Roll - Fragrance Free | 12 | 273,300 | 22775.00 | 4,106 | 396 | 106,455 | 170,555 | 14212.92 | 135.36 |  |  | Coffee | AHC |  |  |  |  |
+| K-60WIP-BAB-FRA-12PK | 60ct Baby Wipe 8" Roll - 12 Pack Printed Box (720ct) | 1 | 48,153 | 48153.00 | \-1,990 | 175 | 22,216 | 23,772 | 23772.00 | 212.25 |  |  | Coffee | AHC | Healthy INV |  |  |  |
+| K-60WIP-BAB-FRA-4PK | 60ct Baby Wipe 8" Roll - 4 pack Bag (240ct) | 3 | 124,899 | 41633.00 | \-44 | 153 | 53,023 | 71,679 | 23893.00 | 227.55 |  |  | Coffee | AHC | TBD |  |  |  |
+| K-DIS-2BAB-LGR | Baby Starter Kit - 8" Seafoam Dispenser+Dock, 2x Baby 60ct Refills | 4 | 24,568 | 6142.00 | 2,792 | 0 | 17,118 | 10,242 | 2560.50 | 36.58 |  |  | Coffee | AHC |  |  |  |  |
+| K-DIS-2BAB-PUR | Baby Starter Kit - 8" Lilac Dispenser+Dock, 2x Baby 60ct Refills | 4 | 27,452 | 6863.00 | 2,165 | 0 | 14,548 | 15,069 | 3767.25 | 53.82 |  |  | Coffee | AHC/P88 |  |  |  |  |
+| K-DIS-2BAB-WHI | Baby Starter Kit - 8" White Dispenser+Dock, 2x Baby 60ct Refills | 4 | 38,653 | 9663.25 | 2,045 | 80 | 37,600 | 3,018 | 754.50 | 10.78 | LOW | Repacking from P-DIS-WHI (3K UNITS) | Coffee | AHC/P88 | TBD | 10,300 |  |  |
+| P-20WIP-SAN-STL-TRV | 20ct Hand Sanitizing Wipe Travel Pack - Santal Escape | 24 | 49,776 | 2074.00 | \-265 | 96 | 48,943 | 472 | 19.67 | 0.11 | LOW |  | Flat | AHC | 9/18/2026 | 50,000 |  |  |
+| P-20WIP-SAN-BER-TRV | 20ct Hand Sanitizing Wipe Travel Pack - Bergamot Bloom | 24 | 0 | 0.00 | 0 | 102,672 | 0 | \-102,672 | \-4278.00 | \-20.67 | LOW |  | Flat |  |  |  |  |  |
+| P-30WIP-LIT-FRA | 30ct Little Messes Wipe Flatpack - Fragrance Free | 24 | 0 | 0.00 | 0 | 30,600 | 0 | \-30,600 | \-1275.00 | \-6.16 | LOW |  | Flat |  |  |  |  |  |
+| P-30WIP-BAB-FRA | 30ct Baby Wipe Flatpack - Fragrance Free | 24 | 0 | 0.00 | 0 | 27,000 | 0 | \-27,000 | \-1125.00 | \-5.43 | LOW |  | Flat |  |  |  |  |  |
+| P-30WIP-BOD-NAT-TRV | 30ct Body Wipe Travel Pack - Naturally Fresh (6 Unit PDQ) | 24 | 66,552 | 2773.00 | \-461 | 672 | 40,710 | 24,709 | 1029.54 | 14.30 |  |  | Flat |  |  |  |  |  |
+| P-40WIP-6IN-SAN-STL (PDQ) | 40ct Hand Sanitizing Mini Roll - Santal Escape (4 Unit PDQ) | 24 | 51,024 | 2126.00 | \-3 | 0 | 29,304 | 21,717 | 904.88 | 9.43 |  |  |  |  |  |  |  |  |
+| P-60WIP-AP-FRA | 60ct All Purpose Wipe 8" Roll - Fragrance Free | 12 | 109,794 | 9149.50 | \-2,010 | 3,552 | 93,385 | 10,847 | 903.92 | 8.61 | LOW |  | Sup | PremierCare |  |  |  |  |
+| P-60WIP-AP-NER | 60ct All Purpose Wipe 8" Roll - Neroli Dream | 12 | 86,313 | 7192.75 | \-1,544 | 912 | 44,748 | 39,109 | 3259.08 | 31.04 |  |  | Coffee | AHC |  |  |  |  |
+| P-60WIP-AP-STL | 60ct All Purpose Wipe 8" Roll - Santal | 12 | 144,015 | 12001.25 | \-4,000 | 1,212 | 107,663 | 31,140 | 2595.00 | 24.71 |  |  | Coffee | AHC |  |  |  |  |
+| P-60WIP-DSN-ALP | 60ct Disinfecting Wipe 8" Roll - Alpine Mint | 12 | 281,496 | 23458.00 | \-32,699 | 0 | 149,448 | 99,349 | 8279.08 | 78.85 |  |  | Coffee | AHC | TBD |  |  |  |
+| P-60WIP-DSN-CIT | 60ct Disinfecting Wipe 8" Roll - Fresh Citrus | 12 | 405,804 | 33817.00 | \-50,934 | 528 | 182,912 | 171,430 | 14285.83 | 136.06 |  |  | Coffee | AHC | TBD |  |  |  |
+| P-60WIP-FLU-FRA | 60ct Flushable Wipe 8" Roll - Fragrance Free | 12 | 54,906 | 4575.50 | \-3,812 | 0 | 38,261 | 12,833 | 1069.42 | 10.18 |  |  | SUP | PremierCare | TBD | 30,000 |  |  |
+| P-DIS-BLK | 8" Refillable Wipe Dispenser - Black | 12 | 4,878 | 406.50 | \-30 | 36 | 2,036 | 2,776 | 231.33 | 4.13 |  |  |  |  |  |  |  |  |
+| P-DIS-DGR | 8" Refillable Wipe Dispenser - Hunter Green | 6 | 2,986 | 497.67 | \-702 | 126 | 1,124 | 1,034 | 172.33 | 1.54 |  | non-dock |  | P89 |  |  |  |  |
+| P-DIS-EUC | 8" Refillable Wipe Dispenser - Eucalyptus | 6 | 87,510 | 14585.00 | \-2,619 | 2,520 | 59,717 | 22,654 | 3775.67 | 33.71 |  |  |  | P88 |  |  |  |  |
+| P-DIS-LGR | 8" Refillable Wipe Dispenser - Sea Foam | 6 | 16,298 | 2716.33 | \-4,444 | 330 | 2,172 | 9,352 | 1558.67 | 13.92 |  |  |  | P88 |  |  |  |  |
+| P-DIS-SS-BRU | 8" Refillable Wipe Dispenser - Brushed Stainless Steel | 4 | 29,669 | 7417.25 | 0 | 740 | 24,927 | 4,002 | 1000.50 | 8.34 | LOW | non-dock |  | P88 |  |  |  |  |
+| P-DIS-TAN | 8" Refillable Wipe Dispenser - Sand | 6 | 45,283 | 7547.17 | \-2,008 | 1,620 | 40,959 | 696 | 116.00 | 1.04 | LOW | non-dock |  | P88 |  |  |  |  |
+| P-DIS-WHI | 8" Refillable Wipe Dispenser - White | 6 | 71,267 | 11877.83 | \-11,691 | 2,706 | 54,862 | 2,008 | 334.67 | 2.99 | LOW |  |  | P88 |  |  |  |  |
+| P-20WIP-SAN-EUC-TRV | 20ct Hand Sanitizing Wipe Travel Pack - Eucalyptus Chill | 24 | 56,182 | 2340.92 | \-648 | 0 | 27,979 | 27,555 | 1148.13 | 5.55 |  |  | Flat | PremierCare | Healthy INV | 0 |  |  |
+| P-40WIP-6IN-AP-GRA | 40ct All-Purpose Mini Roll - Grapefruit Zest | 12 | 20,251 | 1687.58 | \-140 | 0 | 12,844 | 7,267 | 605.58 | 5.05 |  |  |  |  | 9/18/2026 | 26,000 |  |  |
+| P-40WIP-6IN-AP-VAN | 40ct All-Purpose Mini Roll - Tres Vanille | 12 | 1,820 | 151.67 | 0 | 0 | 1,014 | 806 | 67.17 | 0.56 |  |  |  |  | No Replenshiment | No Replenshiment |  |  |
+| P-40WIP-6IN-SAN-EUC | 40ct Hand Sanitizing Mini Roll - Eucalyptus Chill | 12 | 6,867 | 572.25 | 297 | 0 | 6,910 | 254 | 21.17 | 0.18 | LOW |  |  |  | 9/22/2026 | 30,000 |  |  |
+| P-40WIP-6IN-SAN-STL | 40ct Hand Sanitizing Mini Roll - Santal Escape | 24 | 58,440 | 2435.00 | \-39,576 | 1,800 | 10,839 | 6,225 | 259.38 | 2.16 | LOW |  |  |  |  |  |  |  |
+| P-60WIP-AP-CUR | 60ct All Purpose Wipe 8" Roll - Wild Currant | 12 | 9,996 | 833.00 | 0 | 0 | 2,721 | 7,275 | 606.25 | 5.77 |  |  | Coffee |  |  |  |  |  |
+| P-60WIP-AP-FIR | 60ct All Purpose Wipe 8" Roll - Frasier Fir | 12 | 1,464 | 122.00 | 0 | 0 | 8 | 1,456 | 121.33 | 1.16 |  |  | Sup | PremierCare | No Replenshiment | No Replenishment |  |  |
+| P-60WIP-AP-GRA | 60ct All Purpose Wipe 8" Roll - Grapefruit Zest | 12 | 49,104 | 4092.00 | \-3,330 | 180 | 31,996 | 13,598 | 1133.17 | 10.79 |  |  |  |  |  |  |  |  |
+| P-60WIP-AP-LAV | 60ct All Purpose Wipe 8" Roll - Lavender Ease | 12 | 32,417 | 2701.42 | \-7,338 | 336 | 24,212 | 531 | 44.25 | 0.42 | LOW |  | Coffee | AHC | 10/1/2026 | 30,000 |  |  |
+| P-60WIP-AP-PEP | 60ct All Purpose Wipe 8" Roll - Peppermint | 12 | 1,602 | 133.50 | 0 | 0 | 6 | 1,596 | 133.00 | 1.27 |  |  | Flo | PremierCare | No Replenshiment | No Replenishment |  |  |
+| P-6DIS-BLK | 6" Mini Dispenser - Midnight | 6 | 4,668 | 778.00 | 0 | 102 | 896 | 3,670 | 611.67 | 2.18 |  |  |  | P88 |  |  |  |  |
+| P-6DIS-PUR | 6" Mini Dispenser - Lilac | 6 | 2,256 | 376.00 | 0 | 102 | 986 | 1,168 | 194.67 | 0.70 |  |  |  | P88 |  |  |  |  |
+| P-6DIS-TAN | 6" Mini Dispenser - Dune | 6 | 2,178 | 363.00 | 0 | 0 | 1,964 | 214 | 35.67 | 0.13 | LOW |  |  | P88 | PO Placed | 3000 |  |  |
+| P-6DIS-WHI | 6" Mini Dispenser - Bone | 6 | 17,296 | 2882.67 | \-16,572 | 102 | 499 | 123 | 20.50 | 0.07 | LOW |  |  | P88 |  |  |  |  |
+| P-6DIS-YEL | 6" Mini Dispenser - Citrine | 6 | 4,488 | 748.00 | 0 | 102 | 702 | 3,684 | 614.00 | 2.19 |  |  |  | P88 |  |  |  |  |
+| P-DIS-BLU | 8" Refillable Wipe Dispenser - Hydrangea | 6 | 6,108 | 1018.00 | \-175 | 0 | 1,828 | 4,105 | 684.17 | 6.11 |  | non-dock |  | P88 |  |  |  |  |
+| P-DIS-PNK | 8" Refillable Wipe Dispenser - Faded Rose | 6 | 4,359 | 726.50 | 0 | 0 | 1,332 | 3,027 | 504.50 | 4.50 |  | non-dock |  |  |  |  |  |  |
+| P-DIS-PUR | 8" Refillable Wipe Dispenser - Lilac | 6 | 9,946 | 1657.67 | \-1,309 | 0 | 18 | 8,619 | 1436.50 | 12.83 |  | non-dock |  |  |  |  |  |  |
+| P-DIS-TER | 8" Refillable Wipe Dispenser - Terracotta | 6 | 31,662 | 5277.00 | \-9,083 | 114 | 9,053 | 13,412 | 2235.33 | 24.84 |  |  |  | P88 | Healthy INV |  |  |  |
+| P-WIP-SAN-EUC | Hand Sanitizing 8" Roll, 50ct, Eucalyptus Chill | 30 | 8,340 | 278.00 | 1,635 | 60 | 9,986 | \-71 | \-2.37 | \-0.03 | LOW |  | Flo | Pearmine | Old Stock | Old Stock |  |  |
+| P-WIP-SAN-TEA | Hand Sanitizing 8" Roll, 50ct, Tea Tree Bliss | 30 | 13,980 | 466.00 | 0 | 0 | 2,388 | 11,592 | 386.40 | 5.37 |  |  | Flo | Pearmine | Old Stock | Old Stock |  |  |
+| P-WIP-SAN-TEA-TRV | 10ct Hand Sanitizing Wipe Travel Pack - Tea Tree Bliss | 40 | 1,862 | 46.55 | 0 | 0 | 606 | 1,256 | 31.40 | 0.37 |  |  |  |  | Old Stock | Old Stock |  |  |
+| P-800WIP-DSN-CIT-FRA |  | 4 | 192 | 48.00 | 0 | 0 | 4 | 188 | 47.00 | 1.57 |  |  |  | P88 | Old Stock | Old Stock |  |  |
+| P-800WIP-DSN-CIT-PEP | 800ct Citric Acid Disinfecting Wipe Jumbo Roll - Alpine Mint | 4 | 2,732 | 683.00 | 0 | 0 | 76 | 2,656 | 664.00 | 13.28 |  |  | Roll | PremierCare | Old Stock | Old Stock |  |  |
+| P-UDIS-BLK | Unpainted Black Dispenser | 12 | 972 | 81.00 | 0 | 0 | 972 | 0 | 0.00 | 0.00 | LOW | non-dock |  | Hensim | Old Stock | Old Stock |  |  |
+| P-UDIS-DGR | Unpainted Dark Green Dispenser | 12 | 941 | 78.42 | 0 | 0 | 937 | 4 | 0.33 | 0.01 | LOW |  |  | Hensim | Old Stock | Old Stock |  |  |
+| P-UDIS-LGR | Unpainted Light Green Dispenser | 12 | 1,087 | 90.58 | 0 | 0 | 1,080 | 7 | 0.58 | 0.01 | LOW |  |  | Hensim | Old Stock | Old Stock |  |  |
+| P-UDIS-PNK | Unpainted Pink Dispenser | 12 | 21 | 1.75 | 0 | 0 | 0 | 21 | 1.75 | 0.03 |  |  |  | Hensim | Old Stock | Old Stock |  |  |
+| P-UDIS-TAN | Unpainted tan dispenser | 12 | 252 | 21.00 | 0 | 0 | 252 | 0 | 0.00 | 0.00 | LOW |  |  | Hensim | Old Stock | Old Stock |  |  |
+| P-UDIS-WHI | Unpainted Dispenser, White | 12 | 12 | 1.00 | 0 | 0 | 0 | 12 | 1.00 | 0.02 |  |  |  | Hensim | Old Stock | Old Stock |  |  |
+| P-WIP-ALL-GRA-TRV | Grapefruit All Purpose Wipe 10 Count Travel Pack | 40 | 1,164 | 29.10 | 0 | 0 | 708 | 456 | 11.40 | 0.14 |  |  | Flat | Pearmine | Old Stock | Old Stock |  |  |
+| P-WIP-ALL-LAV-TRV | Lavender All Purpose Wipe Travel Pack | 40 | 243 | 6.08 | 0 | 0 | 54 | 189 | 4.73 | 0.06 |  |  | Flo | Pearmine | Old Stock | Old Stock |  |  |
+| P-WIP-ALL-STL-TRV | Santal All Purpose Wipe Travel Pack | 40 | 760 | 19.00 | 0 | 0 | 336 | 424 | 10.60 | 0.13 |  |  | Flo | Pearmine | Old Stock | Old Stock |  |  |
+| P-WIP-FLU-FRA-TRV | 10ct Flushable Wipe Travel Pack - Fragrance Free | 40 | 17,480 | 437.00 | \-205 | 0 | 15,275 | 2,000 | 50.00 | 0.60 | LOW |  | Flat | Pearmine | Old Stock | Old Stock |  |  |
+| P-WIP-SAN-BER | Hand Sanitizing 8" Roll, 50ct, Bergamot Bloom | 30 | 402 | 13.40 | 0 | 0 | 0 | 402 | 13.40 | 0.19 |  |  |  |  | Old Stock | Old Stock |  |  |
+| K-DIS-1AP-TER-LAV | 8" Terracotta Dispenser - 1 60ct AP Wipe Inside (Lavender Ease) | 1 | 0 | 0.00 | 7,000 | 0 | 7,000 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-1BOD-NAT-1SAN-TRV-STL | Memorial Day Sale Gift With Purchase | 1 | 0 | 0.00 | 365 | 0 | 365 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-3ALP-3NER | Cleaning Essentials Starter Kit - Reorder | 1 | 0 | 0.00 | 58 | 0 | 58 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-3ALP-3NER-2TAN | Cleaning Essentials Starter Kit - Earth Tones | 1 | 0 | 0.00 | 194 | 0 | 194 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-3ALP-3NER-2WHI | Cleaning Essentials Starter Kit - Minimal | 1 | 0 | 0.00 | 143 | 0 | 143 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-3ALP-3NER-TAN-BLU | Cleaning Essentials Starter Kit - Vibrant | 1 | 0 | 0.00 | 7 | 0 | 7 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-3ALP-3NER-TER-BLU | Cleaning Essentials Starter Kit - Vibrant | 1 | 0 | 0.00 | 141 | 0 | 141 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-60WIP-AP-2GRA-2FRA-2STL | 60ct All-Purpose Combo 6 Pack: 2 Grapefruit, 2 Fragrance Free, 2 Santal | 1 | 0 | 0.00 | 7 | 0 | 7 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-60WIP-AP-2STL-2NER-2LAV | 60ct All-Purpose Combo 6 Pack: 2 Santal, 2 Neroli, 2 Lavender | 1 | 0 | 0.00 | 143 | 0 | 143 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-60WIP-AP-4GRA-4FRA-4STL | 60ct All-Purpose Combo 12 Pack: 4 Grapefruit, 4 Fragrance Free, 4 Santal | 1 | 0 | 0.00 | 2 | 0 | 2 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-60WIP-AP-4STL-4NER-4LAV | 60ct All-Purpose Combo 12 Pack: 4 Santal, 4 Neroli, 4 Lavender | 1 | 0 | 0.00 | 23 | 0 | 23 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-6FLU-2TER | Flushable Wipes Starter Kit - Terracotta | 1 | 0 | 0.00 | 47 | 0 | 47 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-6FLU-2WHI | Flushable Wipes Starter Kit - White | 1 | 0 | 0.00 | 240 | 0 | 240 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-6FLU-WHI-TER | Flushable Wipes Starter Kit - Combo | 1 | 0 | 0.00 | 68 | 0 | 68 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-BAB-PR-LGR | Baby PR Kit - Seafoam | 1 | 0 | 0.00 | 1,060 | 0 | 1,060 | 0 | 0.00 | 0.00 | LOW | Kitted at time of fulfillment |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-BAB-PR-PUR | Baby PR Kit - Lilac | 1 | 0 | 0.00 | 290 | 0 | 290 | 0 | 0.00 | 0.00 | LOW | Kitted at time of fulfillment |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-BAB-PR-WHI | Baby PR Kit - White | 1 | 0 | 0.00 | 943 | 0 | 943 | 0 | 0.00 | 0.00 | LOW | Kitted at time of fulfillment |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-1AP-BLK-FRA | Black Dispenser - 1 AP Wipe Inside (Fragrance Free) | 6 | 0 | 0.00 | 30 | 0 | 30 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-1AP-BLU-FRA | Hydrangea Dispenser - 1 AP Wipe Inside (Fragrance Free) | 6 | 0 | 0.00 | 18 | 0 | 18 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-1AP-WHI-GRA | 1 Dispenser - AP Wipe Inside (Grapefruit) - White | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-1AP-DGR-FRA | 1 Dispenser - AP Wipe Inside (Fragrance Free) - Hunter Green | 6 | 318 | 53.00 | 702 | 0 | 1,020 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-1AP-EUC-GRA | 1 Dispenser - AP Wipe Inside (Grapefruit) - Eucalyptus | 1 | 0 | 0.00 | 3,300 | 0 | 3,300 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-1AP-WHI-FRA | White Dispenser - 1 AP Wipe Inside (Fragrance Free) | 6 | 0 | 0.00 | 1,230 | 0 | 1,230 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-1AP-WHI-STL | 8" White Dispenser - 1 60ct All Purpose Wipe Inside (Santal Escape) | 1 | 0 | 0.00 | 3,300 | 0 | 3,300 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-1FLU-WHI-FRA | 1 Dispenser - FLU Wipe Inside (Fragrance Free) - White | 1 | 0 | 0.00 | 1,500 | 0 | 1,500 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-4BAB-LGR | 8" Seafoam Dispenser+Dock, 60ct Baby Wipe 8" Roll (x4) | 1 | 0 | 0.00 | 42 | 0 | 42 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-4BAB-PUR | 8" Lilac Dispenser+Dock, 60ct Baby Wipe 8" Roll (x4) | 1 | 0 | 0.00 | 26 | 0 | 26 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-4BAB-WHI | 8" White Dispenser+Dock, 60ct Baby Wipe 8" Roll (x4) | 1 | 0 | 0.00 | 75 | 0 | 75 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-6BAB-LGR | 8" White Dispenser+Dock, 60ct Baby Wipe 8" Roll (x6) | 1 | 0 | 0.00 | 243 | 0 | 243 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-6BAB-PUR | 8" Lilac Dispenser+Dock, 60ct Baby Wipe 8" Roll (x6) | 1 | 0 | 0.00 | 126 | 0 | 126 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-6BAB-WHI | 8" Seafoam Dispenser+Dock, 60ct Baby Wipe 8" Roll (x6) | 1 | 0 | 0.00 | 444 | 0 | 444 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DSN-PR-TER | Disinfecting PR Kit - Terracotta | 1 | 0 | 0.00 | 1,697 | 0 | 1,697 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DSN-PR-WHI | Disinfecting PR Kit - White | 1 | 0 | 0.00 | 333 | 0 | 333 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-AP-CUR-PR-TER | Wild Currant PR Box | 1 | 0 | 0.00 | 1,000 | 0 | 989 | 11 | 11.00 | 0.11 |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-WIP-ALL-COM-TRV | All-Purpose Travel Sampler Pack (3 Pack) | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 | 0.00 | 0.00 | LOW |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-3BAB-WHI | 8" White Dispenser+Dock, 60ct Baby Wipe 8" Roll (x3) | 1 | 0 | 0.00 | 950 | 0 | 950 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-3BAB-PUR | 8" Lilac Dispenser+Dock, 60ct Baby Wipe 8" Roll (x3) | 1 | 0 | 0.00 | 950 | 0 | 950 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-3BAB-LGR | 8" Seafoam Dispenser+Dock, 60ct Baby Wipe 8" Roll (x3) | 1 | 0 | 0.00 | 950 | 0 | 950 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-UDIS-1AP-BLK-GRA | 1 Unpainted Dispenser - AP Wipe Inside (Grapefruit) - Black | 6 | 48 | 8.00 | 0 | 0 | 0 | 48 | 8.00 | 0.07 |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-UDIS-1AP-TAN-GRA | 1 Unpainted Dispenser - AP Wipe Inside (Grapefruit) - Tan | 6 | 48 | 8.00 | 0 | 0 | 0 | 48 | 8.00 | 0.07 |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-UDIS-1AP-WHI-GRA | 1 Unpainted Dispenser - AP Wipe Inside (Grapefruit) - White | 6 | 192 | 32.00 | 0 | 0 | 0 | 192 | 32.00 | 0.29 |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-BLK-60WIP-AP-FRA | Black Dispenser plus 1 60ct AP Wipe Inside Fragrance Free | 6 | 697 | 116.17 | 0 | 0 | 12 | 685 | 114.17 | 1.02 |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-DIS-BLU-60WIP-AP-FRA | Hydrangea Dispenser plus 1 60ct AP Wipe Inside Fragrance Free | 6 | 710 | 118.33 | 0 | 0 | 24 | 686 | 114.33 | 1.02 |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-60WIP-2STL-2ALP-2FLU-1WHI-1TER-1EUC | Whole home starter kit - Variety | 1 | 0 | 0.00 | 92 | 0 | 92 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-60WIP-2STL-2ALP-2FLU-3EUC | Whole home starter kit - Earth Tones | 1 | 0 | 0.00 | 53 | 0 | 53 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| K-60WIP-2STL-2ALP-2FLU-3WHI | Whole home starter kit - Minimal | 1 | 0 | 0.00 | 21 | 0 | 21 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| BTS-FRO-BRU-WHI | Back to School Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| BTS-FRO-2BLU | Back to School Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| BTS-FRO-2WHI | Back to School Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| BTS-RRO | Back to School Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| BTS-OTP-BRU-WHI | Back to School Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| BTS-OTP-2BLU | Back to School Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| BTS-OTP-2WHI | Back to School Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| DRE-FRO-WHI-BLU | Dorm Room Essentials Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| DRE-FRO-BRU-BLU | Dorm Room Essentials Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| DRE-FRO-2BLU | Dorm Room Essentials Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| DRE-RRO | Dorm Room Essentials Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| DRE-OTP-WHI-BLU | Dorm Room Essentials Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| DRE-OTP-BRU-BLU | Dorm Room Essentials Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| DRE-OTP-2BLU | Dorm Room Essentials Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
+| BTC-INF-KIT | Back to College Influencer Kit | 1 | 0 | 0.00 | 0 | 0 | 0 | 0 |  |  |  |  |  |  | KIT BUILT IN DC | KIT BUILT IN DC |  |  |
