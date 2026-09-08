@@ -20,10 +20,18 @@ def test_loads_43_tcins(im: ItemMaster) -> None:
 def test_tcin_to_sku(im: ItemMaster) -> None:
     assert im.sku_for(89854821) == "P-DIS-EUC"
     assert im.sku_for(94799739) == "K-60WIP-BAB-FRA-4PK"
-    # biom_sku missing, rdz_item present -> fallback
-    assert im.sku_for(95285661) == "P-60WIP-FLU-FRA"
-    assert im.sku_for(95285661, fallback_to_rdz=False) is None
+    # multipack: Target SKU from the LaunchPad export, RDZ pool is the base item x3
+    assert im.sku_for(95285661) == "K-60WIP-FLU-FRA-3Pk"
+    assert im.rdz_item_for(95285661) == ("P-60WIP-FLU-FRA", 3)
     assert im.sku_for(1) is None
+    # biom_sku missing, rdz_item present -> fallback (no such row in the data any more)
+    synthetic = ItemMaster(
+        im.frame.assign(
+            biom_sku=im.frame["biom_sku"].where(im.frame["tcin"] != 95285661)
+        ).reset_index(drop=True)
+    )
+    assert synthetic.sku_for(95285661) == "P-60WIP-FLU-FRA"
+    assert synthetic.sku_for(95285661, fallback_to_rdz=False) is None
 
 
 def test_sku_to_tcins(im: ItemMaster) -> None:

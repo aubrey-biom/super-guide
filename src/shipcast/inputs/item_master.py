@@ -4,8 +4,8 @@ TCIN is the ONLY join key. Never join Target feeds on MANUFACTURER_STYLE /
 VENDOR_STYLE_ID: they carry Target's `""` placeholder on ~95% of PO lines,
 10-character truncations, and renamed spellings. Column highlights:
 
-* `biom_sku` — dim_product SKU (missing for 11 TCINs: items not yet in the
-  DTC catalogue). `rdz_item` — the RDZ Item # holding the stock, with
+* `biom_sku` — dim_product SKU; where a TCIN is not in the DTC catalogue the SKU
+  comes from the Target LaunchPad export (2026-09-07), leaving one dispenser unmapped. `rdz_item` — the RDZ Item # holding the stock, with
   `rdz_base_qty_multiplier` base units consumed per Target unit (kits).
 * `casepack` — casepack of record; `casepack_source` says where it came from
   (mode of orders VENDOR_CASEPACK_Q first, plan VENDOR_CASE_PACK_Q, RDZ Units

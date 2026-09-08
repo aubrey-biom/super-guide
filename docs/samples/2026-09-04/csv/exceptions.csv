@@ -1,48 +1,18 @@
 tcin,sku,issue,detail
 93197978.0,,UNMAPPED_ITEM,category inferred from Target dept 3 (not in dim_product) | NOT in dim_product (is_in_target) | in inventory feed but NEVER sold
-1011824789.0,,UNMAPPED_ITEM,category inferred from Target dept 3 (not in dim_product) | NOT in dim_product (is_in_target) | Target PO PLAN has 43968 future ordered units but no RDZ item exists | in inventory feed but NEVER sold | Target ITEM STATE=READY_FOR_ORDER
-1012914812.0,,UNMAPPED_ITEM,category inferred from Target dept 3 (not in dim_product) | NOT in dim_product (is_in_target) | in inventory feed but NEVER sold | Target ITEM STATE=READY_FOR_ORDER
-1012914813.0,,UNMAPPED_ITEM,category inferred from Target dept 3 (not in dim_product) | NOT in dim_product (is_in_target) | in inventory feed but NEVER sold | Target ITEM STATE=READY_FOR_ORDER
-94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,po_week 2026-09-06 expected 24 lead 4
-94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,po_week 2026-09-13 expected 12 lead 11
-94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,po_week 2026-09-20 expected 72 lead 18
-1011824789.0,,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-09-20 expected 3,024 lead 18"
-1012188490.0,P-30WIP-LIT-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,po_week 2026-09-20 expected 864 lead 19
-1012188491.0,P-30WIP-BAB-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-09-20 expected 1,608 lead 19"
-94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,po_week 2026-09-27 expected 528 lead 25
-94928290.0,P-DIS-SS-BRU,PLANNED_FORWARD,"po_week 2026-09-27 expected 2,568 lead 25"
-1011824789.0,,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-09-27 expected 26,268 lead 25"
-1012188490.0,P-30WIP-LIT-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-09-27 expected 2,592 lead 26"
-1012188491.0,P-30WIP-BAB-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-09-27 expected 3,648 lead 26"
-94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,"po_week 2026-10-04 expected 1,356 lead 32"
-94928290.0,P-DIS-SS-BRU,PLANNED_FORWARD,"po_week 2026-10-04 expected 3,072 lead 32"
-95285660.0,P-60WIP-FLU-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-04 expected 36,360 lead 33"
-95285662.0,K-DIS-2FLU-WHI,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-04 expected 7,916 lead 33"
-1011824789.0,,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-04 expected 10,308 lead 32"
-1012188490.0,P-30WIP-LIT-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-04 expected 1,488 lead 33"
-1012188491.0,P-30WIP-BAB-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-04 expected 2,088 lead 33"
-89854821.0,P-DIS-EUC,PLANNED_FORWARD,"po_week 2026-10-11 expected 7,920 lead 39"
-89854823.0,P-DIS-WHI,PLANNED_FORWARD,"po_week 2026-10-11 expected 7,020 lead 39"
-94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,"po_week 2026-10-11 expected 6,888 lead 39"
-94928290.0,P-DIS-SS-BRU,PLANNED_FORWARD,"po_week 2026-10-11 expected 8,636 lead 39"
-94928292.0,P-60WIP-DSN-CIT,PLANNED_FORWARD,"po_week 2026-10-11 expected 26,412 lead 39"
-95285660.0,P-60WIP-FLU-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-11 expected 15,528 lead 40"
-95285662.0,K-DIS-2FLU-WHI,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-11 expected 3,044 lead 40"
-1011824789.0,,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,po_week 2026-10-11 expected 48 lead 39
-94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,"po_week 2026-10-18 expected 3,888 lead 46"
-94928290.0,P-DIS-SS-BRU,PLANNED_FORWARD,"po_week 2026-10-18 expected 3,760 lead 46"
-94928292.0,P-60WIP-DSN-CIT,PLANNED_FORWARD,"po_week 2026-10-18 expected 13,860 lead 46"
-95285660.0,P-60WIP-FLU-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-18 expected 16,200 lead 47"
-95285662.0,K-DIS-2FLU-WHI,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-18 expected 3,188 lead 47"
-1011824789.0,,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-18 expected 1,404 lead 46"
-1012188490.0,P-30WIP-LIT-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,po_week 2026-10-18 expected 504 lead 47
-1012188491.0,P-30WIP-BAB-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,po_week 2026-10-18 expected 696 lead 47
-94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,"po_week 2026-10-25 expected 1,968 lead 53"
-95285660.0,P-60WIP-FLU-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-25 expected 16,056 lead 54"
-95285662.0,K-DIS-2FLU-WHI,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-25 expected 3,308 lead 54"
-1011824789.0,,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-25 expected 2,916 lead 53"
-1012188490.0,P-30WIP-LIT-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-25 expected 3,120 lead 54"
-1012188491.0,P-30WIP-BAB-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"po_week 2026-10-25 expected 3,168 lead 54"
+1011824789.0,P-60WIP-DSN-PIN,UNMAPPED_ITEM,category inferred from Target dept 3 (not in dim_product) | NOT in dim_product (is_in_target) | Target PO PLAN has 43968 future ordered units but no RDZ item exists | in inventory feed but NEVER sold | Target ITEM STATE=READY_FOR_ORDER | biom_sku from Target LaunchPad export shared 2026-09-07 | launch_date from Target LaunchPad export shared 2026-09-07
+1012914812.0,P-20WIP-AP-STL-TRV,UNMAPPED_ITEM,category inferred from Target dept 3 (not in dim_product) | NOT in dim_product (is_in_target) | in inventory feed but NEVER sold | Target ITEM STATE=READY_FOR_ORDER | biom_sku from Target LaunchPad export shared 2026-09-07 | launch_date from Target LaunchPad export shared 2026-09-07
+1012914813.0,P-20WIP-DSN-CIT-TRV,UNMAPPED_ITEM,category inferred from Target dept 3 (not in dim_product) | NOT in dim_product (is_in_target) | in inventory feed but NEVER sold | Target ITEM STATE=READY_FOR_ORDER | biom_sku from Target LaunchPad export shared 2026-09-07 | launch_date from Target LaunchPad export shared 2026-09-07
+89854821.0,P-DIS-EUC,PLANNED_FORWARD,"1 PO week(s) 2026-10-11..2026-10-11, expected 7,920 units, lead 39..39"
+89854823.0,P-DIS-WHI,PLANNED_FORWARD,"1 PO week(s) 2026-10-11..2026-10-11, expected 7,020 units, lead 39..39"
+94928289.0,P-60WIP-DSN-ALP,NO_PO_8WK,"8 PO week(s) 2026-09-06..2026-10-25, expected 14,736 units, lead 4..53"
+94928290.0,P-DIS-SS-BRU,PLANNED_FORWARD,"4 PO week(s) 2026-09-27..2026-10-18, expected 18,036 units, lead 25..46"
+94928292.0,P-60WIP-DSN-CIT,PLANNED_FORWARD,"2 PO week(s) 2026-10-11..2026-10-18, expected 40,272 units, lead 39..46"
+95285660.0,P-60WIP-FLU-FRA-2PK,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"4 PO week(s) 2026-10-04..2026-10-25, expected 84,144 units, lead 33..54"
+95285662.0,K-DIS-2FLU-WHI,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"4 PO week(s) 2026-10-04..2026-10-25, expected 17,456 units, lead 33..54"
+1011824789.0,P-60WIP-DSN-PIN,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"6 PO week(s) 2026-09-20..2026-10-25, expected 43,968 units, lead 18..53"
+1012188490.0,P-30WIP-LIT-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"5 PO week(s) 2026-09-20..2026-10-25, expected 8,568 units, lead 19..54"
+1012188491.0,P-30WIP-BAB-FRA,NEW_TCIN_NO_HISTORY|LAUNCH_FILL,"5 PO week(s) 2026-09-20..2026-10-25, expected 11,208 units, lead 19..54"
 ,,DFE_STALE_OR_MISSING,"{'used': False, 'last_update_d': '2026-07-27', 'ratio': 1.25, 'age_days': 39, 'reason': 'stale: 39 d > 21 d'}"
 ,P-DIS-SS-BLU,OWNER_SKU_UNRESOLVED,"no TCIN via biom_sku, vendor_style or alias; unresolved"
 ,P-10WIP-BOD-NAT-TRV,OWNER_SKU_UNRESOLVED,"no TCIN via biom_sku, vendor_style or alias; unresolved"

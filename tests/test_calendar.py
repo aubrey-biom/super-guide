@@ -40,6 +40,7 @@ def test_item_groups(config: dict[str, Any]) -> None:
     cal = TargetCalendar.from_config(config)
     assert cal.item_group_for(3, 2) == "D3-C2"
     assert cal.item_group_for(253, 4) == "D253-C4"
+    assert cal.item_group_for(253, 6) == "D253-C6"  # flushables, launch 2026-10-11
     assert cal.item_group_for(7, 7) == "D7"
     assert cal.item_group_for(7, 1) == "D7"
     assert cal.item_group_for(3, 9) is None

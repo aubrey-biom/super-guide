@@ -30,6 +30,16 @@ item_groups:
     ship_offset_days: 5
     basis: 'measured 2026-09-03: replenishment PO created Monday; revised_ship_begin_d
       = create + 5 d (Saturday)'
+  D253-C6:
+    name: flushables
+    department_id: 253
+    class_id: 6
+    po_day: monday
+    ship_offset_days: 5
+    basis: 'measured 2026-09-08 on bpd_raw: PO plan ORDER_D is Monday in all 74 snapshots
+      for TCINs 95285660/95285661/95285662 (launch 2026-10-11); the one replenishment PO
+      created so far (10002045523, Mon 24 Aug) had ship_begin +5 d (Sat 29 Aug); the
+      launch PO 10002007019 was created Thu 30 Jul for a 18-19 Sep ship window'
   D7:
     name: baby
     department_id: 7

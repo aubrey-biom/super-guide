@@ -109,13 +109,13 @@ sheets:
     blocks:
       - source: accuracy_signals_h1
         title: "Signals one week ahead: WAPE with 80% week-block bootstrap interval, bias, admission (beats naive AND |bias| < 15%)"
-        columns: [signal, n, wape, wape_lo80, wape_hi80, bias, median_ape, exact_share, within_10_share, admitted_weekly]
+        columns: [signal, n, n_scored, wape, wape_lo80, wape_hi80, bias, median_ape, exact_share, within_10_share, admitted_weekly]
       - source: accuracy_plan_by_lead
         title: "Target PO plan accuracy by lead days (basis of the A/B/C grades)"
-        columns: [lead_days, n, wape, bias, median_ape, exact_share, within_10_share]
+        columns: [lead_days, n, n_scored, wape, bias, median_ape, exact_share, within_10_share]
       - source: accuracy_horizon
         title: "Plan accuracy by horizon (weeks ahead)"
-        columns: [horizon, n, wape, bias, exact_share, within_10_share]
+        columns: [horizon, n, n_scored, wape, bias, exact_share, within_10_share]
       - source: accuracy_bands
         title: "Prediction bands: log-ratio quantiles per lead bucket and leave-one-week-out realised coverage of the P10-P90 band"
         columns: [bucket, n, q_lo, q_hi, pooled, coverage]

@@ -517,7 +517,7 @@ def run_forecast(
                 week_col="week",
                 actual_col="actual",
                 forecast_col="forecast",
-                n_boot=int(_cfg(cfg, "gate", "bootstrap", field_name="n_boot", default=500)),
+                n_boot=int(_cfg(cfg, "gate", "bootstrap", field_name="n_boot", default=1000)),
             )
             cis.append({"signal": s, "wape_lo80": lo, "wape_hi80": hi})
         sig = sig.merge(pd.DataFrame(cis), on="signal", how="left")
@@ -581,17 +581,26 @@ def run_forecast(
                 "detail": "appears in plan or orders; add to data/item_master_target.csv",
             }
         )
-    for r in weekly[
+    flagged = weekly[
         weekly["flags"].str.contains(
             "NEW_TCIN_NO_HISTORY|PLANNED_FORWARD|STALE_PLAN|NO_PO_8WK", regex=True
         )
-    ].itertuples(index=False):
+    ]
+    # One row per item and flag set, not one per PO week: over a 16-week horizon the
+    # per-week form repeated the same item up to 16 times (59 rows for 13 items on the
+    # 4 Sep sample) and buried the items that actually need a human eye.
+    for (t, sku, flags), g in flagged.groupby(["tcin", "sku", "flags"], dropna=False, sort=True):
+        weeks = pd.to_datetime(g["po_week"])
         ex.append(
             {
-                "tcin": int(r.tcin),
-                "sku": r.sku,
-                "issue": r.flags,
-                "detail": f"po_week {pd.Timestamp(r.po_week).date()} expected {r.expected_po_units:,.0f} lead {r.lead_days}",
+                "tcin": int(t),
+                "sku": sku,
+                "issue": flags,
+                "detail": (
+                    f"{len(g)} PO week(s) {weeks.min().date()}..{weeks.max().date()}, "
+                    f"expected {g['expected_po_units'].sum():,.0f} units, "
+                    f"lead {g['lead_days'].min()}..{g['lead_days'].max()}"
+                ),
             }
         )
     if cand_notes["dfe"].get("used") is False:

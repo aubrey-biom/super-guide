@@ -14,7 +14,7 @@
     "age_days": 39,
     "reason": "stale: 39 d > 21 d"
   },
-  "owner_sheet": "bm_master_forecast.txt (bm_master_forecast_target_schedule)",
+  "owner_sheet": "bm_master_forecast.xlsx (bm_master_forecast_target_schedule)",
   "pos_forecast_weights": {
     "owner_velocity": 0.41,
     "runrate_8wk": 0.59

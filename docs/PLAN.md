@@ -37,7 +37,7 @@ Reuse, not re-derivation. Verified in `/home/user/bullseye/src/bpd_mcp/bq.py`: `
 ## 3. The model
 
 ### 3.1 Target variable and streams
-`y[t,w]` = revised PO units for TCIN `t` created in Sunday-anchored week `w`, summed over DCs, from the QUALIFY-reduced order table. Target raises exactly three replenishment POs a week (Sun D3-C2 cleaning, Mon D253-C4 personal care, Mon D7 baby); a TCIN never appears in two replen POs in a week (0 of 7,348 tcin-DC-weeks), so TCIN × week at chain level is the grain Target actually orders at.
+`y[t,w]` = revised PO units for TCIN `t` created in Sunday-anchored week `w`, summed over DCs, from the QUALIFY-reduced order table. Target raises three replenishment POs a week today (Sun D3-C2 cleaning, Mon D253-C4 personal care, Mon D7 baby), with a fourth (Mon D253-C6 flushables) from the 2026-10-11 launch; a TCIN never appears in two replen POs in a week (0 of 7,348 tcin-DC-weeks), so TCIN × week at chain level is the grain Target actually orders at.
 
 Two streams, never pooled:
 - **Replenishment** (`ship_begin − create ≤ 14 d`; 67 POs; steady state since 2026-05-17 mean 22,541 units/wk, CV 0.277): forecast.
