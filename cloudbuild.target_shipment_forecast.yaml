@@ -1,0 +1,15 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args:
+    - build
+    - --build-arg
+    - GIT_SHA=${_GIT_SHA}
+    - -f
+    - Dockerfile.target_shipment_forecast
+    - -t
+    - us-central1-docker.pkg.dev/biom-reporting-s26/biom-containers/target-shipment-forecast
+    - .
+images:
+- us-central1-docker.pkg.dev/biom-reporting-s26/biom-containers/target-shipment-forecast
+substitutions:
+  _GIT_SHA: 'unknown'

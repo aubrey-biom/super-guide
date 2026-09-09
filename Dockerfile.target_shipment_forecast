@@ -1,0 +1,71 @@
+FROM python:3.12-slim
+WORKDIR /app
+
+# This pipeline has its OWN requirements file, not the repo root's. pandas + pyarrow +
+# openpyxl are ~150 MB and no other image in this repo forecasts anything, so they are
+# deliberately not in requirements.txt — see the header of the file below.
+# google-cloud-storage is listed there for step 3 of the runner (upload to GCS).
+COPY pipelines/target_shipment_forecast/requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# ── Code ────────────────────────────────────────────────────────────────────────────
+COPY runners/run_target_shipment_forecast.py ./runners/run_target_shipment_forecast.py
+COPY pipelines/target_shipment_forecast/__init__.py    ./pipelines/target_shipment_forecast/__init__.py
+COPY pipelines/target_shipment_forecast/bq.py          ./pipelines/target_shipment_forecast/bq.py
+COPY pipelines/target_shipment_forecast/config.py      ./pipelines/target_shipment_forecast/config.py
+COPY pipelines/target_shipment_forecast/pipeline.py    ./pipelines/target_shipment_forecast/pipeline.py
+COPY pipelines/target_shipment_forecast/run.py         ./pipelines/target_shipment_forecast/run.py
+COPY pipelines/target_shipment_forecast/cli.py         ./pipelines/target_shipment_forecast/cli.py
+COPY pipelines/target_shipment_forecast/backtest ./pipelines/target_shipment_forecast/backtest
+COPY pipelines/target_shipment_forecast/channels ./pipelines/target_shipment_forecast/channels
+COPY pipelines/target_shipment_forecast/inputs   ./pipelines/target_shipment_forecast/inputs
+COPY pipelines/target_shipment_forecast/model    ./pipelines/target_shipment_forecast/model
+COPY pipelines/target_shipment_forecast/output   ./pipelines/target_shipment_forecast/output
+
+# ── Files read from DISK at runtime — the `COPY dml` failure class (Guide §10.1) ─────
+# `config.repo_root()` resolves to /app/pipelines/target_shipment_forecast, and the
+# package reads three things from under it. Each of these lines is load-bearing:
+#
+#   config/   config.config_path() -> target.yaml (every threshold) and
+#             output/report.py DEFAULT_SPEC -> report_target.yaml (the whole workbook
+#             layout). A missing config/ raises on startup — loud, fine.
+#
+#   data/     inputs/item_master.py -> item_master_target.csv (the 43-TCIN scope, SKU
+#             labels, casepack of record) and the two alias maps. Also raises.
+#
+#   tests/fixtures/signal_panel.csv  ← THE DANGEROUS ONE. run.default_panel() returns
+#             None when it is absent, and pipeline.run_forecast then fits NO empirical
+#             bands and emits NO accuracy_* frames. output/report.py's block writer
+#             `continue`s past a missing frame with no note and no cell, so the workbook
+#             renders, the job exits 0, and the grades quietly lose their evidence.
+#             `runners/run_target_shipment_forecast.py::_require_backtest_panel` now
+#             refuses to start without it, so this COPY going missing fails LOUD.
+#             Only the panel is copied, not tests/ — the suite does not run in the image.
+COPY pipelines/target_shipment_forecast/config ./pipelines/target_shipment_forecast/config
+COPY pipelines/target_shipment_forecast/data   ./pipelines/target_shipment_forecast/data
+COPY pipelines/target_shipment_forecast/tests/fixtures/signal_panel.csv \
+     ./pipelines/target_shipment_forecast/tests/fixtures/signal_panel.csv
+
+# NOT copied, deliberately:
+#   core/, dml/  — verified 2026-09-08: this package imports nothing from core/ and reads
+#                  no .sql file from disk. Every statement it runs is a Python string in
+#                  channels/target/signals.py or bq.LOGICAL_TABLES. So the Guide's
+#                  mandatory `COPY dml ./dml` line genuinely does not apply here, and
+#                  that was checked rather than assumed.
+#   runs/        — 6.4 MB of local forecast output on the machine that built the image.
+#                  Baking it in would ship stale workbooks to production and is the
+#                  item-64 bloat class. Also excluded from the build context in
+#                  .gcloudignore so it never reaches Cloud Build either.
+#   inputs/*.xlsx|txt — the spreadsheet inputs, removed 2026-09-08. Nothing to place.
+#   tests/       — the suite (69 tests) runs in CI/locally, never in the image.
+#   docs/        — including docs/samples/, which is 200 KB of a historical run.
+
+ARG GIT_SHA=unknown
+LABEL org.opencontainers.image.revision=$GIT_SHA
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
+# Read by the runner and stamped onto every shipcast_run_log row, so a forecast can be
+# tied to the code that produced it (KNOWN_GAPS items 26 / 86: a job can run a stale
+# image for weeks with every monitoring signal green).
+ENV GIT_SHA=$GIT_SHA
+CMD ["python", "runners/run_target_shipment_forecast.py"]

@@ -41,19 +41,62 @@ where each query body originated — there is no runtime import of it anywhere i
 layout appears to keep `config/` at repo root, separate from `src/shipcast/`; this snapshot nests
 both under `pipelines/target_shipment_forecast/`, matching its monorepo location.
 
-## Not included in this push — lives outside `pipelines/target_shipment_forecast/`
+## Deploy scaffolding — added in a follow-up push (same branch, second commit)
 
-The instruction that produced this branch was scoped to that one directory. Two things named in
-biom_sql's own commit history are **not here**, and are flagged rather than silently included or
-silently omitted:
+The three **portable** deploy files from `8b740c7` are now included, unmodified:
 
-- **Deploy scaffolding** (`8b740c7`): `Dockerfile.target_shipment_forecast`,
-  `cloudbuild.target_shipment_forecast.yaml`, `runners/run_target_shipment_forecast.py`,
-  `.gcloudignore` — all at `biom_sql` repo root, self-contained to this pipeline. Nothing has
-  actually been deployed from them yet (no image built, no Cloud Run job created).
-- **Monitoring integration** (also `8b740c7`): `ddl/monitoring/008_shipcast_run_log.sql`,
-  additions to `pipelines/monitoring/biomcheck_alert_job.py` and `scripts/biomcheck.py` — these
-  are biom_sql-platform-wide files (biomcheck covers dozens of pipelines), not portable to a
-  single-purpose repo without pulling in unrelated context.
+- `Dockerfile.target_shipment_forecast` (root)
+- `cloudbuild.target_shipment_forecast.yaml` (root)
+- `runners/run_target_shipment_forecast.py` (root-level `runners/`)
 
-Say the word if you want either bundled in on a follow-up push.
+**Nothing has actually been deployed from these** — no image has been built from this Dockerfile,
+no Cloud Run job or scheduler exists for it anywhere. They describe an intended deploy, sized and
+written but never executed.
+
+### 🔴 `biom-reporting-s26` (BIOM's own GCP project) is hardcoded in two of the three — you will need to adapt these before deploying in your own environment
+
+```
+cloudbuild.target_shipment_forecast.yaml:10   us-central1-docker.pkg.dev/biom-reporting-s26/biom-containers/target-shipment-forecast
+cloudbuild.target_shipment_forecast.yaml:13   (same, in the `images:` block)
+
+runners/run_target_shipment_forecast.py:40    PROJECT_ID = "biom-reporting-s26"
+runners/run_target_shipment_forecast.py:43    RUN_LOG_TABLE = f"{PROJECT_ID}.biom_monitoring.shipcast_run_log"
+runners/run_target_shipment_forecast.py:44    PIPELINE_STATE_TABLE = f"{PROJECT_ID}.biom_admin.pipeline_state"
+```
+
+`biom_monitoring.shipcast_run_log` and `biom_admin.pipeline_state` are BIOM-side BigQuery tables
+that do not exist in your project (`pipeline_state` in particular is a cross-pipeline watermark
+table biom_sql's whole platform writes to — not something a single deploy creates on its own). The
+runner also writes to a GCS bucket via a `--bucket` CLI arg (not hardcoded, but the bucket itself
+is BIOM's and won't exist for you either) and runs as `biom-data-pipeline@` — a BIOM service
+account with write access to those specific tables and bucket (see the runner's own module
+docstring, line 25).
+
+**`Dockerfile.target_shipment_forecast` itself has no project-specific hardcoding** — it's plain
+`COPY`/`pip install` instructions relative to the build context, and the Artifact Registry
+push target lives only in `cloudbuild.yaml`. So the adaptation needed, in order:
+
+1. `cloudbuild.target_shipment_forecast.yaml` — swap the Artifact Registry path (project ID +
+   region, if different) on both lines.
+2. `runners/run_target_shipment_forecast.py` — swap `PROJECT_ID`, and either create equivalent
+   `biom_monitoring.shipcast_run_log` / `biom_admin.pipeline_state`-shaped tables in your own
+   project or point the two constants at wherever you want run history and pipeline-state
+   watermarks recorded (the runner's `_write_run_log` / `_write_pipeline_state` functions are the
+   only two places that write to them — self-contained, not spread through the file).
+3. Wire up a service account with `bigquery.dataEditor` on those tables and write access to
+   whichever GCS bucket you pass as `--bucket`, or strip the upload/record steps if you just want
+   the forecast run locally.
+
+No config values inside `pipelines/target_shipment_forecast/config/*.yaml` reference
+`biom-reporting-s26` — that project ID only appears in these deploy-layer files, not in the
+forecasting logic itself.
+
+## Not included — still lives at the biom_sql repo root, not pushed
+
+**Monitoring integration**: `ddl/monitoring/008_shipcast_run_log.sql`, plus additions inside
+`pipelines/monitoring/biomcheck_alert_job.py` and `scripts/biomcheck.py`. These are
+biom_sql-platform-wide files — `biomcheck` covers dozens of unrelated pipelines — so pushing them
+here would pull in context that has nothing to do with Shipcast. `008_shipcast_run_log.sql` is the
+DDL for the `biom_monitoring.shipcast_run_log` table the runner writes to above; if you want the
+exact schema rather than inferring it from the runner's `_write_run_log`, say so and I'll push that
+one DDL file (not the biomcheck additions, which are genuinely BIOM-platform-specific).
