@@ -1,5 +1,33 @@
 # shipcast design record
 
+> **Revision note (2026-09-09).** The engine was forked into `santush-biom/biom-sql`
+> on 7 Sep (`pipelines/target_shipment_forecast/`) and reworked; a snapshot is on
+> branch `biom-fork-2026-09-09` of this repo (commits 410247b, addb85f). What changed:
+> the monthly POS forecast is `dist_velocity` (units per selling store per week x
+> projected selling stores x days/7 x a two-year-gated month-of-year factor; one
+> estimator, no blend; leak-free rolling-origin WAPE 0.19 vs 0.29 run-rate vs 0.34 owner
+> velocity), `item_state` is read live from `bpd_raw.wkly_tcin_item` with the CSV as
+> fallback, `planned_launch` comes from Target's own plan for never-sold items (D) with
+> curated human loads from `biom_admin.seed_target_launch_velocity` (E), the owner sheet
+> and RDZ sheet parsers were removed from the engine, the B&M Target Schedule tab is
+> re-read by `report_bm_combined.py` as a store-rollout ratio applied to finished
+> replenishment (never a level; facts never scaled; sheet-only months E) producing
+> `target_demand_forecast_combined_<as_of>.xlsx`, bullseye's four query bodies were
+> inlined into `bq.py`, and Cloud Run deploy files were added (not yet deployed; the
+> runner defaults to Sunday 09:00 UTC, which precedes the Monday ~06:48 UTC landing of
+> Target's Sunday plan and POs). Verified here 9 Sep: 82 fork tests pass; a full live
+> pull/run/combine reproduced Santush's 8 Sep file within 0.1%. Sections 5 (owner
+> forecast as POS candidate), 6 (RDZ sheet adapter) and 7 (Drive exports) below describe
+> the 4 Sep design and are superseded. Recommended next steps, in order: choose the
+> system of record and port this branch's three fixes (LaunchPad SKUs, D253-C6 group,
+> Exceptions per item) into the fork; move the schedule to Monday >= 07:30 UTC and
+> confirm deploy status; present the combined grid only; give the B&M sheet a scheduled
+> snapshot path; move the store ramp into `simulate()`; rebuild ability-to-ship on
+> `biom_admin.vw_rdz_inventory_current`; monthly rolling-origin backtest against the RDZ
+> shipments log. The stakeholder explainer, workbook guide and build-plan artifacts were
+> updated the same day.
+
+
 > **Revision note (2026-09-04).** The v1 horizon design below was revised after
 > this text was written:
 >
