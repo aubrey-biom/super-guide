@@ -2,14 +2,18 @@
 
 Kept out of `cli.py` so it can be called from tests and from a Claude Code
 session without Typer. Inputs come from `runs/<as_of>/*.parquet` written by
-`shipcast pull`, and nothing else - every input is a BigQuery read. The owner
-spreadsheet and the RDZ supply sheet were both removed on 2026-09-08, so there is no
-Drive call and no manually placed file in this path.
+`shipcast pull`, and nothing else - every input is a BigQuery read. There is no Drive
+call and no manually placed file in this path: the channel owner's Brick & Mortar
+Master Forecast reaches the run as `bm_schedule`, the newest snapshot of
+`biom_admin.bm_target_schedule_snapshot` on or before `as_of`, landed by the separate
+`ingest/bm_schedule_ingest.py` job. `--bm PATH` parses a local copy instead, for a
+hand-run only; it never becomes the scheduled path.
 """
 
 from __future__ import annotations
 
 import json
+from collections.abc import Mapping
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -18,6 +22,13 @@ import pandas as pd
 
 from pipelines.target_shipment_forecast.channels.target.calendar import TargetCalendar
 from pipelines.target_shipment_forecast.config import load_config, repo_root
+from pipelines.target_shipment_forecast.inputs.aliases import AliasMap
+from pipelines.target_shipment_forecast.inputs.bm_master_forecast import (
+    BmForecast,
+    BmParseError,
+    frame_from_snapshot,
+    parse_target_schedule,
+)
 from pipelines.target_shipment_forecast.inputs.item_master import ItemMaster
 from pipelines.target_shipment_forecast.output.report import load_spec, render_workbook, write_csvs
 from pipelines.target_shipment_forecast.pipeline import ForecastBundle, run_forecast
@@ -31,6 +42,7 @@ PULLED_TABLES: tuple[str, ...] = (
     "dfe_asof",
     "item_state",
     "launch_seed",
+    "bm_schedule",
 )
 
 
@@ -111,6 +123,11 @@ def execute_pull(
     # curated launch assumptions: biom_admin.seed_target_launch_velocity, as-of filtered.
     # Empty (and harmless) until someone loads a row; an absent table degrades to empty.
     t["launch_seed"] = write(signals.launch_seed(as_of, run=q), "launch_seed")
+    # the channel owner's B&M Target Schedule: biom_admin.bm_target_schedule_snapshot,
+    # newest snapshot on or before as_of (landed by ingest/bm_schedule_ingest.py). Empty
+    # until the first ingest runs; an absent table degrades to empty, and the run then
+    # raises BM_SCHEDULE_NOT_AVAILABLE and forecasts on BPD alone.
+    t["bm_schedule"] = write(signals.bm_schedule_asof(as_of, run=q), "bm_schedule")
     manifest["bytes_billed_total"] = sum(v["bytes_billed"] for v in t.values())
     (run_dir / "manifest.json").write_text(json.dumps(manifest, indent=2))
     return manifest
@@ -123,6 +140,75 @@ def load_pulled(run_dir: Path) -> dict[str, pd.DataFrame | None]:
         p = run_dir / f"{name}.parquet"
         out[name] = pd.read_parquet(p) if p.exists() else None
     return out
+
+
+def bm_schedule_input(
+    pulled: Mapping[str, Any],
+    *,
+    bm_path: Path | None,
+    item_master: ItemMaster | None = None,
+    aliases: AliasMap | None = None,
+) -> tuple[BmForecast | None, dict[str, Any]]:
+    """The B&M Target Schedule for this run, and where it came from.
+
+    Precedence: a local `--bm PATH` (hand-run override; a parse failure is LOUD because the
+    operator asked for that file), then the pulled BigQuery snapshot (a bad snapshot
+    degrades to "not available" with the reason, so a scheduled run still produces the
+    workbook), then none. The returned meta dict is stamped on the README.
+    """
+    meta: dict[str, Any] = {
+        "source": "none",
+        "name": None,
+        "snapshot_date": None,
+        "source_modified_time": None,
+        "blocks": 0,
+        "months": 0,
+        "tcins_resolved": 0,
+        "unresolved": [],
+        "warnings": [],
+        "reason": None,
+    }
+
+    def _fill(fc: BmForecast) -> None:
+        meta.update(
+            {
+                "name": fc.source_file,
+                "snapshot_date": fc.snapshot_date.isoformat(),
+                "blocks": int(fc.frame["unique_key"].nunique()) if not fc.frame.empty else 0,
+                "months": len(fc.months),
+                "tcins_resolved": len(fc.tcins),
+                "unresolved": [u["bm_sku"] for u in fc.unresolved],
+                "warnings": list(fc.warnings),
+            }
+        )
+
+    if bm_path is not None:
+        fc = parse_target_schedule(Path(bm_path), item_master=item_master, aliases=aliases)
+        meta["source"] = "local_file"
+        _fill(fc)
+        meta["source_modified_time"] = datetime.fromtimestamp(
+            Path(bm_path).stat().st_mtime, tz=timezone.utc
+        ).isoformat(timespec="seconds")
+        meta["reason"] = f"--bm {Path(bm_path).name}: hand-run override of the BigQuery snapshot"
+        return fc, meta
+
+    df = pulled.get("bm_schedule")
+    if df is None or len(df) == 0:
+        meta["reason"] = (
+            "no snapshot in biom_admin.bm_target_schedule_snapshot on or before as_of "
+            "(run ingest/bm_schedule_ingest.py) and no --bm file; forecast is BPD only"
+        )
+        return None, meta
+    try:
+        fc = frame_from_snapshot(df, item_master=item_master, aliases=aliases)
+    except BmParseError as e:
+        meta["reason"] = f"snapshot rejected: {e}"
+        return None, meta
+    meta["source"] = "bq_snapshot"
+    _fill(fc)
+    smt = df["source_modified_time"].iloc[0] if "source_modified_time" in df else None
+    meta["source_modified_time"] = str(smt) if smt is not None and not pd.isna(smt) else None
+    return fc, meta
 
 
 def default_panel() -> pd.DataFrame | None:
@@ -141,12 +227,20 @@ def execute_run(
     channel: str = "target",
     spec_path: Path | None = None,
     panel: pd.DataFrame | None = None,
+    bm_path: Path | None = None,
 ) -> tuple[ForecastBundle, Path]:
-    """Assemble and write the workbook; returns the bundle and the workbook path."""
+    """Assemble and write the workbook; returns the bundle and the workbook path.
+
+    `bm_path` is the `--bm` override: parse that local copy of the B&M Master Forecast
+    instead of the pulled BigQuery snapshot. Hand-runs only.
+    """
     cfg = load_config(channel=channel)
     calendar = TargetCalendar.from_config(cfg)
     item_master = ItemMaster.load()
     inputs: dict[str, Any] = dict(load_pulled(run_dir))
+    inputs["bm_forecast"], inputs["bm_schedule_meta"] = bm_schedule_input(
+        inputs, bm_path=bm_path, item_master=item_master
+    )
     bundle = run_forecast(
         inputs,
         cfg=cfg,
@@ -175,4 +269,11 @@ def execute_run(
     return bundle, out
 
 
-__all__ = ["PULLED_TABLES", "default_panel", "execute_pull", "execute_run", "load_pulled"]
+__all__ = [
+    "PULLED_TABLES",
+    "bm_schedule_input",
+    "default_panel",
+    "execute_pull",
+    "execute_run",
+    "load_pulled",
+]

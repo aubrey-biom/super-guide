@@ -49,6 +49,13 @@ SKU -> TCIN resolution reuses what the repo already has, in this order, and neve
 guesses: `ItemMaster.tcins_for` over `biom_sku`, `rdz_item` and `vendor_style`, with
 `data/sku_aliases_target.tsv` applied first. Anything left over stays in `unresolved`
 and is reported, never dropped -- the contract the retired owner parser had.
+
+TWO WAYS IN. A scheduled run never reads this file from disk: `ingest/bm_schedule_ingest.py`
+parses it (with this module) and appends a snapshot to
+`biom_admin.bm_target_schedule_snapshot`; the engine reads the newest snapshot on or
+before its as-of date and rebuilds a `BmForecast` with `frame_from_snapshot`. The
+`--bm PATH` override on `cli.py run` parses a local copy directly for a hand-run. Both
+paths produce the same frame, so model/bm_combine.py never knows which one fed it.
 """
 
 from __future__ import annotations
@@ -355,35 +362,17 @@ def _resolve(
     Unresolved blocks keep their rows with `tcin` NULL and are listed, never dropped."""
     im = item_master if item_master is not None else ItemMaster.load()
     al = aliases if aliases is not None else AliasMap.load()
-    cols = ("biom_sku", "rdz_item", "vendor_style")
     records: list[dict[str, Any]] = []
     unresolved: list[dict[str, Any]] = []
     for b in blocks:
-        canon = al.resolve(b["sku"], kind="sku").canonical_sku if al is not None else b["sku"]
-        hits = im.tcins_for(canon, columns=cols) or im.tcins_for(b["sku"], columns=cols)
-        tcin: int | None = None
-        if len(hits) == 1:
-            tcin = hits[0]
-        elif len(hits) > 1:
+        tcin, reason = _resolve_sku(b["sku"], im, al)
+        if reason is not None:
             unresolved.append(
-                {
-                    "bm_sku": b["sku"],
-                    "unique_key": b["key"],
-                    "description": b["description"],
-                    "reason": f"BM_SKU_AMBIGUOUS: matches {len(hits)} TCINs {hits}",
-                }
-            )
-        else:
-            unresolved.append(
-                {
-                    "bm_sku": b["sku"],
-                    "unique_key": b["key"],
-                    "description": b["description"],
-                    "reason": "BM_SKU_NO_TCIN: no item-master row on biom_sku, rdz_item or vendor_style",
-                }
+                {"bm_sku": b["sku"], "unique_key": b["key"], "description": b["description"], "reason": reason}
             )
         for j, m in enumerate(months):
             rec: dict[str, Any] = {
+                "source_row": int(b["row"]),
                 "bm_sku": b["sku"],
                 "unique_key": b["key"],
                 "description": b["description"],
@@ -397,3 +386,183 @@ def _resolve(
     frame = pd.DataFrame.from_records(records)
     frame["tcin"] = pd.to_numeric(frame["tcin"], errors="coerce").astype("Int64")
     return frame, unresolved
+
+
+_RESOLVE_COLS = ("biom_sku", "rdz_item", "vendor_style")
+
+
+def _resolve_sku(sku: str, im: ItemMaster, al: AliasMap | None) -> tuple[int | None, str | None]:
+    """One SKU -> (tcin, None) or (None, reason). Aliases first, then the item master on
+    biom_sku / rdz_item / vendor_style. Two hits is ambiguity, not a choice."""
+    canon = al.resolve(sku, kind="sku").canonical_sku if al is not None else sku
+    hits = im.tcins_for(canon, columns=_RESOLVE_COLS) or im.tcins_for(sku, columns=_RESOLVE_COLS)
+    if len(hits) == 1:
+        return int(hits[0]), None
+    if len(hits) > 1:
+        return None, f"BM_SKU_AMBIGUOUS: matches {len(hits)} TCINs {hits}"
+    return None, "BM_SKU_NO_TCIN: no item-master row on biom_sku, rdz_item or vendor_style"
+
+
+def resolve_frame(
+    frame: pd.DataFrame,
+    item_master: ItemMaster | None = None,
+    aliases: AliasMap | None = None,
+) -> tuple[pd.DataFrame, list[dict[str, Any]]]:
+    """Re-run SKU -> TCIN on a frame whose `tcin` may be NULL (a snapshot loaded before the
+    item master learned the SKU). Resolved TCINs already present are kept; only NULLs are
+    attempted. Returns the frame and the still-unresolved blocks, one entry per block."""
+    im = item_master if item_master is not None else ItemMaster.load()
+    al = aliases if aliases is not None else AliasMap.load()
+    out = frame.copy()
+    out["tcin"] = pd.to_numeric(out["tcin"], errors="coerce").astype("Int64")
+    unresolved: list[dict[str, Any]] = []
+    todo = out.loc[out["tcin"].isna(), ["bm_sku", "unique_key", "description"]].drop_duplicates(
+        "unique_key"
+    )
+    for _, r in todo.iterrows():
+        tcin, reason = _resolve_sku(str(r["bm_sku"]), im, al)
+        if tcin is not None:
+            out.loc[out["unique_key"] == r["unique_key"], "tcin"] = tcin
+        else:
+            unresolved.append(
+                {
+                    "bm_sku": r["bm_sku"],
+                    "unique_key": r["unique_key"],
+                    "description": r["description"],
+                    "reason": reason,
+                }
+            )
+    out["tcin"] = out["tcin"].astype("Int64")
+    return out, unresolved
+
+
+# --------------------------------------------------------------------------------------
+# BigQuery snapshot shape (biom_admin.bm_target_schedule_snapshot)
+# --------------------------------------------------------------------------------------
+
+# Column order of the snapshot table; ingest/bm_schedule_ingest.py asserts its BigQuery
+# schema matches this tuple, and ddl/bm_target_schedule_snapshot.sql is the DDL.
+SNAPSHOT_COLUMNS: tuple[str, ...] = (
+    "snapshot_date",
+    "source_file_id",
+    "source_name",
+    "source_modified_time",
+    "loaded_at",
+    "source_row",
+    "bm_sku",
+    "unique_key",
+    "description",
+    "tcin",
+    "month_start",
+    "bm_stores",
+    "bm_upspw",
+    "bm_velocity",
+    "bm_load_orders",
+    "bm_quote",
+    "bm_total_demand",
+    "bm_revenue",
+    "bm_placeholder",
+)
+
+
+def snapshot_rows(
+    bm: BmForecast,
+    *,
+    snapshot_date: date,
+    source_file_id: str,
+    source_name: str,
+    source_modified_time: datetime,
+    loaded_at: datetime,
+) -> pd.DataFrame:
+    """The parsed frame stamped for the snapshot table, columns in `SNAPSHOT_COLUMNS` order."""
+    df = bm.frame.copy()
+    df["snapshot_date"] = pd.Timestamp(snapshot_date)
+    df["source_file_id"] = source_file_id
+    df["source_name"] = source_name
+    df["source_modified_time"] = pd.Timestamp(source_modified_time)
+    df["loaded_at"] = pd.Timestamp(loaded_at)
+    if "source_row" not in df.columns:
+        df["source_row"] = pd.NA
+    df["source_row"] = pd.to_numeric(df["source_row"], errors="coerce").astype("Int64")
+    df["tcin"] = pd.to_numeric(df["tcin"], errors="coerce").astype("Int64")
+    df["month_start"] = pd.to_datetime(df["month_start"])
+    df["bm_placeholder"] = df["bm_placeholder"].astype(bool)
+    missing = [c for c in SNAPSHOT_COLUMNS if c not in df.columns]
+    if missing:
+        raise BmParseError(f"ABORT: parsed frame lacks snapshot column(s) {missing}")
+    return df.loc[:, list(SNAPSHOT_COLUMNS)].reset_index(drop=True)
+
+
+def frame_from_snapshot(
+    df: pd.DataFrame,
+    *,
+    item_master: ItemMaster | None = None,
+    aliases: AliasMap | None = None,
+) -> BmForecast:
+    """Rebuild a `BmForecast` from one snapshot's rows as read back from BigQuery.
+
+    The rows must come from a single snapshot (one `snapshot_date`, one
+    `source_modified_time`); mixing two is refused because it would mix two plans. TCINs
+    that were NULL at ingest are re-attempted against the current item master, so a SKU
+    added to `data/item_master_target.csv` after the load resolves without a re-ingest.
+    """
+    if df.empty:
+        raise BmParseError("ABORT: empty snapshot; nothing to rebuild")
+    d = df.copy()
+    d["month_start"] = pd.to_datetime(d["month_start"])
+    for key in ("snapshot_date", "source_modified_time"):
+        if key in d.columns and d[key].nunique(dropna=False) > 1:
+            raise BmParseError(
+                f"ABORT: snapshot rows span {d[key].nunique()} distinct {key} values; pass one snapshot"
+            )
+    for c in SNAPSHOT_COLUMNS[5:]:
+        if c not in d.columns:
+            raise BmParseError(f"ABORT: snapshot lacks column {c!r}")
+    months = sorted({pd.Timestamp(m).date() for m in d["month_start"].unique()})
+    if len(months) < MONTH_FLOOR:
+        raise BmParseError(
+            f"ABORT: snapshot carries {len(months)} months, below floor {MONTH_FLOOR}"
+        )
+    n_blocks = int(d["unique_key"].nunique())
+    if n_blocks < BLOCK_FLOOR:
+        raise BmParseError(
+            f"ABORT: snapshot carries {n_blocks} SKU blocks, below floor {BLOCK_FLOOR}"
+        )
+    frame_cols = [
+        "source_row",
+        "bm_sku",
+        "unique_key",
+        "description",
+        "tcin",
+        "month_start",
+        "bm_placeholder",
+    ] + [f"bm_{m.lower()}" for m in METRICS]
+    frame = d.loc[:, frame_cols].sort_values(["unique_key", "month_start"]).reset_index(drop=True)
+    frame["bm_placeholder"] = frame["bm_placeholder"].astype(bool)
+    frame, unresolved = resolve_frame(frame, item_master, aliases)
+    snap = (
+        pd.Timestamp(d["snapshot_date"].iloc[0]).date()
+        if "snapshot_date" in d.columns
+        else months[0]
+    )
+    src = (
+        str(d["source_name"].iloc[0])
+        if "source_name" in d.columns and pd.notna(d["source_name"].iloc[0])
+        else "snapshot"
+    )
+    placeholders = sorted(frame.loc[frame["bm_placeholder"], "bm_sku"].unique().tolist())
+    warnings: list[str] = []
+    if placeholders:
+        warnings.append(
+            f"BM_PLACEHOLDER_BLOCK: {len(placeholders)} block(s) hold Stores == 1 for every "
+            f"month, the sheet's own placeholder shape: {', '.join(placeholders)}"
+        )
+    return BmForecast(
+        frame=frame,
+        months=months,
+        snapshot_date=snap,
+        source_file=src,
+        warnings=warnings,
+        unresolved=unresolved,
+        placeholder_skus=placeholders,
+    )

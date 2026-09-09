@@ -23,20 +23,23 @@ sheets:
 
   - name: Monthly
     kind: wide
-    title: "Expected shipments to Target by month (units, all streams). Grades below."
+    title: "Expected shipments to Target by month (units, all streams). Grade, provenance and band grids below. Months the engine cannot measure and only the B&M store plan describes are carried at grade E with provenance stated_only."
     source: monthly
     index: [sku, tcin, description]
     column_from: month_start
     column_format: "%b-%y"
     value: expected_ship_units
     agg: sum
-    limit_columns: 16
+    limit_columns: 28
     number_format: "#,##0"
     total_row: true
     companion:
       - title: "Confidence grade per cell (A high … E indicative; see README legend)"
         value: grade
         agg: worst
+      - title: "Provenance per cell: measured (BPD only) | measured_shaped_by_plan (BPD level, B&M store ramp) | stated_only (B&M sheet alone, no BPD signal). Weakest stream in the month wins."
+        value: authority
+        agg: provenance
       - title: "Low end of band (units)"
         value: low
         agg: sum
@@ -51,16 +54,23 @@ sheets:
     title: "One row per SKU x month x stream — everything behind the Monthly grid. 'Expected PO units (create month)' and 'Expected shipments (units)' are the same weekly orders bucketed by two different dates, NOT one plus the other: create_month = ship_month - carried in + carried out (see README po_units_vs_shipments)"
     source: monthly
     sort: [tcin, month_start, stream]
-    columns: [sku, tcin, description, item_group, month, stream, expected_ship_units, low, high, grade, confidence,
-              expected_po_units, pos_units, upspw, stores_fwd, season_factor, drawdown_release,
+    columns: [sku, tcin, description, item_group, month, stream, authority, expected_ship_units, low, high, grade, confidence,
+              expected_po_units, pos_units, pos_units_bpd, upspw, stores_fwd, stores_source, bm_stores, bm_ramp, ramp_flag,
+              season_factor, drawdown_release,
               on_hand_start, on_hand_end, wos_end, order_to_sales,
               source_mix, pos_candidates, step_up_month, flags]
     labels:
+      authority: "Provenance"
       expected_ship_units: "Expected shipments (units)"
       expected_po_units: "Expected PO units (create month)"
       pos_units: "POS forecast (units)"
+      pos_units_bpd: "POS forecast before store ramp (units)"
       upspw: "Units per selling store per week"
       stores_fwd: "Projected selling stores"
+      stores_source: "Store count set by (bpd_trend | bm_plan)"
+      bm_stores: "B&M sheet stores"
+      bm_ramp: "B&M store ramp (ratio to anchor month)"
+      ramp_flag: "Ramp refusal"
       season_factor: "Month-of-year factor"
       drawdown_release: "Inventory change released (units)"
       on_hand_start: "Target on-hand, month start"
@@ -142,6 +152,49 @@ sheets:
     source: booked_forward
     sort: [ship_week, tcin]
     columns: [sku, tcin, description, purchase_order_id, ship_begin_d, ship_week, receipt_week, units, casepack]
+
+  - name: Store plan check
+    kind: long
+    title: "B&M sheet store plan vs BPD, per TCIN. The sheet's anchor-month Stores (a door count) against BPD's stocked stores in the latest week (gap = (sheet - BPD) / BPD; the selling-store count dist_velocity uses is printed beside it, and is lower by construction), and the ramp the engine actually applied. The ramp is read from max(sheet anchor, BPD stocked), so a sheet that understates today's doors does not turn that into growth (BM_RAMP_ANCHOR_FROM_BPD). Other flags name a refusal: no anchor, placeholder block, or capped."
+    source: bm_store_check
+    sort: [sku]
+    columns: [sku, tcin, bm_stores_anchor, bpd_stocked_stores, stores_gap_pct, bpd_selling_stores, bm_stores_anchor_used, bm_upspw, bpd_upspw,
+              bm_stores_plan_peak, bm_peak_month, bm_ramp_to_peak, ramp_distinct_values, ramp_flag]
+    labels:
+      bm_stores_anchor: "B&M stores, anchor month"
+      bpd_stocked_stores: "BPD stocked stores, latest week"
+      stores_gap_pct: "Store gap (sheet vs BPD stocked)"
+      bpd_selling_stores: "BPD selling stores, anchor month"
+      bm_stores_anchor_used: "Ramp denominator (max of sheet anchor, BPD stocked)"
+      bm_upspw: "B&M UPSPW"
+      bpd_upspw: "BPD UPSPW"
+      bm_stores_plan_peak: "B&M stores at plan peak"
+      bm_peak_month: "Plan peak month"
+      bm_ramp_to_peak: "Ramp to peak"
+      ramp_distinct_values: "Distinct ramp values"
+      ramp_flag: "Ramp refusal"
+
+  - name: Load order check
+    kind: long
+    title: "B&M Load_Orders vs what the engine already carries (booked forward + planned forward + planned launch), per TCIN over the months both cover. A cross-check only: the sheet's Load_Orders never moves a unit. verdict BM_LOAD_AGREES within load_tolerance; otherwise the gap and the months each side names. For a pre-launch item the engine's planned_launch carries Target's WHOLE plan while the sheet splits fill (Load_Orders) from run-rate (Velocity): compare the engine figure with Load_Orders + Velocity there."
+    source: bm_load_check
+    sort: [verdict, tcin]
+    columns: [bm_sku, tcin, bm_load_units, bm_velocity_units, bpd_load_units, gap_pct, bm_months, bpd_months, verdict, note]
+    labels:
+      bm_sku: "B&M SKU"
+      bm_load_units: "B&M Load_Orders (units)"
+      bm_velocity_units: "B&M Velocity, same months (units)"
+      bpd_load_units: "Engine launch/forward units"
+      gap_pct: "Gap (sheet vs engine)"
+      bm_months: "Months named by sheet"
+      bpd_months: "Months named by engine"
+
+  - name: Coverage
+    kind: long
+    title: "Which TCINs the B&M sheet, the item master and this run each cover. A SKU the sheet names but the item master cannot resolve is reported here and never guessed."
+    source: bm_coverage
+    sort: [in_run, sku]
+    columns: [sku, tcin, item_state, in_bm_sheet, in_item_master, in_run, note]
 
   - name: Exceptions
     kind: long

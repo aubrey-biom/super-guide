@@ -410,6 +410,73 @@ def launch_seed(as_of: date, *, run: QueryFn | None = None) -> pd.DataFrame:
         raise
 
 
+BM_SCHEDULE_TABLE = f"{_PROJECT}.biom_admin.bm_target_schedule_snapshot"
+
+
+def bm_schedule_sql() -> str:
+    """Every row of the newest Brick & Mortar Target Schedule snapshot on or before `@as_of`."""
+    return f"""
+-- shipcast.channels.target.signals.bm_schedule
+-- RAW read of biom_admin.bm_target_schedule_snapshot: written by
+-- ingest/bm_schedule_ingest.py from the channel owner's Drive sheet, not a BPD feed, so it
+-- has no logical-table body and needs none.
+--
+-- AS-OF FILTERED on snapshot_date, like launch_seed: the table is APPEND-ONLY, one
+-- snapshot per edit of the sheet, and a replay must see the store plan that stood at its
+-- origin, not the one written afterwards. Unlike launch_seed the reduction is WHOLE
+-- SNAPSHOT, not per key: a plan is one coherent edit of the sheet, and mixing months from
+-- two edits would splice two plans. source_modified_time breaks a same-day tie.
+SELECT snapshot_date, source_file_id, source_name, source_modified_time, loaded_at,
+       source_row, bm_sku, unique_key, description, tcin, month_start,
+       bm_stores, bm_upspw, bm_velocity, bm_load_orders, bm_quote, bm_total_demand,
+       bm_revenue, bm_placeholder
+FROM `{BM_SCHEDULE_TABLE}`
+WHERE snapshot_date = (
+  SELECT MAX(snapshot_date) FROM `{BM_SCHEDULE_TABLE}` WHERE snapshot_date <= @as_of
+)
+QUALIFY source_modified_time = MAX(source_modified_time) OVER ()
+"""
+
+
+def bm_schedule_asof(as_of: date, *, run: QueryFn | None = None) -> pd.DataFrame:
+    """The B&M Target Schedule snapshot that stood at `as_of`, one row per SKU block x month.
+
+    Returns an EMPTY frame with the snapshot columns when the table does not exist yet
+    (`ddl/bm_target_schedule_snapshot.sql` not run) or holds no snapshot on or before
+    `as_of`. The caller turns "empty" into the BM_SCHEDULE_NOT_AVAILABLE exception and
+    runs on BPD alone; any other error raises.
+    """
+    cols = [
+        "snapshot_date",
+        "source_file_id",
+        "source_name",
+        "source_modified_time",
+        "loaded_at",
+        "source_row",
+        "bm_sku",
+        "unique_key",
+        "description",
+        "tcin",
+        "month_start",
+        "bm_stores",
+        "bm_upspw",
+        "bm_velocity",
+        "bm_load_orders",
+        "bm_quote",
+        "bm_total_demand",
+        "bm_revenue",
+        "bm_placeholder",
+    ]
+    try:
+        df = _runner(run)(bm_schedule_sql(), params={"as_of": as_of})
+    except Exception as e:  # noqa: BLE001 - only a missing table is tolerated
+        if "Not found: Table" in str(e) or "404" in str(e):
+            log.warning("bm schedule snapshot table absent; continuing on BPD alone")
+            return pd.DataFrame(columns=cols)
+        raise
+    return df if not df.empty else pd.DataFrame(columns=cols)
+
+
 ALL_SQL: dict[str, Callable[[], str]] = {
     "plan_snapshot": plan_snapshot_sql,
     "plan_business_dates": plan_business_dates_sql,
@@ -420,6 +487,7 @@ ALL_SQL: dict[str, Callable[[], str]] = {
     "dfe_asof": dfe_asof_sql,
     "item_state_live": item_state_sql,
     "launch_seed": launch_seed_sql,
+    "bm_schedule": bm_schedule_sql,
 }
 """Every SQL builder, for the test that checks each names its logical body."""
 
@@ -435,4 +503,5 @@ def describe() -> dict[str, Any]:
             "item_state_live",
         ],
         "raw_asof_exceptions": ["plan_snapshot", "plan_business_dates", "dfe_asof"],
+        "admin_snapshots": ["launch_seed", "bm_schedule"],
     }

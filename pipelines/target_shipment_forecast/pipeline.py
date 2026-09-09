@@ -11,8 +11,17 @@ Frames produced (keys used by the report spec):
     shipments       TCIN x ship week (replenishment forecast + booked forward)
     monthly         TCIN x month x stream: expected shipments for S&OP with grade
     accuracy_*      backtest tables that justify the grades and bands
+    bm_store_check  B&M sheet store plan vs BPD selling stores, per TCIN
+    bm_load_check   B&M Load_Orders vs the launch/forward units the engine carries
+    bm_coverage     which TCINs the sheet, the item master and the run each cover
     exceptions      every item that needs a human eye
     legend          grade -> confidence -> expected error band
+
+The channel owner's Brick & Mortar store plan (`bm_forecast`, from
+`biom_admin.bm_target_schedule_snapshot` or a `--bm` file) shapes the measured POS
+forecast's forward store count BEFORE the weekly simulation and never sets its level;
+see model/bm_combine.py. Every row carries `authority`: measured, measured_shaped_by_plan
+or stated_only.
 """
 
 from __future__ import annotations
@@ -30,9 +39,9 @@ from pipelines.target_shipment_forecast.backtest.rolling import panel_to_long
 from pipelines.target_shipment_forecast.channels.target import forward
 from pipelines.target_shipment_forecast.channels.target.calendar import TargetCalendar, sunday_week
 from pipelines.target_shipment_forecast.inputs.item_master import ItemMaster
+from pipelines.target_shipment_forecast.model import bm_combine as bc
 from pipelines.target_shipment_forecast.model import consumption, intervals, plan_anchor
 from pipelines.target_shipment_forecast.model import grade as grading
-
 
 PO_VS_SHIP_NOTE = (
     "'Expected PO units (create month)' and 'Expected shipments (units)' are the SAME "
@@ -212,14 +221,17 @@ def run_forecast(
     `inputs` keys (from `shipcast pull` / adapters): `plan_snapshots`,
     `orders_latest`, `po_actuals_weekly`, `sales_weekly`, `inventory_weekly`,
     `dfe_asof`, `item_state`, `launch_seed` (curated assumptions,
-    `biom_admin.seed_target_launch_velocity`).
+    `biom_admin.seed_target_launch_velocity`), plus `bm_forecast` (a parsed
+    `BmForecast` of the channel owner's B&M Target Schedule, or None) and
+    `bm_schedule_meta` (where it came from; see run.bm_schedule_input).
 
-    EVERY input is a BigQuery read. There is no Drive call, no spreadsheet and no
+    EVERY input is a BigQuery read in the scheduled path. There is no Drive call and no
     manually placed file: the monthly POS forecast is `consumption.dist_velocity`, the
     `planned_launch` stream comes from Target's own PO plan plus the live item-state
-    feed, and the RDZ supply sheet was removed along with the owner forecast
-    (2026-09-08). Consequently no cell is capped by Biom-side supply, which was already
-    true in v1 -- the RDZ read only ever produced an Exceptions row.
+    feed, and the B&M sheet arrives as a BigQuery snapshot landed by its own ingest job.
+    The RDZ supply sheet was removed 2026-09-08, so no cell is capped by Biom-side
+    supply, which was already true in v1 -- the RDZ read only ever produced an
+    Exceptions row.
     `panel` is the committed backtest panel (tests/fixtures/signal_panel.csv)
     or a fresher one; it drives the bands and the Accuracy sheet.
     """
@@ -231,7 +243,11 @@ def run_forecast(
     inv = inputs.get("inventory_weekly")
     dfe = inputs.get("dfe_asof")
     launch_seed = inputs.get("launch_seed")
+    bm_fc = inputs.get("bm_forecast")  # BmForecast | None
+    bm_meta: dict[str, Any] = dict(inputs.get("bm_schedule_meta") or {})
+    bm_frame = bm_fc.frame if bm_fc is not None and not bm_fc.frame.empty else None
     attrs = _item_attrs(item_master, calendar)
+    attr_sku = {int(r.tcin): r.sku for r in attrs.itertuples(index=False)}
     labels = grading.labels_from_config(cfg)
     fwd_days = int(_cfg(cfg, "streams", "forward_threshold_days", default=14))
     grace = int(_cfg(cfg, "streams", "lapsed_grace_days", default=7))
@@ -409,6 +425,44 @@ def run_forecast(
     pos_notes["pos"]["age_days"] = pos_age_days
     pos_notes["pos"]["max_age_days"] = pos_max_age
     pos_notes["pos"]["stale"] = bool(pos_stale)
+
+    # ---- B&M store ramp: SHAPE the POS forecast before the simulation ------------------
+    # The sheet's store plan as a ratio to its own anchor month, applied to BPD's anchor
+    # store count; whichever of BPD's own projection and the ramped count claims more
+    # doors wins. Level stays BPD's. Facts are never touched. See model/bm_combine.py.
+    anchor = pd.Timestamp(consumption.month_start(pd.Timestamp(as_of)))
+    bm_ramp_cap = float(_cfg(cfg, "bm_schedule", "ramp_cap", default=bc.RAMP_CAP))
+    bm_material = float(_cfg(cfg, "bm_schedule", "material_pct", default=bc.RAMP_MATERIAL))
+    bm_tol = float(_cfg(cfg, "bm_schedule", "load_tolerance", default=bc.LOAD_TOLERANCE))
+    bm_stated_months = bool(
+        _cfg(cfg, "bm_schedule", "include_stated_only_months", default=True)
+    )
+    # doors the sheet's anchor is read against: store locations holding inventory in the
+    # latest week on or before as_of (weekly_inv_tcin_loc), DCs excluded. The ramp's
+    # denominator is max(sheet anchor, this), so the sheet's understatement of the present
+    # never becomes growth; the Store plan check sheet prints both.
+    stocked: dict[int, float] = {}
+    if not inv.empty and {"is_dc", "locations_with_inventory"}.issubset(inv.columns):
+        st_inv = inv.loc[~inv["is_dc"].astype(bool)].copy()
+        st_inv["week_end_d"] = pd.to_datetime(st_inv["week_end_d"])
+        st_inv = st_inv.loc[st_inv["week_end_d"] <= pd.Timestamp(as_of)]
+        if not st_inv.empty:
+            latest = st_inv.loc[st_inv["week_end_d"] == st_inv["week_end_d"].max()]
+            stocked = {
+                int(r.tcin): float(r.locations_with_inventory)
+                for r in latest.itertuples(index=False)
+                if pd.notna(r.locations_with_inventory)
+            }
+    ramp_cols = [
+        "tcin", "month_start", "bm_stores", "bm_stores_anchor", "bm_stores_anchor_used",
+        "bm_upspw", "ramp", "ramp_flag",
+    ]
+    ramp = (
+        bc.store_ramp(bm_frame, anchor, ramp_cap=bm_ramp_cap, bpd_stocked=stocked)
+        if bm_frame is not None
+        else pd.DataFrame(columns=ramp_cols)
+    )
+    pos_blend, shape_note = bc.shape_pos_forecast(pos_blend, ramp, anchor=anchor, material=bm_material)
     rr_tbl = consumption.runrate(sales, as_of, weeks=trailing)
     oh = consumption.chain_on_hand_latest(inv, as_of)
     cal_min = _cfg(cfg, "consumption", "calibration_min_week", default=None)
@@ -532,6 +586,11 @@ def run_forecast(
             strict=True,
         )
     ]
+    # A row the sheet's ramp moved rests partly on a stated plan: one grade worse, the
+    # same penalty a thin POS row pays, and its provenance says so.
+    if "authority" in monthly:
+        shaped_rows = monthly["authority"].eq(bc.AUTH_SHAPED)
+        monthly.loc[shaped_rows, "grade"] = monthly.loc[shaped_rows, "grade"].map(bc.one_worse)
     # booked forward by ship month
     if not booked.empty:
         bm = booked.copy()
@@ -602,6 +661,44 @@ def run_forecast(
     else:
         pl = pl_empty
     monthly_all = pd.concat([monthly, pf, plw, bm, pl], ignore_index=True, sort=False)
+    # Provenance. Fact streams (booked, planned forward, planned launch, curated) are
+    # measured by construction; only a replenishment row the ramp moved is "shaped".
+    if "authority" not in monthly_all:
+        monthly_all["authority"] = bc.AUTH_MEASURED
+    monthly_all["authority"] = monthly_all["authority"].where(
+        monthly_all["authority"].notna(), bc.AUTH_MEASURED
+    )
+    monthly_all.loc[monthly_all["stream"] != consumption.STREAM_REPLEN, "authority"] = bc.AUTH_MEASURED
+    # Months only the sheet describes -- beyond the engine's reach, or an item with no BPD
+    # row at all -- are carried as stated_only at grade E, so the planner sees the sheet's
+    # full reach and exactly how much of it rests on nothing measured.
+    stated = pd.DataFrame()
+    if bm_frame is not None and bm_fc is not None:
+        covered = {
+            (int(t), pd.Timestamp(m))
+            for t, m in zip(monthly_all["tcin"], pd.to_datetime(monthly_all["month_start"]), strict=True)
+        }
+        stated_months = (
+            [pd.Timestamp(m) for m in bm_fc.months if pd.Timestamp(m) >= anchor]
+            if bm_stated_months
+            else list(month_list)
+        )
+        stated = bc.bm_only_rows(bm_frame, covered, months=stated_months)
+    if not stated.empty:
+        st = stated.rename(columns={"units": "expected_ship_units", "ramp": "bm_ramp"})
+        st["expected_po_units"] = st["expected_ship_units"]
+        st["pos_units"] = st["expected_ship_units"]  # the sheet's Velocity is its POS
+        st["stores_fwd"] = st["bm_stores"]
+        st["stores_source"] = bc.STORES_FROM_PLAN
+        st["pos_candidates"] = "bm_sheet_velocity"
+        st = st.merge(
+            bm_frame.loc[bm_frame["tcin"].notna(), ["tcin", "month_start", "bm_upspw"]]
+            .assign(tcin=lambda d: d["tcin"].astype("int64"), month_start=lambda d: pd.to_datetime(d["month_start"]))
+            .rename(columns={"bm_upspw": "upspw"}),
+            on=["tcin", "month_start"],
+            how="left",
+        )
+        monthly_all = pd.concat([monthly_all, st.drop(columns=["units_bpd", "bm_stores_anchor"])], ignore_index=True, sort=False)
     for c in (
         "expected_ship_units",
         "expected_po_units",
@@ -622,6 +719,10 @@ def run_forecast(
     flags = []
     for r in monthly_all.itertuples(index=False):
         f = []
+        if getattr(r, "authority", None) == bc.AUTH_STATED:
+            # sheet only: nothing measured behind it, so none of the measured-row flags apply
+            flags.append(bc.FLAG_STATED)
+            continue
         if r.stream == consumption.STREAM_PLANNED_LAUNCH:
             f.append("PLANNED_LAUNCH")
         if r.stream == "planned_forward":
@@ -652,10 +753,40 @@ def run_forecast(
         + "%",
         monthly_all["stream"],
     )
+    monthly_all.loc[monthly_all["authority"] == bc.AUTH_STATED, "source_mix"] = "B&M sheet only"
     b.frames["monthly"] = monthly_all.sort_values(["tcin", "month_start", "stream"]).reset_index(
         drop=True
     )
     b.frames["weekly_path"] = sim
+
+    # ---- 5b. the sheet's three checks: doors, loads, coverage --------------------------
+    bm_store = pd.DataFrame()
+    bm_loads = pd.DataFrame()
+    if bm_frame is not None and bm_fc is not None:
+        bm_store = bc.store_check(
+            bm_frame, ramp, anchor, pos_blend, sku_for=attr_sku, stocked_stores=stocked
+        )
+        facts = monthly_all.loc[
+            (monthly_all["stream"] != consumption.STREAM_REPLEN)
+            & (monthly_all["authority"] != bc.AUTH_STATED),
+            ["tcin", "month_start", "expected_ship_units"],
+        ]
+        bpd_launch = (
+            facts.groupby(["tcin", "month_start"], as_index=False)["expected_ship_units"]
+            .sum()
+            .rename(columns={"expected_ship_units": "bpd_units"})
+        )
+        bm_loads = bc.load_order_verdicts(bm_frame, bpd_launch, months=list(month_list), tolerance=bm_tol)
+        b.frames["bm_store_check"] = bm_store
+        b.frames["bm_load_check"] = bm_loads
+        b.frames["bm_coverage"] = bc.coverage(
+            bm_frame,
+            bm_fc.unresolved,
+            item_tcins=item_master.tcins,
+            run_tcins=set(monthly_all["tcin"].astype(int)),
+            item_state=state_map,
+            sku_for=attr_sku,
+        )
 
     # ---- 6. accuracy --------------------------------------------------------------------
     if not long_rows.empty:
@@ -733,7 +864,6 @@ def run_forecast(
 
     # ---- 7. exceptions -----------------------------------------------------------------
     ex: list[dict[str, Any]] = []
-    attr_sku = {int(r.tcin): r.sku for r in attrs.itertuples(index=False)}
     for r in item_master.unmapped().itertuples(index=False):
         ex.append(
             {
@@ -753,17 +883,28 @@ def run_forecast(
                 "detail": "appears in plan or orders; add to data/item_master_target.csv",
             }
         )
-    for r in weekly[
+    # One row per (item, flag set), not one per week: sixteen identical rows for an item
+    # with no history said nothing sixteen times.
+    wk_flagged = weekly[
         weekly["flags"].str.contains(
             "NEW_TCIN_NO_HISTORY|PLANNED_FORWARD|STALE_PLAN|NO_PO_8WK", regex=True
         )
-    ].itertuples(index=False):
+    ]
+    for (t, fl), g in wk_flagged.groupby(["tcin", "flags"], sort=True):
+        wks = pd.to_datetime(g["po_week"])
+        leads = pd.to_numeric(g["lead_days"], errors="coerce").dropna()
+        lead_txt = (
+            f"lead {int(leads.min())}-{int(leads.max())} d" if not leads.empty else "lead n/a"
+        )
         ex.append(
             {
-                "tcin": int(r.tcin),
-                "sku": r.sku,
-                "issue": r.flags,
-                "detail": f"po_week {pd.Timestamp(r.po_week).date()} expected {r.expected_po_units:,.0f} lead {r.lead_days}",
+                "tcin": int(t),
+                "sku": g["sku"].iloc[0],
+                "issue": str(fl),
+                "detail": (
+                    f"{len(g)} PO week(s) {wks.min().date()}..{wks.max().date()}, expected "
+                    f"{float(g['expected_po_units'].sum()):,.0f} units in total, {lead_txt}"
+                ),
             }
         )
     if cand_notes["dfe"].get("used") is False:
@@ -932,6 +1073,106 @@ def run_forecast(
                 "detail": f"{item_state_meta}",
             }
         )
+    # ---- the B&M sheet: absent, or what it disagrees with -------------------------------
+    if bm_frame is None or bm_fc is None:
+        ex.append(
+            {
+                "tcin": None,
+                "sku": None,
+                "issue": "BM_SCHEDULE_NOT_AVAILABLE",
+                "detail": (
+                    f"{bm_meta.get('reason') or 'no B&M Target Schedule for this run'}. The "
+                    "forward store count is BPD's own projection only (flat at each item's "
+                    "peak beyond its measured ramp) and no stated_only months are shown"
+                ),
+            }
+        )
+    else:
+        for w in bm_fc.warnings:
+            issue, _, detail = str(w).partition(":")
+            ex.append({"tcin": None, "sku": None, "issue": issue.strip(), "detail": detail.strip()})
+        for u in bm_fc.unresolved:
+            ex.append(
+                {
+                    "tcin": None,
+                    "sku": u.get("bm_sku"),
+                    "issue": "BM_SKU_UNRESOLVED",
+                    "detail": (
+                        f"{u.get('reason')}; '{u.get('description') or ''}' (key {u.get('unique_key')}). "
+                        "Its months are not shaped and not shown; add the SKU to "
+                        "data/item_master_target.csv or data/sku_aliases_target.tsv"
+                    ),
+                }
+            )
+        if not bm_store.empty:
+            for r in bm_store.itertuples(index=False):
+                # BM_RAMP_ANCHOR_FROM_BPD alone is the normal state for a mature item (the
+                # sheet sits a few percent under BPD's stocked count) and is printed on the
+                # Store plan check sheet; only a REFUSAL is an exception here.
+                refusal = "|".join(
+                    f for f in str(r.ramp_flag or "").split("|") if f and f != "BM_RAMP_ANCHOR_FROM_BPD"
+                )
+                if refusal:
+                    ex.append(
+                        {
+                            "tcin": int(r.tcin),
+                            "sku": r.sku,
+                            "issue": refusal,
+                            "detail": (
+                                f"sheet stores at anchor {float(r.bm_stores_anchor or 0):,.0f}, BPD "
+                                f"stocked {r.bpd_stocked_stores}, denominator used "
+                                f"{float(r.bm_stores_anchor_used or 0):,.0f}, plan peak "
+                                f"{float(r.bm_stores_plan_peak or 0):,.0f} -> ramp to peak "
+                                f"{r.bm_ramp_to_peak}. A refused ramp is held at 1.0 (BPD projection only)"
+                            ),
+                        }
+                    )
+                gap = r.stores_gap_pct
+                if gap is not None and gap == gap and abs(float(gap)) > 0.10 and not refusal:
+                    basis = (
+                        f"{float(r.bpd_stocked_stores):,.0f} stocked stores"
+                        if r.bpd_stocked_stores == r.bpd_stocked_stores
+                        else f"{float(r.bpd_selling_stores):,.0f} selling stores"
+                    )
+                    ex.append(
+                        {
+                            "tcin": int(r.tcin),
+                            "sku": r.sku,
+                            "issue": "BM_STORES_DISAGREE",
+                            "detail": (
+                                f"sheet says {float(r.bm_stores_anchor):,.0f} doors this month, BPD "
+                                f"measures {basis} ({float(gap):+.1%}). The ramp to the sheet's plan "
+                                f"peak {float(r.bm_stores_plan_peak or 0):,.0f} is read from "
+                                f"{float(r.bm_stores_anchor_used or 0):,.0f} (x{r.bm_ramp_to_peak}), "
+                                "not from the sheet's own anchor"
+                            ),
+                        }
+                    )
+        if not bm_loads.empty:
+            for r in bm_loads.loc[bm_loads["verdict"] != "BM_LOAD_AGREES"].itertuples(index=False):
+                ex.append(
+                    {
+                        "tcin": int(r.tcin),
+                        "sku": attr_sku.get(int(r.tcin), r.bm_sku),
+                        "issue": str(r.verdict),
+                        "detail": (
+                            f"{r.note}. Sheet Load_Orders {float(r.bm_load_units):,.0f} "
+                            f"({r.bm_months or '-'}) vs engine launch/forward "
+                            f"{float(r.bpd_load_units):,.0f} ({r.bpd_months or '-'}); cross-check "
+                            "only, no unit moved"
+                        ),
+                    }
+                )
+        sheet_tcins = {int(t) for t in bm_frame.loc[bm_frame["tcin"].notna(), "tcin"]}
+        for t in sorted(set(item_master.tcins) - sheet_tcins):
+            ex.append(
+                {
+                    "tcin": int(t),
+                    "sku": attr_sku.get(int(t)),
+                    "issue": "BM_SHEET_NO_BLOCK",
+                    "detail": "in the item master but not in the B&M Target Schedule; BPD only, no ramp",
+                }
+            )
     b.frames["exceptions"] = pd.DataFrame(ex, columns=["tcin", "sku", "issue", "detail"])
     b.frames["legend"] = grading.legend(labels)
 
@@ -971,14 +1212,43 @@ def run_forecast(
             "controller": f"band {controller.band} weeks, k {controller.k} weeks; {controller.basis}",
             "receipt_lag_weeks": receipt_lag,
             "horizon": f"{horizon_weeks} PO weeks; {months} months",
-            "grades": "A/B/C weekly by plan lead days (measured); monthly B when >=75% plan-covered, C model to 6 months, D beyond 6, E beyond 12 months; one grade worse when the POS row is thin (few selling weeks, store count capped, curated, or under 100 selling stores)",
+            "grades": "A/B/C weekly by plan lead days (measured); monthly B when >=75% plan-covered, C model to 6 months, D beyond 6, E beyond 12 months; one grade worse when the POS row is thin (few selling weeks, store count capped, curated, or under 100 selling stores) and one grade worse when the B&M store ramp shaped it; E always for a month only the sheet describes (stated_only)",
             "bands": "weekly: leave-one-week-out P10/P90 of log ratio from the backtest panel where fitted; otherwise symmetric ±band from the grade legend",
             "not_forecast": "launch volume Target has not yet planned, unless a curated assumption exists in biom_admin.seed_target_launch_velocity; monthly velocity for a TCIN with no selling history (reported as NEW_TCIN_NO_POS_HISTORY, never as zero); item-level weekly timing beyond one week; realised shipments before ASN reconciliation",
             "inputs": (
-                "BigQuery only. No Google Drive call, no spreadsheet and no manually "
-                "placed file anywhere in check|pull|run: the owner forecast and the RDZ "
-                "supply sheet were both removed 2026-09-08. Curated human assumptions, "
-                "when any exist, come from biom_admin.seed_target_launch_velocity"
+                "BigQuery only in the scheduled path. No Google Drive call and no manually "
+                "placed file anywhere in check|pull|run: curated human assumptions come "
+                "from biom_admin.seed_target_launch_velocity, and the channel owner's "
+                "Brick & Mortar Master Forecast (Target Schedule) comes from "
+                "biom_admin.bm_target_schedule_snapshot, landed by "
+                "ingest/bm_schedule_ingest.py, the one job with a Drive grant, and read "
+                "as the newest snapshot on or before as_of. `run --bm PATH` parses a local "
+                "copy instead, for a hand-run only. The RDZ supply sheet was removed "
+                "2026-09-08"
+            ),
+            "bm_schedule": {
+                **bm_meta,
+                "shaping": shape_note,
+                "ramp_cap": bm_ramp_cap,
+                "material_pct": bm_material,
+                "load_tolerance": bm_tol,
+                "stated_only_months_shown": bool(bm_stated_months),
+                "stated_only_rows": int(len(stated)),
+                "stated_only_units": float(stated["units"].sum()) if not stated.empty else 0.0,
+            },
+            "store_ramp": (
+                "ramp(t, M) = B&M stores(t, M) / max(B&M stores(t, anchor month), BPD stocked "
+                "stores(t) today), a RATIO never a level, so the sheet's understatement of the "
+                "present never becomes growth; projected selling stores(t, M) = max(BPD's own "
+                "projection, BPD anchor stores x ramp); POS = UPSPW x stores x days/7 x season. "
+                "Applied BEFORE the "
+                "weekly simulation so replenishment follows the ramp with the inventory lag. "
+                "Facts (booked forward, planned forward, planned launch, curated loads) are "
+                "never scaled. Refused (ramp 1.0) when the sheet has no anchor-month stores, "
+                "is a placeholder block, or exceeds ramp_cap. Rows the ramp moved carry "
+                "provenance measured_shaped_by_plan and one grade worse; months only the sheet "
+                "describes carry stated_only at grade E and the flag BM_ONLY_NO_BPD_SIGNAL. "
+                "Load_Orders is a cross-check (Load order check sheet), never a source"
             ),
             "supply_layer": (
                 "not applied. Biom-side ability-to-ship was never enforced in v1 (the RDZ "

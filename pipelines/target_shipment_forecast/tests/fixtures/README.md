@@ -55,9 +55,13 @@ rows. Used by `tests/test_rdz_parser.py`.
 
 The "Brick & Mortar Master Forecast" Google Drive export fixtures were deleted
 with the owner-forecast parser they tested (`inputs/owner_forecast.py`,
-`inputs/drive_export.py`, `tests/test_bm_master_forecast.py`,
-`tests/test_owner_forecast.py`). The monthly POS forecast is now
-`consumption.dist_velocity`, derived from `bpd_raw`/`biom_canvas`, and the
+`inputs/drive_export.py`, `tests/test_owner_forecast.py`). The monthly POS forecast
+is now `consumption.dist_velocity`, derived from `bpd_raw`/`biom_canvas`, and the
 `planned_launch` stream comes from Target's own PO plan plus the live item-state
 feed. Recover them from git history if the parser is ever needed again:
 `git show 64e0e6c -- <path>`.
+
+The sheet's strict parser (`inputs/bm_master_forecast.py`) and its snapshot path
+(`ingest/bm_schedule_ingest.py`) are tested by `tests/test_bm_master_forecast.py` and
+`tests/test_bm_schedule.py` with workbooks built in-process by openpyxl, so no slice
+of the real sheet is committed here to go stale.

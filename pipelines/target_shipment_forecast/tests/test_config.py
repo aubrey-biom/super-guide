@@ -47,6 +47,11 @@ def test_headline_values(config: dict[str, Any]) -> None:
     assert config["calendar"]["fiscal_year_start"]["value"] == date(2026, 2, 1)
     assert config["consumption"]["steady_state_wos_band"]["low"] == 5
     assert config["consumption"]["steady_state_wos_band"]["high"] == 10
-    assert set(config["item_groups"]) == {"D3-C2", "D253-C4", "D7"}
+    assert set(config["item_groups"]) == {"D3-C2", "D253-C4", "D253-C6", "D7"}
     assert config["item_groups"]["D7"]["ship_offset_days"] == 7
+    # flushables (dept 253 class 6) launch 2026-10-11: Monday PO day, +5 d ship, measured
+    assert config["item_groups"]["D253-C6"]["po_day"] == "monday"
+    assert config["item_groups"]["D253-C6"]["ship_offset_days"] == 5
+    assert config["bm_schedule"]["ramp_cap"]["value"] == 3.0
+    assert config["bm_schedule"]["include_stated_only_months"]["value"] is True
     assert config["grades"]["by_lead_days"]["A"] == {"min": 0, "max": 1}

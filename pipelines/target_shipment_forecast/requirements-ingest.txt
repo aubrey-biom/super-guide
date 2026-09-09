@@ -1,0 +1,8 @@
+# pipelines/target_shipment_forecast/ingest -- the Drive -> BigQuery snapshot job.
+#
+# Separate from requirements.txt on purpose: the forecast engine reads BigQuery only and
+# its image must not carry a Drive client. This job runs as the data-pipeline service
+# account that holds the sheet grant, on its own schedule, and writes one table.
+-r requirements.txt
+google-api-python-client>=2.100
+google-auth>=2.20

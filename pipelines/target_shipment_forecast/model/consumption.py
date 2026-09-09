@@ -1038,6 +1038,15 @@ def monthly_from_simulation(
         "upspw",
         "season_factor",
         "pos_flags",
+        # from model/bm_combine.shape_pos_forecast, when the B&M store ramp shaped the row:
+        # the BPD-only number it started from, the ratio applied, which source set the
+        # store count, and the row's provenance.
+        "pos_units_bpd",
+        "bm_ramp",
+        "bm_stores",
+        "ramp_flag",
+        "stores_source",
+        "authority",
     ]
     pb = (
         pos_blend.rename(columns={"pos_units": "pos_forecast_units", "flags": "pos_flags"})

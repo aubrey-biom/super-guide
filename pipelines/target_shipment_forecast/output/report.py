@@ -39,8 +39,13 @@ from openpyxl.styles import Alignment, Font
 from openpyxl.utils import get_column_letter
 
 from pipelines.target_shipment_forecast.config import repo_root
+from pipelines.target_shipment_forecast.model.bm_combine import AUTH_ORDER, weakest_authority
 from pipelines.target_shipment_forecast.model.grade import GRADE_ORDER, worse
-from pipelines.target_shipment_forecast.output.workbook import _cell_value, _number_format, safe_sheet_name
+from pipelines.target_shipment_forecast.output.workbook import (
+    _cell_value,
+    _number_format,
+    safe_sheet_name,
+)
 
 DEFAULT_SPEC = repo_root() / "config" / "report_target.yaml"
 
@@ -69,6 +74,13 @@ def _worst(series: pd.Series) -> str:
     return out
 
 
+def _provenance(series: pd.Series) -> str:
+    """Weakest provenance in the cell: stated_only beats measured_shaped_by_plan beats
+    measured, so one sheet-only stream in a month marks the whole cell."""
+    vals = [str(v) for v in series.dropna() if str(v) in AUTH_ORDER]
+    return weakest_authority(vals) if vals else ""
+
+
 def _agg_fn(name: str) -> Any:
     return {
         "sum": "sum",
@@ -77,6 +89,7 @@ def _agg_fn(name: str) -> Any:
         "min": "min",
         "first": "first",
         "worst": _worst,
+        "provenance": _provenance,
     }.get(name, "sum")
 
 

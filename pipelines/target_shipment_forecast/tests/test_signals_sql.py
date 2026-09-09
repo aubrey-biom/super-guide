@@ -22,7 +22,7 @@ LOGICAL_BODIES = {
 # (biom_admin.seed_target_launch_velocity), not a BPD feed, so there is nothing to
 # inject; it is named here rather than left to pass this test by an incidental mention
 # of `orders_daily` in its comment.
-NO_LOGICAL_BODY = {"launch_seed"}
+NO_LOGICAL_BODY = {"launch_seed", "bm_schedule"}
 
 
 @pytest.mark.parametrize("name", sorted(signals.ALL_SQL))
