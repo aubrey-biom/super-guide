@@ -1,0 +1,695 @@
+tcin,sku,description,item_group,ship_week,units,cases,grade,confidence,stream,casepack
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-08-30,2058.0,343.0,A,A · high · ±15%,created,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-08-30,1296.0,216.0,A,A · high · ±15%,created,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-08-30,642.0,107.0,A,A · high · ±15%,created,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-08-30,1536.0,128.0,A,A · high · ±15%,created,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-08-30,324.0,27.0,A,A · high · ±15%,created,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-08-30,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-08-30,2724.0,227.0,A,A · high · ±15%,created,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-08-30,6.0,1.0,A,A · high · ±15%,created,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-08-30,12.0,2.0,A,A · high · ±15%,created,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-08-30,6.0,1.0,A,A · high · ±15%,created,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-08-30,912.0,228.0,A,A · high · ±15%,created,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-08-30,1208.0,302.0,A,A · high · ±15%,created,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-08-30,552.0,46.0,A,A · high · ±15%,created,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-08-30,2188.0,547.0,A,A · high · ±15%,created,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-08-30,336.0,14.0,A,A · high · ±15%,created,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-08-30,1698.0,283.0,A,A · high · ±15%,created,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-08-30,2112.0,88.0,A,A · high · ±15%,created,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-08-30,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-08-30,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-08-30,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-09-06,2712.0,452.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-09-06,2022.0,337.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-09-06,3648.0,608.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-09-06,3144.0,262.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-09-06,1152.0,96.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-09-06,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-09-06,2856.0,238.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-09-06,6.0,1.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-09-06,12.0,2.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-09-06,24.0,4.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-09-06,20.0,5.0,A,A · high · ±15%,created,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-09-06,48.0,4.0,A,A · high · ±15%,created,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-09-06,39.0,13.0,A,A · high · ±15%,created,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-09-06,21.0,21.0,A,A · high · ±15%,created,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-09-06,24.0,2.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-09-06,416.0,104.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-09-06,1484.0,371.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-09-06,1656.0,138.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-09-06,1572.0,393.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-09-06,600.0,25.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-09-06,996.0,166.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-09-06,1752.0,73.0,C,C · directional · ±50%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-09-06,1536.0,64.0,A,A · high · ±15%,created,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-09-06,528.0,88.0,A,A · high · ±15%,created,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-06,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-09-06,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-09-06,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-09-13,1902.0,317.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-09-13,1446.0,241.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-09-13,1764.0,294.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-09-13,3468.0,289.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-09-13,1368.0,114.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-09-13,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-09-13,2784.0,232.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-09-13,12.0,2.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-09-13,6.0,1.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-09-13,18.0,3.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-09-13,56.0,14.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-09-13,96.0,8.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-09-13,66.0,22.0,C,C · directional · ±50%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-09-13,39.0,39.0,C,C · directional · ±50%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-09-13,12.0,1.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-09-13,576.0,144.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-09-13,1740.0,435.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-09-13,1872.0,156.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-09-13,1852.0,463.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-09-13,528.0,22.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-09-13,1014.0,169.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-09-13,1464.0,61.0,C,C · directional · ±50%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-09-13,26016.0,2168.0,A,A · booked PO,booked_forward,12.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-09-13,15080.0,3770.0,A,A · booked PO,booked_forward,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-09-13,552.0,92.0,C,C · directional · ±50%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-13,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-09-13,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-09-13,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-09-20,1092.0,182.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-09-20,948.0,158.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-09-20,1122.0,187.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-09-20,3600.0,300.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-09-20,1380.0,115.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-09-20,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-09-20,2964.0,247.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-09-20,30.0,5.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-09-20,30.0,5.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-09-20,36.0,6.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-09-20,132.0,33.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-09-20,336.0,28.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-09-20,90.0,30.0,C,C · directional · ±50%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-09-20,139.0,139.0,C,C · directional · ±50%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-09-20,72.0,6.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-09-20,768.0,192.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-09-20,1832.0,458.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-09-20,2400.0,200.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-09-20,1932.0,483.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-09-20,480.0,20.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-09-20,504.0,21.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-09-20,1044.0,174.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-09-20,1536.0,64.0,C,C · directional · ±50%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-09-20,462.0,77.0,C,C · directional · ±50%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-09-20,3024.0,252.0,C,C · directional · ±50%,planned_forward,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-20,30600.0,1275.0,A,A · booked PO,booked_forward,24.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-20,27000.0,1125.0,A,A · booked PO,booked_forward,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-20,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-09-20,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-09-20,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-09-27,3000.0,500.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-09-27,2706.0,451.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-09-27,1188.0,198.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-09-27,3984.0,332.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-09-27,1308.0,109.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-09-27,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-09-27,3000.0,250.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-09-27,12.0,2.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-09-27,36.0,6.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-09-27,24.0,4.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-09-27,244.0,61.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-09-27,636.0,53.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-09-27,198.0,66.0,C,C · directional · ±50%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-09-27,201.0,201.0,C,C · directional · ±50%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-09-27,528.0,44.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-09-27,2568.0,642.0,C,C · directional · ±50%,planned_forward,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-09-27,2016.0,504.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-09-27,8904.0,742.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-09-27,1940.0,485.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-09-27,576.0,24.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-09-27,96.0,4.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-09-27,1050.0,175.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-09-27,1608.0,67.0,C,C · directional · ±50%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-09-27,5184.0,216.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-09-27,480.0,80.0,C,C · directional · ±50%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-09-27,71976.0,2999.0,A,A · booked PO,booked_forward,24.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-09-27,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-09-27,26268.0,2189.0,C,C · directional · ±50%,planned_forward,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-27,864.0,36.0,C,C · directional · ±50%,planned_forward,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-09-27,1608.0,67.0,C,C · directional · ±50%,planned_forward,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-09-27,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-09-27,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-10-04,3306.0,551.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-10-04,2886.0,481.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-10-04,1302.0,217.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-10-04,3612.0,301.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-10-04,1140.0,95.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-10-04,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-10-04,2820.0,235.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-10-04,12.0,2.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-10-04,18.0,3.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-10-04,30.0,5.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-10-04,260.0,65.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-10-04,816.0,68.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-10-04,282.0,94.0,C,C · directional · ±50%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-10-04,199.0,199.0,C,C · directional · ±50%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-10-04,1356.0,113.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-10-04,3072.0,768.0,C,C · directional · ±50%,planned_forward,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-10-04,1900.0,475.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-10-04,9840.0,820.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-10-04,1924.0,481.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-10-04,456.0,19.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-10-04,96.0,4.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-10-04,960.0,160.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-10-04,1344.0,56.0,C,C · directional · ±50%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-10-04,36360.0,3030.0,C,C · directional · ±50%,planned_forward,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-10-04,7916.0,1979.0,C,C · directional · ±50%,planned_forward,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-10-04,1896.0,79.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-10-04,480.0,80.0,C,C · directional · ±50%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-10-04,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-10-04,10308.0,859.0,C,C · directional · ±50%,planned_forward,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-10-04,2592.0,108.0,C,C · directional · ±50%,planned_forward,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-10-04,3648.0,152.0,C,C · directional · ±50%,planned_forward,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-10-04,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-10-04,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-10-11,7920.0,1320.0,C,C · directional · ±50%,planned_forward,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-10-11,7020.0,1170.0,C,C · directional · ±50%,planned_forward,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-10-11,1398.0,233.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-10-11,3864.0,322.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-10-11,1200.0,100.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-10-11,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-10-11,2796.0,233.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-10-11,12.0,2.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-10-11,18.0,3.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-10-11,24.0,4.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-10-11,280.0,70.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-10-11,888.0,74.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-10-11,297.0,99.0,C,C · directional · ±50%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-10-11,189.0,189.0,C,C · directional · ±50%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-10-11,6888.0,574.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-10-11,8636.0,2159.0,C,C · directional · ±50%,planned_forward,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-10-11,2144.0,536.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-10-11,26412.0,2201.0,C,C · directional · ±50%,planned_forward,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-10-11,2004.0,501.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-10-11,528.0,22.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-10-11,96.0,4.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-10-11,930.0,155.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-10-11,1536.0,64.0,C,C · directional · ±50%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-10-11,15528.0,1294.0,C,C · directional · ±50%,planned_forward,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-10-11,3044.0,761.0,C,C · directional · ±50%,planned_forward,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-10-11,1944.0,81.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-10-11,408.0,68.0,C,C · directional · ±50%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-10-11,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-10-11,48.0,4.0,C,C · directional · ±50%,planned_forward,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-10-11,1488.0,62.0,C,C · directional · ±50%,planned_forward,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-10-11,2088.0,87.0,C,C · directional · ±50%,planned_forward,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-10-11,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-10-11,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-10-18,5004.0,834.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-10-18,4296.0,716.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-10-18,1464.0,244.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-10-18,3936.0,328.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-10-18,1236.0,103.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-10-18,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-10-18,2808.0,234.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-10-18,12.0,2.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-10-18,24.0,4.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-10-18,36.0,6.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-10-18,276.0,69.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-10-18,1104.0,92.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-10-18,333.0,111.0,C,C · directional · ±50%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-10-18,208.0,208.0,C,C · directional · ±50%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-10-18,3888.0,324.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-10-18,3760.0,940.0,C,C · directional · ±50%,planned_forward,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-10-18,2288.0,572.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-10-18,13860.0,1155.0,C,C · directional · ±50%,planned_forward,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-10-18,2128.0,532.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-10-18,504.0,21.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-10-18,24.0,1.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-10-18,996.0,166.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-10-18,1488.0,62.0,C,C · directional · ±50%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-10-18,16200.0,1350.0,C,C · directional · ±50%,planned_forward,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-10-18,3188.0,797.0,C,C · directional · ±50%,planned_forward,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-10-18,2592.0,108.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-10-18,516.0,86.0,C,C · directional · ±50%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-10-18,1404.0,117.0,C,C · directional · ±50%,planned_forward,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-10-18,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-10-18,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-10-18,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-10-25,2694.0,449.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-10-25,2196.0,366.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-10-25,1314.0,219.0,C,C · directional · ±50%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-10-25,3900.0,325.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-10-25,1092.0,91.0,C,C · directional · ±50%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-10-25,0.0,,C,C · directional · ±50%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-10-25,2724.0,227.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-10-25,18.0,3.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-10-25,18.0,3.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-10-25,36.0,6.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-10-25,288.0,72.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-10-25,1200.0,100.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-10-25,405.0,135.0,C,C · directional · ±50%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-10-25,220.0,220.0,C,C · directional · ±50%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-10-25,1968.0,164.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-10-25,728.0,182.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-10-25,2092.0,523.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-10-25,3924.0,327.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-10-25,1856.0,464.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-10-25,504.0,21.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-10-25,72.0,3.0,C,C · directional · ±50%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-10-25,882.0,147.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-10-25,1512.0,63.0,C,C · directional · ±50%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-10-25,16056.0,1338.0,C,C · directional · ±50%,planned_forward,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-10-25,3308.0,827.0,C,C · directional · ±50%,planned_forward,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-10-25,4584.0,191.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-10-25,870.0,145.0,C,C · directional · ±50%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-10-25,30696.0,1279.0,A,A · booked PO,booked_forward,24.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-10-25,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-10-25,2916.0,243.0,C,C · directional · ±50%,planned_forward,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-10-25,504.0,21.0,C,C · directional · ±50%,planned_forward,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-10-25,696.0,29.0,C,C · directional · ±50%,planned_forward,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-10-25,0.0,,C,C · directional · ±50%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-10-25,0.0,,C,C · directional · ±50%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-11-01,1749.0,291.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-11-01,1322.0,220.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-11-01,1722.0,287.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-11-01,1401.0,116.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-11-01,498.0,41.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-11-01,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-11-01,2217.0,184.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-11-01,27.0,4.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-11-01,60.0,10.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-11-01,56.0,9.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-01,296.0,74.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-11-01,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-11-01,1212.0,101.0,C,C · directional · ±50%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-11-01,0.0,0.0,C,C · directional · ±50%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-01,441.0,147.0,C,C · directional · ±50%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-11-01,223.0,223.0,C,C · directional · ±50%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-11-01,429.0,107.2,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-11-01,518.0,129.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-11-01,366.0,30.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-11-01,690.0,172.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-11-01,876.0,36.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-01,884.0,147.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-01,1512.0,63.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-11-01,28.0,7.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-11-01,4776.0,199.0,C,C · directional · ±50%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-11-01,780.0,130.0,C,C · directional · ±50%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-11-01,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-01,3120.0,130.0,C,C · directional · ±50%,planned_forward,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-01,3168.0,132.0,C,C · directional · ±50%,planned_forward,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-01,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-01,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-11-08,1749.0,291.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-11-08,1322.0,220.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-11-08,1722.0,287.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-11-08,1401.0,116.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-11-08,498.0,41.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-11-08,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-11-08,2217.0,184.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-11-08,27.0,4.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-11-08,60.0,10.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-11-08,56.0,9.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-08,242.0,60.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-11-08,1173.0,97.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-08,650.0,216.7,D,D · plan-based · ±70%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-11-08,724.0,724.0,D,D · plan-based · ±70%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-11-08,429.0,107.2,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-11-08,518.0,129.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-11-08,366.0,30.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-11-08,690.0,172.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-11-08,876.0,36.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-08,884.0,147.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-08,1512.0,63.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-11-08,28.0,7.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-11-08,4572.0,190.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-11-08,930.0,155.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-08,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-08,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-08,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-11-15,1749.0,291.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-11-15,1322.0,220.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-11-15,1722.0,287.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-11-15,1401.0,116.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-11-15,498.0,41.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-11-15,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-11-15,2217.0,184.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-11-15,27.0,4.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-11-15,60.0,10.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-11-15,56.0,9.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-15,242.0,60.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-11-15,1173.0,97.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-15,650.0,216.7,D,D · plan-based · ±70%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-11-15,724.0,724.0,D,D · plan-based · ±70%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-11-15,429.0,107.2,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-11-15,518.0,129.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-11-15,366.0,30.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-11-15,690.0,172.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-11-15,876.0,36.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-15,884.0,147.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-15,1512.0,63.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-11-15,28.0,7.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-11-15,4572.0,190.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-11-15,930.0,155.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-15,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-15,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-15,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-11-22,1749.0,291.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-11-22,1322.0,220.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-11-22,1722.0,287.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-11-22,1401.0,116.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-11-22,498.0,41.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-11-22,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-11-22,2217.0,184.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-11-22,27.0,4.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-11-22,60.0,10.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-11-22,56.0,9.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-22,242.0,60.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-11-22,1173.0,97.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-22,650.0,216.7,D,D · plan-based · ±70%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-11-22,724.0,724.0,D,D · plan-based · ±70%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-11-22,429.0,107.2,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-11-22,518.0,129.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-11-22,366.0,30.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-11-22,690.0,172.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-11-22,876.0,36.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-22,884.0,147.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-22,1512.0,63.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-11-22,28.0,7.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-11-22,4572.0,190.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-11-22,930.0,155.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-22,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-22,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-22,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-11-29,1749.0,291.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-11-29,1322.0,220.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-11-29,1722.0,287.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-11-29,1401.0,116.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-11-29,498.0,41.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-11-29,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-11-29,2217.0,184.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-11-29,27.0,4.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-11-29,60.0,10.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-11-29,56.0,9.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-29,242.0,60.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-11-29,1173.0,97.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-11-29,650.0,216.7,D,D · plan-based · ±70%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-11-29,724.0,724.0,D,D · plan-based · ±70%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-11-29,429.0,107.2,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-11-29,518.0,129.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-11-29,366.0,30.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-11-29,690.0,172.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-11-29,876.0,36.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-29,884.0,147.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-11-29,1512.0,63.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-11-29,28.0,7.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-11-29,4572.0,190.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-11-29,930.0,155.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-11-29,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-29,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-11-29,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-12-06,1749.0,291.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-12-06,1322.0,220.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-12-06,1722.0,287.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-12-06,1401.0,116.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-12-06,498.0,41.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-12-06,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-12-06,2217.0,184.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-12-06,27.0,4.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-12-06,60.0,10.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-12-06,56.0,9.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-12-06,242.0,60.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-12-06,1173.0,97.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-12-06,650.0,216.7,D,D · plan-based · ±70%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-12-06,724.0,724.0,D,D · plan-based · ±70%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-12-06,429.0,107.2,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-12-06,518.0,129.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-12-06,366.0,30.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-12-06,690.0,172.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-12-06,876.0,36.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-12-06,884.0,147.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-12-06,1512.0,63.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-12-06,28.0,7.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-12-06,4572.0,190.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-12-06,930.0,155.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-12-06,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-12-06,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-12-06,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+89854821,P-DIS-EUC,Biom Refillable Plant-Based Wipes Dispenser - Eucalyptus,D3-C2,2026-12-13,1749.0,291.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854822,P-60WIP-AP-LAV,"Biom Lavender Ease All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Removes Grease",D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854823,P-DIS-WHI,"Biom Refillable Plant-Based Wipes Dispenser - White: BPA-Free, Multi-Surface Use, Silicone Components",D3-C2,2026-12-13,1322.0,220.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854824,P-60WIP-AP-GRA,"Biom Grapefruit Zest All Purpose Cleaning Wipes Refill - 60ct: Safe for Sensitive Skin, Contains Naturally Derived Ingredients, Multi-Surface Cleaner",D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+89854825,P-DIS-TAN,Biom Refillable Plant-Based Wipes Dispenser - Sand,D3-C2,2026-12-13,1722.0,287.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+89854826,P-60WIP-AP-STL,Biom Plant Based Refillable All Purpose Wipes - Santal Escape - 60ct,D3-C2,2026-12-13,1401.0,116.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197977,P-60WIP-AP-NER,Biom Plant Based Refillable All Purpose Wipes - Neroli Dream - 60ct,D3-C2,2026-12-13,498.0,41.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+93197978,,Biom Refillable Wipe Dispenser,D3-C2,2026-12-13,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+93197979,P-60WIP-AP-FRA,Biom Plant Based Refillable All Purpose Wipes - Fragrance Free - 60ct,D3-C2,2026-12-13,2217.0,184.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94643458,P-DIS-DGR,"Biom Refillable Wipes Dispenser - Hunter Green: BPA-Free, Silicone Material",D3-C2,2026-12-13,27.0,4.5,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643459,P-DIS-BLK,"Biom Refillable Wipes Dispenser - Black: BPA-Free, Silicone, Cleaning Tools and Accessories",D3-C2,2026-12-13,60.0,10.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94643460,P-DIS-LGR,"Biom Refillable Wipes Dispenser - Seafoam: BPA-Free, Silicone, 8 Inch Height",D3-C2,2026-12-13,56.0,9.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723685,P-60WIP-AP-FIR,"Biom Fraser Fir All-Purpose Cleaning Wipes Refill - 60ct: Removes Dirt, Grease, Multi-Surface Use",D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723686,P-60WIP-AP-PEP,Biom Peppermint All-Purpose Cleaning Wipes Refill - 60ct,D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94723687,P-6DIS-WHI,"Biom Mini Refillable Wipe Dispenser - Bone: BPA-Free, Silicone, 6 Height",D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723688,P-DIS-TER,Biom Refillable Plant-Based Wipes Dispenser - Terracotta,D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94723689,P-40WIP-6IN-AP-VAN,"Biom Tres Vanille All-Purpose Cleaning Mini Wipes - 40ct: Refill Pouch, Removes Dirt",D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-12-13,242.0,60.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-12-13,1173.0,97.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-12-13,650.0,216.7,D,D · plan-based · ±70%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-12-13,724.0,724.0,D,D · plan-based · ±70%,forecast_replenishment,1.0
+94928289,P-60WIP-DSN-ALP,Biom Plastic Free Plant Based Disinfecting Wipes - Alpine Mint - 60ct,D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928290,P-DIS-SS-BRU,Biom Refillable Plant-Based Wipes Dispenser - Brushed Stainless,D3-C2,2026-12-13,429.0,107.2,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928291,K-60WIP-DSN-COM-3PK,"Biom Plastic Free Plant Based Disinfecting Wipes - Variety - 3pk/180ct: Ammonia-Free, Paraben-Free, Mint Scent",D3-C2,2026-12-13,518.0,129.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94928292,P-60WIP-DSN-CIT,"Biom Plastic Free Plant Based Disinfecting Wipes - Fresh Citrus - 60ct: Ammonia-Free, Aluminum-Free, Paraben-Free",D3-C2,2026-12-13,366.0,30.5,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94928293,K-60WIP-AP-COM,Biom Plant Based Refillable All Purpose Wipes Variety - 3pk/180ct,D3-C2,2026-12-13,690.0,172.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94979715,P-30WIP-BOD-NAT-TRV,Biom Travel Pack Biodegradable Body Wipes - Naturally Fresh - 30ct,D253-C4,2026-12-13,876.0,36.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979716,P-20WIP-SAN-STL-TRV,Biom Travel Pack Biodegradable Hand Sanitizing Wipes - Santal Escape - 20ct,D253-C4,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+94979717,K-6DIS-WHI-1SAN-STL,Biom Mini Dispenser with Biodegradable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-12-13,884.0,147.3,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94979718,P-40WIP-6IN-SAN-STL,Biom Mini Biodegradable Refillable Hand Sanitizing Wipes - Santal Escape - 40ct,D253-C4,2026-12-13,1512.0,63.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+95285660,P-60WIP-FLU-FRA-2PK,Biom Flushable Personal Wipes Fragrance Free - 120ct,D253-C6,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+95285661,K-60WIP-FLU-FRA-3Pk,Biom Flushable Personal Wipes Unscented - 180ct,D253-C6,2026-12-13,28.0,7.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+95285662,K-DIS-2FLU-WHI,Biom White Flushable One Handed Kit Personal Wipes Unscented - 120ct,D253-C6,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-12-13,4572.0,190.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-12-13,930.0,155.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+1011278742,P-20WIP-SAN-BER-TRV,Biom Sanitizing Go-Pack Holiday Bergamot Bloom - Hand Wipes - 20ct,D253-C4,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1011824789,P-60WIP-DSN-PIN,Biom Pine Forest Disinfecting Wipes Refill All-Purpose Cleaners - 60ct,D3-C2,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,12.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-12-13,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012914812,P-20WIP-AP-STL-TRV,Biom Santal Escape Cleaning Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-12-13,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+1012914813,P-20WIP-DSN-CIT-TRV,Biom Fresh Citrus Disinfecting Wipe Go-Pack All-Purpose Cleaners - 20ct,D3-C2,2026-12-13,0.0,,D,D · plan-based · ±70%,forecast_replenishment,
+94799734,K-DIS-2BAB-WHI,"Biom 99% Water Hypoallergenic Baby Starter Kit - White - Fragrance Free - 120 wipes: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-12-20,242.0,60.5,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799736,K-DIS-2BAB-LGR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Seafoam Green - Fragrance Free - 120ct: Refillable, Alcohol-Free, Aloe & Vitamin E",D7,2026-12-20,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,4.0
+94799737,P-60WIP-BAB-FRA,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 60ct: Alcohol-Free, Contains Aloe, Refill Pouch",D7,2026-12-20,1173.0,97.8,D,D · plan-based · ±70%,forecast_replenishment,12.0
+94799738,K-DIS-2BAB-PUR,"Biom 99% Water Hypoallergenic Baby Starter Kit - Lilac - Fragrance Free - 120ct: Refillable Container, Contains Aloe, Contains Vitamin E",D7,2026-12-20,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+94799739,K-60WIP-BAB-FRA-4PK,"Biom 99% Water Hypoallergenic Baby Wipes -Fragrance Free - 240ct: Face, Hands, Nose, Whole Body, Diaper Area",D7,2026-12-20,650.0,216.7,D,D · plan-based · ±70%,forecast_replenishment,3.0
+94799740,K-60WIP-BAB-FRA-12PK,"Biom 99% Water Hypoallergenic Baby Wipes - Fragrance Free - 720ct: Face & Body Application, Refill Pouch, With Aloe & Vitamin E",D7,2026-12-20,724.0,724.0,D,D · plan-based · ±70%,forecast_replenishment,1.0
+1010810949,P-40WIP-LIT-FRA,Biom Baby Mini Little Messes Hand Wipes Refills Fragrance Free - 40ct,D7,2026-12-20,4572.0,190.5,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1010810951,K-6DIS-PER-1LIT,Biom Refillable Mini Dispenser Little Mess Hand Wipes Periwinkle - 40ct,D7,2026-12-20,930.0,155.0,D,D · plan-based · ±70%,forecast_replenishment,6.0
+1012188490,P-30WIP-LIT-FRA,Biom Little Mess Baby Wipes Go-Pack Unscented - 30ct,D7,2026-12-20,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0
+1012188491,P-30WIP-BAB-FRA,Biom Baby Wipes Go-Pack Unscented - 30ct,D7,2026-12-20,0.0,0.0,D,D · plan-based · ±70%,forecast_replenishment,24.0

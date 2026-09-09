@@ -1,0 +1,145 @@
+# Shared runner for the Target shipment forecast.
+#
+# Runs every Monday 12:00 UTC (08:00 ET) and on demand from the Actions tab by
+# anyone with repo access. Secrets live in the repository settings, not on a
+# person:
+#   GCP_SA_KEY_B64     base64 of the read-only BigQuery service-account JSON
+#                      (claude-code-bq-readonly@biom-reporting-s26). The same
+#                      account exports the Google Sheets once the Drive API is
+#                      enabled on the project and the sheets are shared with it.
+#   BULLSEYE_TOKEN     fine-grained GitHub PAT (or deploy token) with read access
+#                      to aubrey-biom/bullseye, the private git dependency.
+#   SLACK_WEBHOOK_URL  optional; posts the digest to #supply-chain.
+#   DRIVE_FOLDER_ID    optional; Shared Drive folder for the workbook upload.
+#
+# Secrets are mapped to job-level env once, because GitHub does not allow the
+# `secrets` context inside step `if:` conditions (that mistake made the first
+# three pushes register as failed runs before any job started).
+name: forecast
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Channel
+        default: target
+        type: choice
+        options: [target]
+      as_of:
+        description: Origin date YYYY-MM-DD (blank = today)
+        default: ""
+        type: string
+      months:
+        description: Months to forecast
+        default: "16"
+        type: string
+
+jobs:
+  forecast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GCP_SA_KEY_B64: ${{ secrets.GCP_SA_KEY_B64 }}
+      BULLSEYE_TOKEN: ${{ secrets.BULLSEYE_TOKEN }}
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      DRIVE_FOLDER_ID: ${{ secrets.DRIVE_FOLDER_ID }}
+      SHIPCAST_ROOT: ${{ github.workspace }}
+      CHANNEL: ${{ github.event.inputs.channel || 'target' }}
+      MONTHS: ${{ github.event.inputs.months || '16' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets
+        id: secrets
+        run: |
+          if [ -z "$GCP_SA_KEY_B64" ]; then
+            echo "::warning::GCP_SA_KEY_B64 is not set; the forecast cannot pull from BigQuery. Add the repository secret (see README, Shared runner)."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "### Forecast skipped" >> "$GITHUB_STEP_SUMMARY"
+            echo "Repository secret GCP_SA_KEY_B64 is not configured. See README → Shared runner." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Allow uv to fetch the private bullseye dependency
+        if: steps.secrets.outputs.ready == 'true' && env.BULLSEYE_TOKEN != ''
+        run: |
+          git config --global url."https://x-access-token:${BULLSEYE_TOKEN}@github.com/".insteadOf "https://github.com/"
+
+      - uses: astral-sh/setup-uv@v3
+        if: steps.secrets.outputs.ready == 'true'
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        if: steps.secrets.outputs.ready == 'true'
+        run: uv sync --extra drive
+
+      - name: Resolve as-of
+        id: asof
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          d="${{ github.event.inputs.as_of }}"
+          if [ -z "$d" ]; then d=$(date -u +%F); fi
+          echo "as_of=$d" >> "$GITHUB_OUTPUT"
+
+      - name: Export input sheets with the service account
+        if: steps.secrets.outputs.ready == 'true'
+        continue-on-error: true   # until the Drive API is enabled and the sheets are shared
+        run: |
+          mkdir -p inputs
+          uv run python -c "from shipcast.inputs.drive_fetch import fetch_known; print(fetch_known('inputs'))"
+
+      - name: Pull Target signals
+        if: steps.secrets.outputs.ready == 'true'
+        run: uv run shipcast pull --as-of "${{ steps.asof.outputs.as_of }}"
+
+      - name: Build the forecast workbook
+        if: steps.secrets.outputs.ready == 'true'
+        run: |
+          set -e
+          AS_OF="${{ steps.asof.outputs.as_of }}"
+          OWNER=""
+          if [ -f inputs/bm_master_forecast.xlsx ]; then OWNER="--owner inputs/bm_master_forecast.xlsx"; fi
+          uv run shipcast run --channel "$CHANNEL" --as-of "$AS_OF" --months "$MONTHS" $OWNER
+
+      - name: Upload workbook as a build artifact
+        if: steps.secrets.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: target-shipment-forecast-${{ steps.asof.outputs.as_of }}
+          path: |
+            runs/${{ steps.asof.outputs.as_of }}/*.xlsx
+            runs/${{ steps.asof.outputs.as_of }}/csv/*.csv
+            runs/${{ steps.asof.outputs.as_of }}/readme.json
+
+      - name: Upload workbook to the Drive folder
+        if: steps.secrets.outputs.ready == 'true' && env.DRIVE_FOLDER_ID != ''
+        continue-on-error: true
+        run: |
+          uv run python - <<'PY'
+          import glob, os
+          from shipcast.inputs.drive_fetch import upload_to_folder
+          for p in glob.glob(f"runs/{os.environ['AS_OF']}/*.xlsx"):
+              print(upload_to_folder(p, os.environ["DRIVE_FOLDER_ID"]))
+          PY
+        env:
+          AS_OF: ${{ steps.asof.outputs.as_of }}
+
+      - name: Post digest to Slack
+        if: steps.secrets.outputs.ready == 'true' && env.SLACK_WEBHOOK_URL != ''
+        continue-on-error: true
+        run: |
+          uv run python - <<'PY'
+          import json, os, urllib.request
+          rd = json.load(open(f"runs/{os.environ['AS_OF']}/readme.json"))
+          text = (f"Target shipment forecast {rd['as_of']}: plan snapshot {rd['plan_snapshot_used']}, "
+                  f"plan horizon to {rd['plan_horizon_last_order_day']}. Workbook in the run artifact / Drive folder.")
+          req = urllib.request.Request(os.environ["SLACK_WEBHOOK_URL"], data=json.dumps({"text": text}).encode(),
+                                       headers={"Content-Type": "application/json"})
+          urllib.request.urlopen(req)
+          PY
+        env:
+          AS_OF: ${{ steps.asof.outputs.as_of }}

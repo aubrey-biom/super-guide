@@ -1,0 +1,39 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+tokens.json
+# Materialised service-account key (shipcast.bq / bpd_mcp.bq write it to
+# ~/.config/gcloud/biom-bq-sa.json; never let a copy land in the tree)
+biom-bq-sa.json
+*-sa.json
+.config/gcloud/
+
+# Run inputs and outputs at the repo root (pulled from Drive / BigQuery at run time).
+# Root-anchored: src/shipcast/inputs/ is a package and must stay tracked.
+/inputs/
+/runs/
+*.parquet
+*.xlsx
+!tests/fixtures/*.xlsx
+
+# Lock file: not managed in-tree (mirrors bullseye); see README
+uv.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Editor
+.idea/
+.vscode/
+*.swp
+.DS_Store

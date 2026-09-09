@@ -1,0 +1,95 @@
+[project]
+name = "shipcast"
+version = "0.1.0"
+description = "Demand and shipment forecaster for Biom retail channels (v1: Target), built on bullseye's BigQuery logical tables."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Biom" }]
+dependencies = [
+    # bullseye (bpd-mcp): the Target logical-table registry and CTE injection.
+    # Pinned to a commit in [tool.uv.sources] below; bump deliberately.
+    "bpd-mcp",
+    "google-cloud-bigquery>=3.20",
+    # `QueryJob.to_dataframe()` needs db-dtypes for DATE columns.
+    "db-dtypes>=1.2",
+    "pandas>=2.2",
+    "pyarrow>=15",
+    "openpyxl>=3.1",
+    "pydantic>=2.7",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+# Google Drive export/upload with the service account (GitHub Actions runner).
+drive = [
+    "google-api-python-client>=2.100",
+    "google-auth>=2.20",
+]
+dev = [
+    "pytest>=8",
+    "ruff>=0.4",
+    "mypy>=1.10",
+    "pandas-stubs",
+    "types-PyYAML",
+]
+
+[project.scripts]
+shipcast = "shipcast.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shipcast"]
+
+[tool.uv.sources]
+# Private repo. CI needs a deploy key or a fine-grained PAT (see README and
+# .github/workflows/forecast.yml). For local development against a checkout:
+#   uv add --editable /path/to/bullseye
+bpd-mcp = { git = "https://github.com/aubrey-biom/bullseye", rev = "adbf2a2b73f4a434f32443348c4eb820074db579" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "C4", "SIM", "RUF"]
+# E501: line too long (prose in docstrings and SQL is kept long-form)
+# RUF001/2/3: ambiguous unicode (em-dashes, × and − are used deliberately in docs)
+# SIM105: try/except/pass -> contextlib.suppress (the explicit form reads clearer)
+ignore = ["E501", "RUF001", "RUF002", "RUF003", "SIM105"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["shipcast"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "bq_live: executes against live BigQuery with REAL production data (bills bytes); skipped without credentials",
+]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src"]
+ignore_missing_imports = true
+
+# The model, pipeline and report modules are pandas-heavy; pandas-stubs report
+# spurious Series/DataFrame unions on groupby/pivot chains. They are covered by
+# tests/test_model.py and the live run instead of strict typing.
+[[tool.mypy.overrides]]
+module = [
+  "shipcast.pipeline",
+  "shipcast.run",
+  "shipcast.model.consumption",
+  "shipcast.model.plan_anchor",
+  "shipcast.model.intervals",
+  "shipcast.model.grade",
+  "shipcast.output.report",
+  "shipcast.supply.freight_tracker",
+  "shipcast.inputs.drive_fetch",
+]
+ignore_errors = true
