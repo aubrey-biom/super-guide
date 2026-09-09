@@ -195,13 +195,27 @@ def run(
     spec: Annotated[
         Path | None, typer.Option(help="Report layout YAML (default config/report_target.yaml)")
     ] = None,
+    bm: Annotated[
+        Path | None,
+        typer.Option(
+            "--bm",
+            help=(
+                "Local copy of the B&M Master Forecast .xlsx: hand-run override of the "
+                "BigQuery snapshot pulled as bm_schedule"
+            ),
+        ),
+    ] = None,
 ) -> None:
-    """Produce the forecast workbook from the pulled BigQuery signals. That is the whole input set.
+    """Produce the ONE forecast workbook from the pulled BigQuery signals.
 
-    No spreadsheet, no Drive fetch, no manually placed file: the monthly POS forecast is
-    `consumption.dist_velocity`, `planned_launch` comes from Target's own PO plan plus the
-    live item-state feed, and curated launch assumptions are pulled from
-    `biom_admin.seed_target_launch_velocity` as `launch_seed`.
+    No Drive fetch and no manually placed file in the scheduled path: the monthly POS
+    forecast is `consumption.dist_velocity`, `planned_launch` comes from Target's own PO
+    plan plus the live item-state feed, curated launch assumptions come from
+    `biom_admin.seed_target_launch_velocity` (`launch_seed`), and the channel owner's
+    Brick & Mortar store plan comes from `biom_admin.bm_target_schedule_snapshot`
+    (`bm_schedule`, landed by ingest/bm_schedule_ingest.py). The store plan shapes the
+    measured forecast's forward store count; it never sets its level. `--bm PATH` reads a
+    local copy of that sheet instead, for a hand-run.
     """
     if channel != "target":
         raise typer.BadParameter("v1 supports --channel target only")
@@ -224,9 +238,16 @@ def run(
         months=mo,
         channel=channel,
         spec_path=spec,
+        bm_path=bm,
     )
     for w in bundle.warnings:
         _echo(f"warning: {w}")
+    bm_meta = bundle.readme.get("bm_schedule") or {}
+    _echo(
+        f"bm schedule: {bm_meta.get('source')} {bm_meta.get('name') or ''} "
+        f"snapshot {bm_meta.get('snapshot_date') or '-'}; "
+        f"{(bm_meta.get('shaping') or {}).get('rows_shaped', 0)} POS rows shaped"
+    )
     wk = bundle.frames["weekly"]
     mo_df = bundle.frames["monthly"]
     _echo(
@@ -285,7 +306,11 @@ def score(
 ) -> None:
     """WAPE, bias, median APE, exact and within-10% shares per signal x horizon, with 80% bootstrap CIs on WAPE."""
     from pipelines.target_shipment_forecast.backtest.rolling import panel_to_long
-    from pipelines.target_shipment_forecast.backtest.scoring import score_table, wape, week_block_bootstrap_ci
+    from pipelines.target_shipment_forecast.backtest.scoring import (
+        score_table,
+        wape,
+        week_block_bootstrap_ci,
+    )
 
     src = rows or repo_root() / "runs" / "backtest" / "backtest_rows.csv"
     long = (

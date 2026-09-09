@@ -1,0 +1,31 @@
+# The Drive -> BigQuery snapshot job for the channel owner's Brick & Mortar Master Forecast.
+# A SEPARATE image from Dockerfile.target_shipment_forecast on purpose: this is the only
+# code that talks to Google Drive, it runs as the service account that holds the sheet's
+# grant, and the forecast image must not carry a Drive client or that identity.
+#
+#   docker build -f Dockerfile.bm_schedule_ingest -t bm-schedule-ingest .
+#   docker run -e BM_SCHEDULE_FILE_ID=... -e GOOGLE_APPLICATION_CREDENTIALS=... bm-schedule-ingest
+#
+# Cloud Run job + Cloud Scheduler, Monday 07:00 UTC, before the forecast run at 07:30.
+# The file id is an environment variable, never baked in.
+FROM python:3.12-slim
+WORKDIR /app
+
+COPY pipelines/target_shipment_forecast/requirements.txt        ./requirements.txt
+COPY pipelines/target_shipment_forecast/requirements-ingest.txt ./requirements-ingest.txt
+RUN pip install --no-cache-dir -r requirements-ingest.txt
+
+COPY pipelines/target_shipment_forecast/__init__.py ./pipelines/target_shipment_forecast/__init__.py
+COPY pipelines/target_shipment_forecast/bq.py       ./pipelines/target_shipment_forecast/bq.py
+COPY pipelines/target_shipment_forecast/config.py   ./pipelines/target_shipment_forecast/config.py
+COPY pipelines/target_shipment_forecast/inputs      ./pipelines/target_shipment_forecast/inputs
+COPY pipelines/target_shipment_forecast/ingest      ./pipelines/target_shipment_forecast/ingest
+# the parser resolves SKU -> TCIN through the committed item master and alias maps
+COPY pipelines/target_shipment_forecast/config      ./pipelines/target_shipment_forecast/config
+COPY pipelines/target_shipment_forecast/data        ./pipelines/target_shipment_forecast/data
+
+ARG GIT_SHA=unknown
+LABEL org.opencontainers.image.revision=$GIT_SHA
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
+CMD ["python", "-m", "pipelines.target_shipment_forecast.ingest.bm_schedule_ingest"]

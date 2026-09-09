@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+runs/
+# hand-placed spreadsheet inputs: the scheduled path reads BigQuery only, and the
+# Brick & Mortar sheet is the channel owner's document, not repository content
+pipelines/target_shipment_forecast/inputs/*.xlsx
+pipelines/target_shipment_forecast/inputs/*.xlsm
+pipelines/target_shipment_forecast/inputs/*.csv
+# credentials never
+*.json.key
+shopify_token.json
+.env

@@ -1,0 +1,9 @@
+# Cloud Build context: never ship local run output or a hand-placed sheet in an image.
+.git
+.venv
+__pycache__
+runs/
+pipelines/target_shipment_forecast/inputs/*.xlsx
+pipelines/target_shipment_forecast/inputs/*.xlsm
+pipelines/target_shipment_forecast/tests/
+pipelines/target_shipment_forecast/docs/

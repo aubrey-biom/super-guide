@@ -51,14 +51,29 @@ Implemented:
   0.686, so `1/WAPE²` weighting scored worse than the single one: 0.2035 vs 0.1998).
   An inventory drawdown controller calibrated by grid search each run. A month-of-year
   index that admits a month only on ≥ 2 distinct calendar years and prints its `n_years`.
-- Config-driven workbook (`config/report_target.yaml`): Monthly grid with a grade grid
-  beneath, Monthly detail, weekly Shipments, Weekly detail, Accuracy, Booked forward,
-  Exceptions. Change the layout by editing the YAML.
-- **BigQuery is the only input.** No Google Drive call, no spreadsheet and no manually
-  placed file anywhere in `check | pull | run`. The owner forecast, the RDZ Inventory
-  Summary, the Inbound Freight Tracker and every Drive code path were removed on
-  2026-09-08; curated human assumptions, when any exist, come from
-  `biom_admin.seed_target_launch_velocity` (append-only, as-of read, always graded E).
+- Config-driven workbook (`config/report_target.yaml`): Monthly grid with grade and
+  provenance grids beneath, Monthly detail, weekly Shipments, Weekly detail, Accuracy,
+  Booked forward, Store plan check, Load order check, Coverage, Exceptions. Change the
+  layout by editing the YAML. **One workbook**, `target_shipment_forecast_<as_of>.xlsx`;
+  "shipment forecast" is the Target sell-in file, "demand plan" is reserved for the
+  omnichannel DTC + Target file that does not exist yet.
+- **The channel owner's Brick & Mortar Master Forecast shapes the forward store count
+  and never sets the level** (`model/bm_combine.py`). Its `Stores` row, as a RATIO to
+  max(its own anchor month, BPD's stocked stores today), ramps BPD's own anchor store
+  count forward, so a sheet that understates today's doors cannot turn that into
+  growth; the POS forecast is shaped
+  BEFORE the weekly simulation so replenishment follows the ramp with the inventory lag.
+  Rows the ramp moved carry provenance `measured_shaped_by_plan` and one grade worse;
+  months only the sheet describes are shown at grade E as `stated_only`. `Load_Orders`
+  is a cross-check sheet, never a source. Refusals (no anchor, placeholder block, over
+  `ramp_cap`) hold the ramp at 1.0 and say so in Exceptions.
+- **BigQuery is the only input in the scheduled path.** No Google Drive call and no
+  manually placed file anywhere in `check | pull | run`. The sheet reaches the run as
+  `biom_admin.bm_target_schedule_snapshot`, landed by `ingest/bm_schedule_ingest.py`
+  (Drive → BigQuery, the RDZ inventory pipeline's pattern, running as the one service
+  account that holds the Drive grant); the run reads the newest snapshot on or before
+  `as_of`. `run --bm PATH` parses a local copy for a hand-run. Curated human assumptions
+  come from `biom_admin.seed_target_launch_velocity` (append-only, as-of read, always E).
 
 Not yet: **Biom-side ability-to-ship is not modelled at all** — no forecast cell is capped
 by what Biom can ship. That was already true in v1 (the RDZ read only ever produced an
@@ -166,6 +181,26 @@ sheet to export, no Drive scope on the identity that runs this.
   measured number) and `load_orders` (launch volume Target's own plan does not carry yet,
   netted against booked-forward and the planned launch/forward streams). Both graded E.
   Empty is the normal state.
+* **`bm_schedule`** — `biom_admin.bm_target_schedule_snapshot`, the channel owner's
+  Brick & Mortar Master Forecast (`Target Schedule` tab) as append-only snapshots, one per
+  edit of the sheet (keyed by Drive `modifiedTime`). The run reads the WHOLE newest
+  snapshot on or before `as_of` (never months from two edits). It is landed by
+  `ingest/bm_schedule_ingest.py`:
+
+  ```bash
+  pip install -r pipelines/target_shipment_forecast/requirements-ingest.txt
+  # one-off: bq query --use_legacy_sql=false < pipelines/target_shipment_forecast/ddl/bm_target_schedule_snapshot.sql
+  BM_SCHEDULE_FILE_ID=<drive file id>  python -m pipelines.target_shipment_forecast.ingest.bm_schedule_ingest
+  python -m pipelines.target_shipment_forecast.ingest.bm_schedule_ingest --local /path/to/sheet.xlsx --dry-run
+  ```
+
+  The job runs as the service account that holds the sheet's Drive grant
+  (`biom-data-pipeline@`, Viewer on the file, `dataEditor` on `biom_admin`); the forecast
+  identity keeps BigQuery read only. Idempotent on `modifiedTime`. The file id is never
+  committed. Until the first snapshot lands, `run --bm PATH` is the interim and the run
+  raises `BM_SCHEDULE_NOT_AVAILABLE` without it. Schedule it before the Monday forecast
+  run (the sheet is edited during the week; 07:00 UTC Monday is before the 07:30 run).
+  The parser is strict and aborts rather than guess — see `inputs/bm_master_forecast.py`.
 * **Committed reference data** (`data/`): the 43-TCIN item master and the SKU alias maps.
   Hand-maintained, in the repo, not fetched — the `rdz_item` / `rdz_base_qty_multiplier`
   columns there are Biom SKU identity and casepack provenance, and have nothing to do
@@ -173,7 +208,9 @@ sheet to export, no Drive scope on the identity that runs this.
 
 **Removed 2026-09-08** (recover from git if ever needed): the owner forecast parser, the
 RDZ Inventory Summary parser, the Inbound Freight Tracker parser, the supply-ledger stub
-and every Drive fetch/export module. See `scratchpad/drive_residuals_removed.md`.
+and every Drive fetch/export module. See `scratchpad/drive_residuals_removed.md`. The
+Brick & Mortar sheet came back 2026-09-09 as a BigQuery snapshot with a strict parser,
+not as a Drive read inside the run.
 
 ## Graceful degradation
 
@@ -186,6 +223,10 @@ and every Drive fetch/export module. See `scratchpad/drive_residuals_removed.md`
 | TCIN has history but no open selling store | `POS_NO_SELLING_STORES` — a drawdown or a delist, told apart from a new item on purpose |
 | Weekly POS feed > 14 d stale | `POS_FEED_STALE`; the monthly view is single-sourced on that feed, so every monthly number is suspect |
 | A month-of-year has < 2 calendar years of history | the seasonal factor is exactly 1.000 and `SEASON_INDEX_UNSUPPORTED` names the month with its `(n, n_years)` |
+| No B&M snapshot on or before `as_of` and no `--bm` | `BM_SCHEDULE_NOT_AVAILABLE`; store counts are BPD's own projection, no `stated_only` months, every other sheet still renders |
+| B&M block with no anchor-month stores, a placeholder (`Stores == 1`), or a ramp over `ramp_cap` | ramp held at 1.0, `BM_RAMP_NO_ANCHOR` / `BM_RAMP_REFUSED_PLACEHOLDER` / `BM_RAMP_CAPPED` per TCIN |
+| B&M SKU the item master cannot resolve | `BM_SKU_UNRESOLVED`; its months are neither shaped nor shown, never guessed |
+| B&M `Load_Orders` differs from the engine's launch/forward units | `BM_LOAD_DISAGREES` / `BM_LOAD_ONLY` / `BPD_LOAD_ONLY` / `BM_LOAD_MONTH_SHIFTED` on the Load order check sheet; no unit moves |
 
 No row is silently dropped: every TCIN in the universe appears with a status.
 

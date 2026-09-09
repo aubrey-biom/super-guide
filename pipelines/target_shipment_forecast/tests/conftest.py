@@ -21,6 +21,11 @@ sys.path.insert(0, str(ROOT.parents[1]))               # biom_sql root, for `pip
 FIXTURES = ROOT / "tests" / "fixtures"
 
 
+def pytest_configure(config: Any) -> None:
+    """Register the `bq_live` marker so `-m "not bq_live"` runs without a warning."""
+    config.addinivalue_line("markers", "bq_live: hits production BigQuery (bills bytes); needs a credential")
+
+
 def pytest_collection_modifyitems(config: Any, items: list[Any]) -> None:
     """Skip `bq_live` tests when no BigQuery credential is in the environment."""
     from pipelines.target_shipment_forecast.bq import credentials_available
