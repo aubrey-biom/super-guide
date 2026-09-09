@@ -1,0 +1,26 @@
+# target_shipment_forecast (Shipcast) — package-local dependencies.
+#
+# Deliberately NOT merged into the repo-root requirements.txt: that file is COPYd
+# into every Cloud Run image in this repo, and pandas/pyarrow/openpyxl would add
+# ~150 MB to images that never forecast anything. A dedicated Dockerfile for this
+# pipeline installs this file instead.
+#
+# The bullseye (bpd-mcp) git dependency the upstream repo pinned is GONE: its
+# credential resolution and CTE injection are local in `bq.py`.
+google-cloud-bigquery==3.25.0   # pinned to the repo-root version, deliberately
+db-dtypes>=1.2                  # QueryJob.to_dataframe() needs it for DATE columns
+pandas>=2.2,<3                  # <3 deliberate: this code predates pandas 3's
+                                # copy-on-write and fillna/replace-downcasting changes and
+                                # has not been validated against them (first-run report,
+                                # 2026-09-07). Lift the cap only with the suite green on 3.x.
+pyarrow>=15                     # parquet for `pull`
+openpyxl>=3.1                   # the workbook
+pyyaml>=6.0                     # config/target.yaml, config/report_target.yaml
+typer>=0.12                     # cli.py only — see the migration report, decision D-2
+google-cloud-storage==2.18.2    # runner step 3: upload the workbook to GCS. Pinned to the
+                                # repo-root version so the two cannot diverge.
+
+# There is deliberately NO Google Drive dependency, optional or otherwise: the owner
+# forecast and the RDZ sheet were removed on 2026-09-08 and every input is now a
+# BigQuery read. Re-adding google-api-python-client here would be re-opening that
+# decision -- see scratchpad/drive_residuals_removed.md.

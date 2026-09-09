@@ -1,0 +1,214 @@
+channel: target
+bq:
+  project: biom-reporting-s26
+  location: us-central1
+  max_bytes_billed: 2147483648
+  basis: operational choice, not measured
+calendar:
+  week_anchor: sunday
+  fiscal_year_start:
+    value: 2026-02-01
+    basis: assumed, confirm with buyer
+  ship_window_days:
+    value: 1
+    basis: 'measured 2026-09-03: revised_ship_end_d - revised_ship_begin_d = 1 day
+      on replenishment lines'
+item_groups:
+  D3-C2:
+    name: cleaning
+    department_id: 3
+    class_id: 2
+    po_day: sunday
+    ship_offset_days: 5
+    basis: 'measured 2026-09-03: replenishment PO created Sunday; revised_ship_begin_d
+      = create + 5 d (Friday)'
+  D253-C4:
+    name: personal care
+    department_id: 253
+    class_id: 4
+    po_day: monday
+    ship_offset_days: 5
+    basis: 'measured 2026-09-03: replenishment PO created Monday; revised_ship_begin_d
+      = create + 5 d (Saturday)'
+  D7:
+    name: baby
+    department_id: 7
+    class_id: null
+    po_day: monday
+    ship_offset_days: 7
+    basis: 'measured 2026-09-03: replenishment PO created Monday; revised_ship_begin_d
+      = create + 7 d (Monday)'
+dc_transit_days:
+  default:
+    days: 12
+    basis: operational choice, not measured (remaining DCs observed at 9-15 d on 2026-09-03;
+      12 is the midpoint)
+  overrides:
+  - dcs:
+    - 553
+    - 555
+    - 593
+    - 3806
+    - 3856
+    - 588
+    days: 5
+    basis: 'measured 2026-09-03: revised_estimated_arrival_d - revised_ship_begin_d
+      on replenishment lines (CA DCs)'
+  - dcs:
+    - 551
+    - 579
+    - 3802
+    days: 16
+    basis: 'measured 2026-09-03: revised_estimated_arrival_d - revised_ship_begin_d
+      on replenishment lines'
+streams:
+  forward_threshold_days:
+    value: 14
+    basis: 'measured 2026-09-03: replenishment lines have revised_ship_begin_d - purchase_order_create_d
+      <= 14 d; the 17 forward/launch POs (272,682 units, 34%) all exceed it'
+  lapsed_grace_days:
+    value: 7
+    basis: operational choice, not measured
+  planned_forward_multiple:
+    value: 3.0
+    basis: operational choice, not measured (plan spikes of 71k-98k vs ~20-25k normal
+      weeks on 2026-09-03 exceed 3x)
+grades:
+  by_lead_days:
+    A:
+      min: 0
+      max: 1
+    B:
+      min: 2
+      max: 3
+    C:
+      min: 4
+      max: null
+  basis: 'measured 2026-09-04: plan-anchor WAPE by lead days 0 -> 0.123, 1 -> 0.180,
+    2 -> 0.251, 3 -> 0.305, 4 -> 0.416, 5-10 -> 0.54-0.62; bias -1%'
+  labels:
+    A:
+      label: high
+      band_pct: 0.15
+      meaning: Target's own plan, 0-1 days old; measured error 12-18%
+      basis: measured 2026-09-04
+    B:
+      label: good
+      band_pct: 0.3
+      meaning: Target's plan 2-3 days old, or a month >= 75% covered by plan weeks;
+        measured error 25-31%
+      basis: measured 2026-09-04
+    C:
+      label: directional
+      band_pct: 0.5
+      meaning: plan 4+ days old, or consumption model within 6 months; measured weekly
+        error 42-62%, monthly unmeasured
+      basis: measured 2026-09-04 (weekly); assumed for monthly until backtested
+    D:
+      label: plan-based
+      band_pct: 0.7
+      meaning: beyond Target's plan and 6+ months out, or a thin POS row (few selling
+        weeks, store count capped, or under 100 selling stores); band assumed
+      basis: operational choice, not measured
+    E:
+      label: indicative
+      band_pct: 1.0
+      meaning: beyond 12 months, or no history at all; direction only
+      basis: operational choice, not measured
+consumption:
+  steady_state_wos_band:
+    low: 5
+    high: 10
+    basis: 'measured Jun-Aug 2026: chain weeks-of-supply band for fast movers'
+  dfe_pos_ratio:
+    low: 1.1
+    high: 1.4
+    basis: 'measured Jun-Jul 2026: DFE / POS ratio; the DFE feed has been stale since
+      2026-07-27'
+  trailing_pos_weeks:
+    value: 8
+    basis: operational choice, not measured
+  receipt_lag_weeks:
+    value: 3
+    basis: 'measured 2026-09-03: PO create -> receipt median 23 d (p5 13, p95 38)'
+  dfe_max_age_days:
+    value: 21
+    basis: operational choice, not measured
+  controller:
+    band: 8
+    k: 12
+    basis: 'measured 2026-09-04 on 252 TCIN-weeks Jun 7-Aug 23: weekly-order WAPE
+      0.685, bias -7%; recalibrated by grid search every run'
+  dist_slope_weeks:
+    value: 3
+    basis: 'operational choice, not measured: the store-count slope is read over the
+      last 3 complete weeks. Clipped at zero (ramp up only) because a falling store
+      count is a drawdown or a delist, not a trend to extrapolate'
+  dist_ramp_cap:
+    value: 1.15
+    basis: 'operational choice, not measured: caps the projected selling-store count at
+      1.15x the item''s own observed peak. Target''s full-chain footprint is ~1,700
+      locations and every item at full distribution sits at 1,500-1,690 (measured
+      2026-09-08), so the cap stops a steep launch ramp extrapolating past the chain'
+  pos_max_age_days:
+    value: 14
+    basis: 'operational choice, not measured (mirrors consumption.dfe_max_age_days).
+      The monthly POS forecast is single-sourced on the weekly sales feed since
+      2026-09-08, so a stalled feed hits the whole monthly view with no second opinion;
+      beyond this the run raises POS_FEED_STALE'
+  season_min_obs:
+    value: 4
+    basis: 'operational choice, not measured: minimum TCIN-month observations before a
+      month-of-year index is admitted'
+  season_min_years:
+    value: 2
+    basis: 'measured 2026-09-08 - THIS IS THE GATE THAT MATTERS. A calendar month
+      observed in one year only has an index inseparable from that year''s trend, and
+      BIOM''s Target distribution grew ~20x over the 20 months bpd_raw holds. Live, NO
+      month reaches 2 distinct years, so every factor is 1.000 and
+      SEASON_INDEX_UNSUPPORTED is raised. Expect the gate to open around Apr 2027. STL
+      (needs >=2 cycles) and a year-over-year ratio (WAPE 2.20-3.04, bias +190% to
+      +304%) were both rejected on measurement -
+      scratchpad/inhouse_velocity_forecast_design.md'
+  pos_estimator:
+    value: dist_velocity
+    basis: 'measured 2026-09-08, leak-free rolling origin: dist_velocity WAPE 0.1998 /
+      bias +5.8% vs runrate_8wk 0.2962 / -9.4% (Jun-Aug 2026, 69 TCIN-months, actual >
+      200) and 0.3054 / -4.7% vs 0.4341 / -28.1% (Sep-25..Aug-26, 179 TCIN-months).
+      P(better) = 1.000 on a month-block paired bootstrap. The retired owner_velocity
+      published 0.3422 / -4.1%. NOT blended: errors correlate 0.686, so 1/WAPE^2
+      weighting scored 0.2035, worse than dist_velocity alone'
+  calibration_min_week:
+    value: '2026-06-07'
+    basis: 'measured 2026-09-03: launch pipeline-fill weeks 2026-04-26..05-17 ran
+      36-64k units vs 22.5k steady state; calibration starts after them'
+gate:
+  max_abs_bias:
+    value: 0.15
+    basis: operational choice, not measured
+  bootstrap:
+    n_boot: 1000
+    alpha: 0.2
+    basis: operational choice, not measured
+intervals:
+  min_pool_rows:
+    value: 100
+    basis: operational choice, not measured
+  log_offset_c:
+    value: 1.0
+    basis: operational choice, not measured
+freshness:
+  stale_plan_days:
+    value: 4
+    basis: operational choice, not measured
+  item_state_max_age_days:
+    value: 21
+    basis: operational choice, not measured (mirrors consumption.dfe_max_age_days; beyond
+      this the live wkly_tcin_item feed is not trusted over the committed item master)
+horizon:
+  po_weeks: 16
+  months: 16
+  basis: operational choice, not measured. Was set to match the retired owner sheet's
+    Dec-2028 reach; kept because the grade legend already says what a distant month is
+    worth (D beyond 6 months, E beyond 12) and dist_velocity holds its rate flat once
+    the store ramp caps out

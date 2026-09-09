@@ -1,0 +1,135 @@
+# Copied verbatim from aubrey-biom/fastidious-lion
+#   path:   .claude/skills/crstl-po-alert/references/item-aliases.tsv
+#   commit: b8871acd336fa1c84b87cab701f3224b15a7a2ba (repo HEAD at copy time, 2026-09-04)
+#   file last changed in e1e3c10940af26f7099f1d40edc52d8c031bbe48 (2026-08-31)
+# Do not edit here; extend upstream and re-copy. Target-specific SKU spellings
+# live in sku_aliases_target.tsv.
+#
+# Crstl PO alert — item identifier -> RDZ item alias map
+#
+# PURPOSE
+# Partners identify the same physical item in different ways, and some order
+# multi-packs that consume several units of a base item. This file maps any
+# partner-supplied identifier to the RDZ `Item #` that holds its inventory,
+# plus how many base units one ordered unit consumes.
+#
+# FORMAT — tab-separated, 5 columns:
+#   id_type   identifier   rdz_item   base_qty   note
+#
+# id_type values:
+#   upc          item-level UPC/GTIN (matched against upc_default,
+#                upc_barcode_155, upc_barcode_1551, ean_8_barcode)
+#   upc_case     case-level UPC (upc_case_code, ean_shipping_container_code)
+#   code         a partner style/item/part number not already in RDZ form
+#   desc         exact, case-insensitive free-form description; last resort
+#
+# base_qty — base units consumed per ordered unit. 1 for a single. For an
+# Amazon multi-pack it is the pack count: one ordered K-60WIP-AP-GRA-3PK
+# consumes 3 units of P-60WIP-AP-GRA. Coverage is ALWAYS computed on the
+# base item in base units, because RDZ stocks the base, not the pack.
+#
+# Matching runs on the NORMALIZED form of both sides (SKILL.md §4d).
+#
+# MAINTENANCE
+# Every run prints "Unmapped identifiers" naming what it could not resolve.
+# Add a row per entry. Do NOT guess — a wrong alias reports coverage against
+# the wrong item, which is worse than an honest warn.
+#
+# ---------------------------------------------------------------------------
+# AMAZON VENDORCENTRAL — from amazon_item_mappings.xlsx + the Catalog &
+# Forecast template, both supplied 2026-08-31. Amazon POs carry only
+# upc_default, so this table is the sole way to reach an RDZ item for them.
+# ASINs are recorded in the note for traceability back to the listing.
+# Five of these (the dispensers) were independently corroborated by pairs
+# harvested from Target/Thrive/Grove POs — zero conflicts.
+upc	850078481627	K-DIS-2FLU-WHI	2	K-DIS-2FLU-WHI; ASIN B0HFW7KLLC; BASE SKU NOT IN RDZ
+upc	850088546231	P-20WIP-FLU-FRA-TRV	3	K-20WIP-FLU-FRA-TRV-3PK; ASIN B0HFVW1716; BASE SKU NOT IN RDZ
+upc	850088546248	P-20WIP-FLU-FRA-TRV	6	K-20WIP-FLU-FRA-TRV-6PK; ASIN B0HFVY6VNR; BASE SKU NOT IN RDZ
+upc	850088546217	P-20WIP-SAN-EUC-TRV	3	K-20WIP-SAN-EUC-TRV-3PK; ASIN B0HFVYYT1H
+upc	850088546224	P-20WIP-SAN-EUC-TRV	6	K-20WIP-SAN-EUC-TRV-6PK; ASIN B0HFW3WKW6
+upc	850088546194	P-20WIP-SAN-STL-TRV	3	K-20WIP-SAN-STL-TRV-3PK; ASIN B0HFW8ZYGN
+upc	850088546200	P-20WIP-SAN-STL-TRV	6	K-20WIP-SAN-STL-TRV-6PK; ASIN B0HFW1MY9S
+upc	850088546187	P-30WIP-BOD-NAT-TRV	3	K-30WIP-BOD-NAT-TRV-3PK; ASIN B0HFW159LR
+upc	850078481290	P-30WIP-BOD-NAT-TRV	6	K-30WIP-BOD-NAT-TRV-6PK; ASIN B0GC8TF3RP
+upc	850088546002	P-40WIP-6IN-SAN-STL	3	K-40WIP-6IN-SAN-STL-3PK; ASIN B0HFVYVFGQ
+upc	850088546019	P-40WIP-6IN-SAN-STL	6	K-40WIP-6IN-SAN-STL-6PK; ASIN B0HFW3MFH7
+upc	850088546101	P-60WIP-AP-FIR	3	K-60WIP-AP-FIR-3PK; ASIN B0HFW1YQB5
+upc	850088546118	P-60WIP-AP-FIR	6	K-60WIP-AP-FIR-6PK; ASIN B0HFVXG6DG
+upc	850088546088	P-60WIP-AP-FRA	3	K-60WIP-AP-FRA-3PK; ASIN B0HFW3QSMF
+upc	850088546095	P-60WIP-AP-FRA	6	K-60WIP-AP-FRA-6PK; ASIN B0HFW8ZKLZ
+upc	850088546026	P-60WIP-AP-GRA	3	K-60WIP-AP-GRA-3PK; ASIN B0HFW517PC
+upc	850088546033	P-60WIP-AP-GRA	6	K-60WIP-AP-GRA-6PK; ASIN not in catalog
+upc	850088546040	P-60WIP-AP-LAV	3	K-60WIP-AP-LAV-3PK; ASIN B0HFVRHNKG
+upc	850088546057	P-60WIP-AP-LAV	6	K-60WIP-AP-LAV-6PK; ASIN not in catalog
+upc	850088546125	P-60WIP-AP-PEP	3	K-60WIP-AP-PEP-3PK; ASIN B0HFW3ZKMB
+upc	850088546132	P-60WIP-AP-PEP	6	K-60WIP-AP-PEP-6PK; ASIN B0HFW2P6NF
+upc	850088546064	P-60WIP-AP-STL	3	K-60WIP-AP-STL-3PK; ASIN B0HFVXN3HT
+upc	850088546071	P-60WIP-AP-STL	6	K-60WIP-AP-STL-6PK; ASIN B0HFW2ZHCJ
+upc	850078481610	P-60WIP-FLU-FRA	3	K-60WIP-FLU-FRA-3PK; ASIN B0HFW17DQK
+upc	850088546170	P-60WIP-FLU-FRA	6	K-60WIP-FLU-FRA-6PK; ASIN B0HFVZ9DCB
+upc	850056298292	P-6DIS-BLK	1	P-6DIS-BLK; ASIN B0HFW68CQJ
+upc	850056298346	P-6DIS-PUR	1	P-6DIS-PUR; ASIN B0HFW1TBQJ
+upc	850056298315	P-6DIS-WHI	1	P-6DIS-WHI; ASIN B0HFW2BWKV
+upc	850056298339	P-6DIS-YEL	1	P-6DIS-YEL; ASIN B0HFW2CTM5
+upc	850036134152	P-DIS-DGR	1	P-DIS-DGR; ASIN B0DGHP6M1G
+upc	850056298049	P-DIS-EUC	1	P-DIS-EUC; ASIN B0HFW17DRB
+upc	850036134145	P-DIS-LGR	1	P-DIS-LGR; ASIN B0DGHJNR96
+upc	850036134428	P-DIS-TAN	1	P-DIS-TAN; ASIN B0HFW5F6RT
+upc	850056298155	P-DIS-TER	1	P-DIS-TER; ASIN B0HFVXLSTT
+upc	850036134121	P-DIS-WHI	1	P-DIS-WHI; ASIN B0DGHRQMZL
+upc	850088546149	P-WIP-SAN-TEA	3	K-WIP-SAN-TEA-3PK; ASIN B0HFVX3JLG
+upc	850088546156	P-WIP-SAN-TEA	6	K-WIP-SAN-TEA-6PK; ASIN B0HFW72M9F
+#
+# Two Amazon base SKUs are NOT present in the RDZ Inventory Summary, so lines
+# for them resolve to a base item but still report warn (no on-hand to compare):
+#   K-DIS-2FLU-WHI        Flushable Starter Kit. Its Base SKU points at itself
+#                         with base_qty 2, which is likely a placeholder — a
+#                         kit should decompose into its components. Worth
+#                         confirming what it should consume from RDZ.
+#   P-20WIP-FLU-FRA-TRV   20ct Flushable Travel Pack; appears to be a new item
+#                         not yet carried in RDZ.
+#
+# Two Amazon SKUs have no ASIN in the Catalog & Forecast template:
+#   K-60WIP-AP-GRA-6PK (850088546033), K-60WIP-AP-LAV-6PK (850088546057)
+#
+# NOT REAL ITEMS — placeholder UPCs seen only during the 2026-08-21..08-26 EDI
+# test window, all priced $12.74 in round 100-unit lots, none present in the
+# 08-31 go-live batch. Do NOT map these; they must not match anything:
+#   850088546111, 850088546222, 850088546333
+#   1234567891234  (ean_8_barcode on the CONNECTIVITYTEST PO)
+# Their trailing 111/222/333 pattern and invalid check digits are the tell.
+#
+# ---------------------------------------------------------------------------
+# Other partners — pairs harvested 2026-08-31 from Crstl itself: each was
+# observed on a real PO from a partner that sends the UPC and the style
+# number on the same line (Target, Thrive Market, Grove Collaborative).
+upc	850036134138	P-DIS-BLK	1	Refillable Wipes Dispenser, Black
+upc	850056298087	P-60WIP-AP-LAV	1	All-Purpose Cleaning Wipes, Lavender Ease
+upc	850056298094	P-60WIP-AP-STL	1	All-Purpose Cleaning Wipes, Santal Escape
+upc	850056298391	P-60WIP-AP-NER	1	All-Purpose Cleaning Wipes, Neroli
+upc	850056298407	P-60WIP-AP-FRA	1	All-Purpose Cleaning Wipes, Fragrance Free
+upc	850056298506	P-60WIP-DSN-CIT	1	Dispenser Wipes, Citrus
+upc	850056298957	P-60WIP-BAB-FRA	1	Baby Wipes, Fragrance Free
+upc	850056298964	K-60WIP-BAB-FRA-4PK	1	Baby Wipes, Fragrance Free, 4pk
+upc	850078481023	K-60WIP-DSN-COM-3PK	1	Dispenser Wipes Combo, 3pk
+upc	850078481030	K-60WIP-AP-COM	1	All-Purpose Wipes Combo
+upc	850078481047	P-DIS-SS-BRU	1	Dispenser, Stainless Brushed
+upc	850078481078	K-DIS-2BAB-WHI	1	Dispenser + 2 Baby Wipes, White
+upc	850078481108	P-30WIP-BOD-NAT-TRV	1	Body Wipes Natural, Travel 30ct
+upc	850078481122	P-40WIP-6IN-SAN-STL	1	6-in-1 Sanitizing Wipes, Santal 40ct
+upc	850078481153	K-6DIS-WHI-1SAN-STL	1	6 Dispensers White + 1 Santal
+upc	850078481221	P-20WIP-SAN-BER-TRV	1	Sanitizing Wipes Bergamot, Travel 20ct
+upc	850078481672	P-40WIP-LIT-FRA	1	Little Wipes Fragrance Free 40ct
+upc	850078481726	K-6DIS-PER-1LIT	1	6 Dispensers Periwinkle + 1 Little
+#
+# Partner codes not already in RDZ form. The P-60 prefix rule in SKILL.md §4d
+# handles the general case; these are the observed ones.
+code	WIP-AP-STL	P-60WIP-AP-STL	1	UNFI shortened part number
+code	WIP-AP-FRA	P-60WIP-AP-FRA	1	UNFI shortened part number
+#
+# Case UPCs — no rows needed. Merchants Distributors' upc_case_code is the
+# item UPC with the check digit dropped and a leading zero added, so the
+# 11-digit rule in SKILL.md §4d resolves all observed codes against the `upc`
+# rows above (085003613442 -> P-DIS-TAN, 085005629809 -> P-60WIP-AP-STL,
+# 085005629808 -> P-60WIP-AP-LAV). Add an explicit upc_case row only for a
+# code that rule does NOT resolve.
